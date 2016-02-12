@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1106380d95cadfccabc8f46a89ebb9e8",
-    "content-hash": "06869dda4dadfad3a121ba18baa7d18c",
+    "hash": "42faa58ff58e15b0863550e2821b71d7",
+    "content-hash": "6516ccc84a11cf6a1a79a7f7dda7bf82",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -268,6 +268,47 @@
             "time": "2016-02-09 22:09:46"
         },
         {
+            "name": "codemix/yii2-localeurls",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codemix/yii2-localeurls.git",
+                "reference": "cfdb9b6b0ae12b4e55fbb43eff9c25aa25055320"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/cfdb9b6b0ae12b4e55fbb43eff9c25aa25055320",
+                "reference": "cfdb9b6b0ae12b4e55fbb43eff9c25aa25055320",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "codemix\\localeurls\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Härtl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "Automatic locale/language management for URLs.",
+            "keywords": [
+                "i18n",
+                "locale",
+                "yii2"
+            ],
+            "time": "2016-02-05 12:46:45"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.6.0",
             "source": {
@@ -374,7 +415,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/abb6d386b71fe4d30d028c293202223311162dd2",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/33f50af818d9d4609a964da275aa3c1ddda68bd3",
                 "reference": "abb6d386b71fe4d30d028c293202223311162dd2",
                 "shasum": ""
             },

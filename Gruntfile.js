@@ -3,9 +3,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             css: {
-                src: [
-                    'vendor/bower/bootstrap/dist/css/bootstrap.css'
-                ],
+                src: grunt.file.readJSON('assets/css/all.json'),
                 dest: 'web/css/all.css'
             }
         },

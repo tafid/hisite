@@ -3,7 +3,7 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-    'id' => 'basic',
+    'id' => 'HiSite',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
@@ -52,14 +52,33 @@ $config = [
                 ],
             ],
         ],
-        /*
+
         'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['en', 'ru'],
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
+            'ignoreLanguageUrlPatterns' => [
+                '#^site/(login|register)#' => '#^(login|register)#',
+                '#^api/#' => '#^api/#',
+            ],
+            'rules' => [],
+        ],
+
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
