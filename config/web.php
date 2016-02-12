@@ -38,6 +38,20 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+
+        'assetManager' => [
+            'bundles' => false,
+        ],
+
+        'view' => [
+            'theme' => [
+                'basePath' => '@app/themes/dataserv',
+                'baseUrl' => '@web/themes/dataserv',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/dataserv',
+                ],
+            ],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
