@@ -3,5 +3,21 @@
   "vendor/bower/bootstrap/dist/js/bootstrap.js",
   "vendor/yiisoft/yii2/assets/yii.js",
   "vendor/yiisoft/yii2/assets/yii.validation.js",
-  "vendor/yiisoft/yii2/assets/yii.activeForm.js"
+  "vendor/yiisoft/yii2/assets/yii.activeForm.js",
+
+  "themes/dataserv/js/morphext.min.js",
+  "themes/dataserv/js/hoverIntent.js",
+  "themes/dataserv/js/superfish.min.js",
+  "themes/dataserv/js/owl.carousel.js",
+  "themes/dataserv/js/jquery-ui.min.js",
+  "themes/dataserv/js/ripple-effect.js",
+  "themes/dataserv/js/wow.min.js",
+  "themes/dataserv/js/jquery.form.min.js",
+  "themes/dataserv/js/jquery.slicknav.min.js",
+  "themes/dataserv/js/retina.min.js",
+  "themes/dataserv/js/custom.js"
 ]
+
+
+
+

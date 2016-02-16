@@ -1,3 +1,12 @@
 [
-  "vendor/bower/bootstrap/dist/css/bootstrap.css"
+  "vendor/bower/bootstrap/dist/css/bootstrap.css",
+
+  "themes/dataserv/css/bootstrap-theme.min.css",
+  "themes/dataserv/css/block_grid_bootstrap.css",
+  "themes/dataserv/css/owl.carousel.css",
+  "themes/dataserv/css/owl.theme.css",
+  "themes/dataserv/css/animate-custom.css",
+  "themes/dataserv/css/slicknav.min.css",
+  "themes/dataserv/css/.css",
+  "themes/dataserv/css/.css"
 ]
