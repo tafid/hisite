@@ -3,7 +3,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             css: {
-                src: grunt.file.readJSON('assets/css/all.json'),
+                src: grunt.file.readJSON('themes/dataserv/css.json'),
                 dest: 'web/css/all.css'
             }
         },
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
             },
             all: {
                 files: {
-                    'web/js/all.js': grunt.file.readJSON('assets/js/all.json')
+                    'web/js/all.js': grunt.file.readJSON('themes/dataserv/js.json')
                 }
             }
         },
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['vendor/bower/bootstrap/fonts/*'],
+                        src: grunt.file.readJSON('themes/dataserv/fonts.json'),
                         dest: 'web/fonts/',
                         filter: 'isFile'
                     }
