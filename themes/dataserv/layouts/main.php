@@ -4,7 +4,34 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\widgets\Menu;
 
+$menuItems = [
+    ['label' => Yii::t('app', 'Domains'), 'url' => '#', 'items' => [
+        ['label' => Yii::t('app', 'Prices'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Advantages'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Transfer'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Premium Package'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Whois lookup'), 'url' => '#'],
+    ]],
+    ['label' => Yii::t('app', 'Hosting'), 'url' => '#', 'items' => [
+        ['label' => Yii::t('app', 'XEN SSD'), 'url' => '#'],
+        ['label' => Yii::t('app', 'OpenVZ'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Tariffs details'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Advantages'), 'url' => '#'],
+        ['label' => Yii::t('app', 'What is VDS'), 'url' => '#'],
+    ]],
+    ['label' => Yii::t('app', 'For resellers'), 'url' => '#', 'items' => [
+        ['label' => Yii::t('app', 'Prices'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Advantages'), 'url' => '#'],
+        ['label' => Yii::t('app', 'API'), 'url' => '#'],
+    ]],
+    ['label' => Yii::t('app', 'Help'), 'url' => '#', 'items' => [
+        ['label' => Yii::t('app', 'FAQ'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Create ticket'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Terms of use'), 'url' => '#'],
+    ]],
+];
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -26,14 +53,22 @@ use yii\helpers\Html;
     <div class="row">
         <div class="col-sm-3">
             <ul class="top left">
-                <li><i class="fa fa-phone"></i> 851.02.DATASERV</li>
+                <li><i class="fa fa-envelope-o"></i> 24/7 <?= Yii::t('app', 'tech support') ?> <?= Html::mailto('support@ahnames.com', 'support@ahnames.com') ?></li>
             </ul>
         </div>
         <div class="col-sm-9">
             <ul class="topright">
-                <li><i class="fa fa-unlock-alt"></i> <a href="#" data-toggle="modal" data-target="#LoginModal">CLIENT AREA</a></li>
+                <?php if (Yii::$app->user->isGuest) : ?>
+                    <li><i class="fa fa-unlock-alt"></i> <a href="#" data-toggle="modal" data-target="#LoginModal">CLIENT AREA</a></li>
+                <?php else : ?>
+                    <li>PANEL</li>
+                <?php endif; ?>
                 <li><i class="fa fa-commenting-o"></i> <a href="#">LIVE CHAT</a></li>
-                <li><i class="fa fa-hand-pointer-o"></i> <a href="affiliates.html">AFFILIATES</a></li>
+                <li class="dropdown">
+                    <i class="fa fa-language"></i> <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="text-transform: uppercase">
+                        <?= Yii::$app->language ?> <span class="caret"></span></a>
+                    <?= \app\widgets\LanguageDropdown::widget() ?>
+                </li>
             </ul>
         </div>
     </div>
@@ -45,55 +80,37 @@ use yii\helpers\Html;
     <div class="row">
         <div class="col-sm-3">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="" />
-                </a>
+                <a href="/"><?= Html::img('/images/logo.png') ?></a>
             </div>
         </div>
         <div class="col-sm-9">
 
             <nav id="desktop-menu">
-                <ul class="sf-menu" id="navigation">
-                    <li class="current"><a href="#">Home</a>
-                        <ul>
-                            <li><a href="index.html">Order Slider</a></li>
-                            <li><a href="index-image.html">Background Header</a></li>
-                            <li><a href="index-image2.html">Background Header 2</a></li>
-                            <li><a href="index-video.html">Video Header</a></li>
-                            <li><a href="index-slider.html">Slider Header</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Hosting</a>
-                        <ul>
-                            <li><a href="shared.html">Shared Hosting</a></li>
-                            <li><a href="vps.html">Cloud VPS</a></li>
-                            <li><a href="servers.html">Dedicated Servers</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="domains.html">Domains</a></li>
-                    <li><a href="#">Pages</a>
-                        <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="datacenter.html">Datacenter</a></li>
-                            <li><a href="elements.html">Elements</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Blog</a>
-                        <ul>
-                            <li><a href="blog-category.html">Category</a></li>
-                            <li><a href="blog-single.html">Single</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <?= Menu::widget([
+                    'options' => ['class' => 'sf-menu', 'id' => 'navigation'],
+                    'activeCssClass' => 'current',
+                    'items' => $menuItems,
+                ]) ?>
             </nav>
         </div>
     </div>
 </div>
 <!-- END OF HEADER -->
 
-
+<?php if (\app\helpers\ThemeHelper::isHomePage() === false) : ?>
+<!-- SUBHEADER -->
+<div id="subheader" class="contact">
+    <div class="subheader-text">
+        <h1>We'd love to hear from you</h1>
+        <h2>Our friendly Support Team is available to help you 24 hours a day</h2>
+    </div>
+</div>
+<!-- END OF SUBHEADER -->
 <?= $content ?>
+<?php else : ?>
+<?php endif; ?>
+
+
 
 
 <!-- FOOTER -->
@@ -101,51 +118,37 @@ use yii\helpers\Html;
     <div class="row">
 
         <div class="col-sm-3">
-            <h4>CLOUD HOSTING</h4>
-            <ul>
-                <li><a href="#" title="">cPanel Hosting</a></li>
-                <li><a href="#" title="">Shared Hosting</a></li>
-                <li><a href="#" title="">Cloud VPS</a></li>
-                <li><a href="#" title="">Dedicated Servers</a></li>
-                <li><a href="#" title="">WordPress Hosting</a></li>
-            </ul>
+            <h4><?= Yii::t('app', 'Domains') ?></h4>
+            <?= Menu::widget([
+                'items' => $menuItems[0]['items'],
+            ]) ?>
         </div>
 
         <div class="col-sm-3">
-            <h4>HOSTING FOR APPS</h4>
-
-            <ul>
-                <li><a href="#" title="">WordPress Hosting</a></li>
-                <li><a href="#" title="">Joomla Hosting</a></li>
-                <li><a href="#" title="">Drupal Hosting</a></li>
-                <li><a href="#" title="">Magento Hosting</a></li>
-                <li><a href="#" title="">Ghost Hosting</a></li>
-            </ul>
+            <h4><?= Yii::t('app', 'Hosting') ?></h4>
+            <?= Menu::widget([
+                'items' => $menuItems[1]['items'],
+            ]) ?>
         </div>
 
         <div class="col-sm-3">
-            <h4>COMPANY</h4>
-
-            <ul>
-                <li><a href="#" title="">About Us</a></li>
-                <li><a href="#" title="">Privacy Policy</a></li>
-                <li><a href="#" title="">Acceptable Usage Policy</a></li>
-                <li><a href="#" title="">Terms & Conditions</a></li>
-                <li><a href="#" title="">DMCA Policy</a></li>
-            </ul>
+            <h4><?= Yii::t('app', 'For resellers') ?></h4>
+            <?= Menu::widget([
+                'items' => $menuItems[2]['items'],
+            ]) ?>
         </div>
 
         <div class="col-sm-3">
-            <h4>NEWSLETTER SIGNUP</h4>
-            <div id="mc_embed_signup">
-                <form class="form-inline validate material" action="//audemedia.us7.list-manage.com/subscribe/post?u=b5638e105dac814ad84960d90&amp;id=9345afa0aa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-                    <input id="mce-EMAIL" type="email" name="EMAIL" placeholder="E-mail" required>
-                    <div style="position: absolute; left: -5000px;">
-                        <input type="text" name="b_b5638e105dac814ad84960d90_9345afa0aa" tabindex="-1" value="">
-                    </div>
-                    <input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="mtr-btn button-blue">
-                </form>
-            </div>
+            <h4><?= Yii::t('app', 'Other') ?></h4>
+            <?= Menu::widget([
+                'items' => [
+                    ['label' => Yii::t('app', 'About us'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Contacts'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'News'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Promotions'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Loyalty program'), 'url' => '#'],
+                ],
+            ]) ?>
         </div>
     </div>
 </div>
@@ -158,9 +161,7 @@ use yii\helpers\Html;
             <ul class="social-links">
                 <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#" title="Pinterest"><i class="fa fa-pinterest-p"></i></a></li>
-                <li><a href="#" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#" title="Vkontakte"><i class="fa fa-vk"></i></a></li>
                 <li><a href="#" title="Github"><i class="fa fa-github-alt"></i></a></li>
             </ul>
             <p class="text-center">Copyright© DataServ. All rights reserved.</p>
