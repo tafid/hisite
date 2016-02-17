@@ -3,9 +3,9 @@
 namespace app\widgets;
 
 use Yii;
-use yii\bootstrap\Dropdown;
+use yii\widgets\Menu;
 
-class LanguageDropdown extends Dropdown
+class LanguageDropdown extends Menu
 {
     private static $_labels;
 

@@ -3,6 +3,8 @@
 
     $(document).ready(function () {
 
+        $('[data-toggle="popover"]').popover();
+
         // ______________ RESPONSIVE MENU
         $('#navigation').superfish({
             delay: 300,

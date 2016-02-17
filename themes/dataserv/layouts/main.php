@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Json;
 use yii\widgets\Menu;
 
 $menuItems = [
@@ -64,12 +65,10 @@ $menuItems = [
                     <li>PANEL</li>
                 <?php endif; ?>
                 <li><i class="fa fa-commenting-o"></i> <a href="#">LIVE CHAT</a></li>
-                <li class="dropdown">
-                    <i class="fa fa-language"></i> <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="text-transform: uppercase">
-                        <?= Yii::$app->language ?> <span class="caret"></span></a>
-                    <?= \app\widgets\LanguageDropdown::widget() ?>
-                </li>
             </ul>
+            <?= \app\widgets\LanguageDropdown::widget([
+                'options' => ['class' => 'langSelector list-inline pull-right'],
+            ]) ?>
         </div>
     </div>
 </div>

@@ -16039,6 +16039,8 @@ $(function(){$.fn.hasAttr=function(e){var t=this.attr(e);if(typeof t!==typeof un
 
     $(document).ready(function () {
 
+        $('[data-toggle="popover"]').popover();
+
         // ______________ RESPONSIVE MENU
         $('#navigation').superfish({
             delay: 300,
