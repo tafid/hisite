@@ -68,9 +68,10 @@ module.exports = function (grunt) {
         //},
         watch: {
             js: {
-                files: ['themes/dataserv/js/**/*.js', 'assets/js/all.json'],
+                files: ['themes/dataserv/js/**/*.js', 'assets/js.json', 'themes/dataserv/css.json', 'themes/dataserv/css/*.css'],
                 tasks: [
-                    'concat_sourcemap'
+                    'concat_sourcemap',
+                    'concat'
                     //'uglify:lib'
                 ],
                 options: {

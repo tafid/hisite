@@ -3,13 +3,16 @@
 namespace app\widgets;
 
 use Yii;
-use yii\widgets\Menu;
+use yii\base\Widget;
+use yii\helpers\Html;
 
-class LanguageDropdown extends Menu
+class LanguageDropdown extends Widget
 {
     private static $_labels;
 
     private $_isError;
+
+    public $items = [];
 
     public function init()
     {
@@ -36,6 +39,7 @@ class LanguageDropdown extends Menu
             $this->items[] = [
                 'label' => self::label($language),
                 'url' => $params,
+                'code' => $params['language'],
             ];
         }
         parent::init();
@@ -47,7 +51,11 @@ class LanguageDropdown extends Menu
         if ($this->_isError) {
             return '';
         } else {
-            return parent::run();
+            $html = '';
+            foreach ($this->items as $item) {
+                $html .= Html::tag('li', Html::a($item['label'], $item['url']), ['class' => $item['code'] == Yii::$app->language ? 'activeLanguage' : '']);
+            }
+            return $html;
         }
     }
 

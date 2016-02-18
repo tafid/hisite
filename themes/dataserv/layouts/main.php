@@ -65,10 +65,9 @@ $menuItems = [
                     <li>PANEL</li>
                 <?php endif; ?>
                 <li><i class="fa fa-commenting-o"></i> <a href="#">LIVE CHAT</a></li>
+                <li> |</li>
+                <?= \app\widgets\LanguageDropdown::widget() ?>
             </ul>
-            <?= \app\widgets\LanguageDropdown::widget([
-                'options' => ['class' => 'langSelector list-inline pull-right'],
-            ]) ?>
         </div>
     </div>
 </div>
