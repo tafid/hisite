@@ -6607,11 +6607,22 @@ button.button-circle i {
 }
 
 /* Custom */
-
 ul.topright li.activeLanguage a {
     border-bottom: 1px solid #fff;
 }
 
 .topright {
     text-transform: uppercase;
+}
+
+.domainavailability {
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+    background-size: cover;
+}
+
+.domainavailability > .row {
+    margin-top: 290px;
 }

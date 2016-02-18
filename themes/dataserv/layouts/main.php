@@ -4,7 +4,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\helpers\Json;
 use yii\widgets\Menu;
 
 $menuItems = [
@@ -106,6 +105,8 @@ $menuItems = [
 <!-- END OF SUBHEADER -->
 <?= $content ?>
 <?php else : ?>
+    <?= \app\widgets\DomainAvailabilityWidget::widget() ?>
+    <?= \app\widgets\OurServicesWidget::widget() ?>
 <?php endif; ?>
 
 

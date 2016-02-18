@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'Hello' => 'Привет'
+    'Domains search and registration' => 'Поиск и регистрация доменных имен'
 ];
