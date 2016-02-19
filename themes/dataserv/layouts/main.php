@@ -106,6 +106,11 @@ $menuItems = [
 <?php else : ?>
     <?= \app\widgets\DomainAvailabilityWidget::widget() ?>
     <?= \app\widgets\OurServicesWidget::widget() ?>
+    <?= \app\widgets\CalltoactionWidget::widget() ?>
+    <?= \app\widgets\PricingboxWidget::widget() ?>
+    <?= \app\widgets\FeaturesTabsWidget::widget() ?>
+    <?= \app\widgets\TestimonialsWidget::widget() ?>
+    <?= \app\widgets\NewPlansWidget::widget() ?>
 <?php endif; ?>
 
 
