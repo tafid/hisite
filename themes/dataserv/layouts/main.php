@@ -63,8 +63,7 @@ $menuItems = [
                 <?php else : ?>
                     <li>PANEL</li>
                 <?php endif; ?>
-                <li><i class="fa fa-commenting-o"></i> <a href="#">LIVE CHAT</a></li>
-                <li> |</li>
+                <li><i class="fa fa-commenting-o"></i> <a href="#"><?= Yii::t('app', 'ONLINE CHAT') ?></a></li>
                 <?= \app\widgets\LanguageDropdown::widget() ?>
             </ul>
         </div>
