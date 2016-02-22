@@ -1,55 +1,29 @@
 <!-- NEW PLANS -->
 <div class="newplans">
-
     <div class="row">
-        <h3>WE HAVE NEW HOSTING PLANS!</h3>
+        <h3><?= Yii::t('app', 'Our services')?></h3>
         <div class="newplans_box"></div>
         <div class="spacing-25"></div>
         <div class="col-md-4 col-sm-12 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
             <div class="newplanscolumn">
-                <h5>Quite Simply</h5>
-                <p>Think tank stakeholders, public sector marginalized communities developing nations invest, resourceful strengthen democracy international implementation poverty donation disrupt planned giving.</p><p>Social good, Gandhi donors, Jane Addams; catalytic effect social challenges crowdsourcing Millennium.</p>
+                <h5><?= Yii::t('app', 'Hosting') ?></h5>
+                <p>Virtual Dedicated Server (VDS) — a perfect solution for the majority of Internet projects at an affordable price. Ahnames VDS are this convenience, performance and reliability 24/7!</p>
+                <p>We offer VDS based on two virtualization technologies — XEN with SSD and OpenVZ. Due to the large choice of tariff plans, you can choose the optimal solution for your projects!</p>
             </div>
         </div>
-
         <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
             <div class="newplanscolumn">
-                <h5>New Features</h5>
-                <ul>
-                    <li><i class="fa fa-check"></i> 10TB bandwidth</li>
-                    <li><i class="fa fa-check"></i> cPanel now Available</li>
-                    <li><i class="fa fa-check"></i> OpenVPN</li>
-                    <li><i class="fa fa-check"></i> Pure SSD cloud servers</li>
-                    <li><i class="fa fa-check"></i> 8 GB RAM</li>
-                    <li><i class="fa fa-check"></i> Backup Plans</li>
-                    <li><i class="fa fa-check"></i> 24/7/365 Phone and Email Support</li>
-                </ul>
+                <h5><?= Yii::t('app', 'Domains search and register')?></h5>
+                <p>Find and register domains in just a few clicks!</p>
+                <p>Extending, registration and transfer domains performed at any time 24/7 and at low prices.</p>
+                <p>With Ahnames perform all operations with domains is very simple, convenient and affordable.</p>
             </div>
         </div>
         <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">
             <div class="newplanscolumn">
-                <h5>Additions to Every Plan</h5>
-                <div class="progressbars">
-                    <p>EXTRA CPU</p>
-                    <div class="thebar"><p class="percent">80%</p>
-                        <div class="progress"><span class="meter" style="width:80%"></span></div>
-                    </div>
-
-                    <p>EXTRA RAM</p>
-                    <div class="thebar"><p class="percent">70%</p>
-                        <div class="progress alt-1"><span class="meter" style="width:70%"></span></div>
-                    </div>
-
-                    <p>EXTRA STORAGE</p>
-                    <div class="thebar"><p class="percent">40%</p>
-                        <div class="progress alt-2"><span class="meter" style="width:40%"></span></div>
-                    </div>
-
-                    <p>EXTRA BANDWIDTH</p>
-                    <div class="thebar"><p class="percent">95%</p>
-                        <div class="progress alt-3"><span class="meter" style="width:95%"></span></div>
-                    </div>
-                </div>
+                <h5><?= Yii::t('app', 'DNS manage')?></h5>
+                <p>AHnames.com offers its customers reliable, convenient and free DNS service.</p>
+                <p>And for those who require more control settings, we offer the premium-package.</p>
             </div>
         </div>
     </div>

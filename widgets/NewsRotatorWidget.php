@@ -5,7 +5,7 @@ namespace app\widgets;
 use Yii;
 use yii\base\Widget;
 
-class TestimonialsWidget extends Widget
+class NewsRotatorWidget extends Widget
 {
 
     public function init()

@@ -16577,3 +16577,32 @@ ul.topright li.activeLanguage a {
 .domainavailability > .row {
     margin-top: 290px;
 }
+
+.testimonial-content h3 {
+    font-size: 16px;
+    text-align: left;
+    color: #333;
+    font-weight: 500;
+    padding: 16px;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+.testimonial-content p {
+    text-align: justify;
+}
+.testimonial-content span {
+    color: #999;
+    font-size: 12px;
+    text-align: right;
+    text-transform: uppercase;
+    padding: 16px 16px 0;
+    display: block;
+}
+
+.testimonial-content a {
+    color: #FF4081;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 16px;
+    display: block;
+}
