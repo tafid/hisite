@@ -5,7 +5,7 @@ namespace app\widgets;
 use Yii;
 use yii\base\Widget;
 
-class OurServicesWidget extends Widget
+class OurAppWidget extends Widget
 {
 
     public function init()

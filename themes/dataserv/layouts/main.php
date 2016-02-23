@@ -105,10 +105,9 @@ $menuItems = [
 <?= $content ?>
 <?php else : ?>
     <?= \app\widgets\DomainAvailabilityWidget::widget() ?>
-    <?= \app\widgets\OurServicesWidget::widget() ?>
     <?= \app\widgets\NewPlansWidget::widget() ?>
     <?= \app\widgets\PricingboxWidget::widget() ?>
-    <?= \app\widgets\FeaturesTabsWidget::widget() ?>
+    <?= \app\widgets\OurAppWidget::widget() ?>
     <?= \app\widgets\NewsRotatorWidget::widget() ?>
 <?php endif; ?>
 
