@@ -18,7 +18,8 @@
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "codemix/yii2-localeurls": "^1.4"
+        "codemix/yii2-localeurls": "^1.4",
+        "bower-asset/less-space": " *"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
