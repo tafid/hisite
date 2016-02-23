@@ -109,7 +109,7 @@ $menuItems = [
     <?= \app\widgets\NewPlansWidget::widget() ?>
     <?= \app\widgets\PricingboxWidget::widget() ?>
     <?= \app\widgets\FeaturesTabsWidget::widget() ?>
-    <?= \app\widgets\TestimonialsWidget::widget() ?>
+    <?= \app\widgets\NewsRotatorWidget::widget() ?>
 <?php endif; ?>
 
 
