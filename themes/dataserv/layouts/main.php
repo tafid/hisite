@@ -8,23 +8,23 @@ use yii\widgets\Menu;
 
 $menuItems = [
     ['label' => Yii::t('app', 'Domains'), 'url' => '#', 'items' => [
-        ['label' => Yii::t('app', 'Prices'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Advantages'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Transfer'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Premium Package'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Whois lookup'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Prices'), 'url' => ['/domain/prices']],
+        ['label' => Yii::t('app', 'Advantages'), 'url' => ['/domain/advantages']],
+        ['label' => Yii::t('app', 'Transfer'), 'url' => ['/domain/transfer']],
+        ['label' => Yii::t('app', 'Premium Package'), 'url' => ['/domain/premium-package']],
+        ['label' => Yii::t('app', 'Whois lookup'), 'url' => ['/domain/whois-lookup']],
     ]],
     ['label' => Yii::t('app', 'Hosting'), 'url' => '#', 'items' => [
-        ['label' => Yii::t('app', 'XEN SSD'), 'url' => '#'],
-        ['label' => Yii::t('app', 'OpenVZ'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Tariffs details'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Advantages'), 'url' => '#'],
-        ['label' => Yii::t('app', 'What is VDS'), 'url' => '#'],
+        ['label' => Yii::t('app', 'XEN SSD'), 'url' => ['/hosting/xen-ssd']],
+        ['label' => Yii::t('app', 'OpenVZ'), 'url' => ['/hosting/open-vz']],
+        ['label' => Yii::t('app', 'Tariffs details'), 'url' => ['/hosting/tariffs-details']],
+        ['label' => Yii::t('app', 'Advantages'), 'url' => ['/hosting/advantages']],
+        ['label' => Yii::t('app', 'What is VDS'), 'url' => ['/hosting/what-is-vds']],
     ]],
     ['label' => Yii::t('app', 'For resellers'), 'url' => '#', 'items' => [
-        ['label' => Yii::t('app', 'Prices'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Advantages'), 'url' => '#'],
-        ['label' => Yii::t('app', 'API'), 'url' => '#'],
+        ['label' => Yii::t('app', 'Prices'), 'url' => ['/reseller/prices']],
+        ['label' => Yii::t('app', 'Advantages'), 'url' => ['/reseller/advantages']],
+        ['label' => Yii::t('app', 'API'), 'url' => ['/reseller/api']],
     ]],
     ['label' => Yii::t('app', 'News'), 'url' => '/news/index'],
     ['label' => Yii::t('app', 'Help'), 'url' => '#', 'items' => [
@@ -98,8 +98,8 @@ $menuItems = [
 <!-- SUBHEADER -->
 <div id="subheader" class="contact">
     <div class="subheader-text">
-        <h1>We'd love to hear from you</h1>
-        <h2>Our friendly Support Team is available to help you 24 hours a day</h2>
+        <?= Html::tag('h1', $this->title) ?>
+        <?= Html::tag('h2', $this->blocks['subTitle']) ?>
     </div>
 </div>
 <!-- END OF SUBHEADER -->

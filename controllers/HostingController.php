@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
-class Hosting extends Controller
+class HostingController extends Controller
 {
     public function actionXenSsd()
     {
@@ -16,9 +16,9 @@ class Hosting extends Controller
         return $this->render('open_vz');
     }
 
-    public function actionTariffsDetail()
+    public function actionTariffsDetails()
     {
-        return $this->render('tariffs_detail');
+        return $this->render('tariffs_details');
     }
 
     public function actionAdvantages()

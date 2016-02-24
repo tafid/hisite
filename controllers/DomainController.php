@@ -4,9 +4,9 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
-class Domain extends Controller
+class DomainController extends Controller
 {
-    public function actionPrice()
+    public function actionPrices()
     {
         return $this->render('prices');
     }
