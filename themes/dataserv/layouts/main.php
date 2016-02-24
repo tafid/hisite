@@ -26,7 +26,7 @@ $menuItems = [
         ['label' => Yii::t('app', 'Advantages'), 'url' => '#'],
         ['label' => Yii::t('app', 'API'), 'url' => '#'],
     ]],
-    ['label' => Yii::t('app', 'News'), 'url' => '#'],
+    ['label' => Yii::t('app', 'News'), 'url' => '/news/index'],
     ['label' => Yii::t('app', 'Help'), 'url' => '#', 'items' => [
         ['label' => Yii::t('app', 'FAQ'), 'url' => '#'],
         ['label' => Yii::t('app', 'Create ticket'), 'url' => '#'],
