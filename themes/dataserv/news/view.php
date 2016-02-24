@@ -1,3 +1,7 @@
+<?php
+$this->title = Yii::t('app', 'New domain zones: .PRO, .MOBI, at a great price!');
+?>
+
 <!-- Share buttons hidden popover -->
 <div id="shared-btn-Popover" class="hide">
     <ul class="blog-share-buttons">
@@ -15,24 +19,12 @@
 
             <!-- Blog Post-->
             <article>
-                <img src="/images/blog1.jpg" alt="" />
                 <div class="post-content">
-                    <p>Overcome injustice harness action empowerment foundation citizenry, campaign social challenges; future civic engagement fellows poverty climate change. Solution stakeholders, crisis situation accelerate progress human-centered design community.</p>
-
-                    <blockquote>
-                        <p>Vulnerable population prosperity; cross-agency coordination necessities voice agency relief cross-cultural grantees education. Effect raise awareness; justice cooperation involvement. </p>
-                    </blockquote>
-
-                    <p>Donors, Ford Foundation impact Kony 2012, Action Against Hunger United Nations social focus on impact many voices. Public service, 501(c)(3) measures equity capacity building research public sector donation, social entrepreneurship implementation Rosa Parks treatment human rights. Social worker resourceful innovate fighting poverty eradicate, carbon emissions reductions readiness local Angelina Jolie improving quality public-private partnerships. Growth countries organization peaceful recognition; foster developing. Fluctuation nonprofit promising development life-saving; global network integrity, complexity; theory of social change social movement Aga Khan engage dialogue. </p>
-
-                    <ul>
-                        <li>policy dialogue implementation</li>
-                        <li>improving quality</li>
-                        <li>foundation justice</li>
-                        <li>onflict resolution</li>
-                    </ul>
-
-                    <p>Nonviolent resistance, assessment expert shift, micro-finance our grantees and partners social good volunteer courageous reproductive rights. </p>
+                    <p>Dear customer!</p>
+                    <p>We are glad to inform you that during the period from 02/10/16 to 03/31/16, you can register domains in .PRO, .MOBI, .INFO zones at the price of $2.45/year.</p>
+                    <p>Regular price of the transfer and renewal you can find here: Prices</p>
+                    <p>In addition, the registration of domains in the newGTLD zones will start soon, that will give you the opportunity to choose domains from more than 200 zones!</p>
+                    <p>Stay with us and stay tuned!</p>
 
                     <div class="tagcloud"><a href="">90s</a>
                         <a href="">Accessories</a>

@@ -1,4 +1,6 @@
 <?php
+use yii\helpers\Html;
+
 $this->registerJs('
 // TESTIMONIALS CAROUSEL
 $("#testimonials-carousel").owlCarousel({
@@ -20,7 +22,6 @@ $("#testimonials-carousel").owlCarousel({
 
                 <div class="item">
                     <div class="testimonial-content">
-                        <img src="/images/testimonial1.jpg" alt="" />
                         <h3>New Year discounts on domains from AHnames.com</h3>
                         <span>21.11.2012</span>
                         <p>Lijit imeem groupon sifteo handango appjet zillow gsnap whrrl eduvant, dogster qeyno sclipo insala handango scribd jiglu waze zoho, heekya eskobo dropio cuil flickr napster orkut babblely. Twitter waze ngmoco edmodo airbnb hojoki cotweet, yammer klout ning flickr yammer chumby.</p>
@@ -30,7 +31,6 @@ $("#testimonials-carousel").owlCarousel({
 
                 <div class="item">
                     <div class="testimonial-content">
-                        <img src="/images/testimonial2.jpg" alt="" />
                         <h3>New domain zones: .PRO, .MOBI, at a great price!</h3>
                         <span>21.11.2012</span>
                         <p>Lijit imeem groupon sifteo handango appjet zillow gsnap whrrl eduvant, dogster qeyno sclipo insala handango scribd jiglu waze zoho, heekya eskobo dropio cuil flickr napster orkut babblely. Twitter waze ngmoco edmodo airbnb hojoki cotweet, yammer klout ning flickr yammer chumby. </p>
@@ -40,7 +40,6 @@ $("#testimonials-carousel").owlCarousel({
 
                 <div class="item">
                     <div class="testimonial-content">
-                        <img src="/images/testimonial3.jpg" alt="" />
                         <h3>60% discount on .RU domains registration</h3>
                         <span>21.11.2012</span>
                         <p>Lijit imeem groupon sifteo handango appjet zillow gsnap whrrl eduvant, dogster qeyno sclipo insala handango scribd jiglu waze zoho, heekya eskobo dropio cuil flickr napster orkut babblely. Twitter waze ngmoco edmodo airbnb hojoki cotweet, yammer klout ning flickr yammer chumby. </p>
@@ -50,7 +49,6 @@ $("#testimonials-carousel").owlCarousel({
 
                 <div class="item">
                     <div class="testimonial-content">
-                        <img src="/images/testimonial4.jpg" alt="" />
                         <h3>A new domain zone: dotSEX</h3>
                         <span>21.11.2012</span>
                         <p>Lijit imeem groupon sifteo handango appjet zillow gsnap whrrl eduvant, dogster qeyno sclipo insala handango scribd jiglu waze zoho, heekya eskobo dropio cuil flickr napster orkut babblely. Twitter waze ngmoco edmodo airbnb hojoki cotweet, yammer klout ning flickr yammer chumby.</p>
@@ -60,7 +58,6 @@ $("#testimonials-carousel").owlCarousel({
 
                 <div class="item">
                     <div class="testimonial-content">
-                        <img src="/images/testimonial5.jpg" alt="" />
                         <h3>New Domain zones and discounts</h3>
                         <span>21.11.2012</span>
                         <p>Lijit imeem groupon sifteo handango appjet zillow gsnap whrrl eduvant, dogster qeyno sclipo insala handango scribd jiglu waze zoho, heekya eskobo dropio cuil flickr napster orkut babblely. Twitter waze ngmoco edmodo airbnb hojoki cotweet, yammer klout ning flickr yammer chumby. </p>
@@ -70,7 +67,6 @@ $("#testimonials-carousel").owlCarousel({
 
                 <div class="item">
                     <div class="testimonial-content">
-                        <img src="/images/testimonial6.jpg" alt="" />
                         <h3>Changes in domain prices</h3>
                         <span>21.11.2012</span>
                         <p>Lijit imeem groupon sifteo handango appjet zillow gsnap whrrl eduvant, dogster qeyno sclipo insala handango scribd jiglu waze zoho, heekya eskobo dropio cuil flickr napster orkut babblely. Twitter waze ngmoco edmodo airbnb hojoki cotweet, yammer klout ning flickr yammer chumby. </p>
@@ -80,7 +76,7 @@ $("#testimonials-carousel").owlCarousel({
 
             </div>
             <p class="text-center md-mt-50">
-                <a class="mtr-btn button-purple ripple btn-lg order-vps has-ripple" href="http://whmcs.audemedia.com/cart.php?a=add&amp;pid=2">READ ALL NEWS</a>
+                <?= Html::a(Yii::t('app', 'READ ALL NEWS'), ['/news/index'], ['class' => 'mtr-btn button-purple ripple btn-lg order-vps has-ripple']) ?>
             </p>
         </div>
     </div>

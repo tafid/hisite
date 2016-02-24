@@ -28,9 +28,7 @@ $menuItems = [
     ]],
     ['label' => Yii::t('app', 'News'), 'url' => '/news/index'],
     ['label' => Yii::t('app', 'Help'), 'url' => '#', 'items' => [
-        ['label' => Yii::t('app', 'FAQ'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Create ticket'), 'url' => '#'],
-        ['label' => Yii::t('app', 'Terms of use'), 'url' => '#'],
+        ['label' => Yii::t('app', 'FAQ'), 'url' => ['/help/faq']],
     ]],
 ];
 ?>
@@ -96,11 +94,14 @@ $menuItems = [
 
 <?php if (\app\helpers\ThemeHelper::isHomePage() === false) : ?>
 <!-- SUBHEADER -->
-<div id="subheader" class="contact">
+<div id="subheader" class="blog">
     <div class="subheader-text">
         <?= Html::tag('h1', $this->title) ?>
         <?= Html::tag('h2', $this->blocks['subTitle']) ?>
     </div>
+    <?php if ($this->context->id == 'news' && $this->context->action->id == 'view') : ?>
+        <a href="#" rel="shared-popover" data-popover-content="#shared-btn-Popover" title="Share" data-placement="bottom" class="mtr-btn button-circle button-fab ripple"><i class="fa fa-share-alt"></i></a>
+    <?php endif; ?>
 </div>
 <!-- END OF SUBHEADER -->
 <?= $content ?>

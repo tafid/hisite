@@ -1,3 +1,6 @@
+<?php
+$this->title = Yii::t('app', 'News');
+?>
 <!-- Blog -->
 <div class="blog">
     <div class="row">
