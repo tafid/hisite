@@ -12,10 +12,10 @@ $this->registerJs("
     event.stopPropagation();
   });
 
-//  $('.faq-categories li a').click(function(){
-//    $('.panel-collapse.in')
-//    .collapse('hide');
-//  });
+  $('.faq-categories li a').click(function(){
+    $('.panel-collapse.in')
+    .collapse('hide');
+  });
 ");
 
 ?>
