@@ -6655,3 +6655,15 @@ ul.topright li.activeLanguage a {
     padding: 16px;
     display: block;
 }
+
+.pricing-features ul li {
+    text-align: left;
+}
+
+.pricing-plan.absidian {
+    background: #3B3B3B;
+}
+
+.pricing-plan.absidian:before {
+    background-color: rgba(75, 75, 75, 0.5);
+}

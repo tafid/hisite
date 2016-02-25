@@ -17,7 +17,7 @@
         <div class="col-sm-4 col-sm-offset-2">
             <div class="pricing-plan red wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
                 <div class="pricing-title"><?= Yii::t('app', 'Premium package') ?></div>
-                <div class="pricing-price">$0.95<span>/m</span></div>
+                <div class="pricing-price">$0.95<span>/year</span></div>
                 <div class="pricing-features">
                     <ul>
                         <li><?= Yii::t('app', '3 independent DNS servers in the Netherlands and United States') ?></li>
@@ -33,7 +33,7 @@
         <div class="col-sm-4">
             <div class="pricing-plan purple wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
                 <div class="pricing-title"><?= Yii::t('app', 'Whois Protect free') ?></div>
-                <div class="pricing-price">$0</div>
+                <div class="pricing-price">$0<span>/year</span></div>
                 <div class="pricing-features">
                     <ul>
                         <li><?= Yii::t('app', 'personal data protection against spam, information gathering, direct calls') ?></li>

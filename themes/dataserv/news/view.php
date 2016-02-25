@@ -1,5 +1,6 @@
 <?php
 $this->title = Yii::t('app', 'New domain zones: .PRO, .MOBI, at a great price!');
+
 $this->registerJs("
 $('[rel=\"shared-popover\"]').popover({
     trigger: 'click',

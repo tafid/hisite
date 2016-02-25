@@ -94,7 +94,7 @@ $menuItems = [
 
 <?php if (\app\helpers\ThemeHelper::isHomePage() === false) : ?>
 <!-- SUBHEADER -->
-<div id="subheader" class="blog">
+<div id="subheader" class="<?= $this->blocks['subHeaderClass'] ? : 'blog' ?>">
     <div class="subheader-text">
         <?= Html::tag('h1', $this->title) ?>
         <?= Html::tag('h2', $this->blocks['subTitle']) ?>
