@@ -1,8 +1,24 @@
 <?php
 $this->title = Yii::t('app', 'FAQ');
+$this->registerJs("
+// ______________ ACCORDION ICONS
+  $('.collapse').on('show.bs.collapse', function(event){
+    var i = $(this).siblings().find('i').eq(0);
+    i.toggleClass('fa-plus-square-o fa-minus-square-o');
+    event.stopPropagation();
+  }).on('hide.bs.collapse', function(event){
+    var i = $(this).siblings().find('i').eq(0);
+    i.toggleClass('fa-minus-square-o fa-plus-square-o');
+    event.stopPropagation();
+  });
+
+//  $('.faq-categories li a').click(function(){
+//    $('.panel-collapse.in')
+//    .collapse('hide');
+//  });
+");
 
 ?>
-
 
 <!-- FAQ TABS -->
 <div class="faq-tabs">
@@ -39,7 +55,51 @@ $this->title = Yii::t('app', 'FAQ');
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <p>Corps, indicator donate Global South leverage. Institutions, The Elders, conflict resolution gun control developing. Experience in the field; shifting landscape; dedicated local solutions rural Nelson Mandela Martin. </p>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="tabbable tabs-top-horizontal">
+                                                    <div class="tab-content">
+                                                        <div id="subAccording1" class="panel-group">
+                                                            <!-- QUESTION -->
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title"><i class="indicator fa fa-minus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#subAccording1" href="#collapse112">Installing third-party NS-servers</a></h4>
+                                                                </div>
+                                                                <div id="collapse112" class="panel-collapse collapse">
+                                                                    <div class="panel-body">
+                                                                        <p>Hack, John Lennon, efficient small-scale farmers planned giving social responsibility life-expectancy. Transformative, deep engagement Andrew Carnegie, carbon emissions reductions meaningful cooperation. Forward-thinking fundraise stakeholders, time of extraordinary change human-centered design humanitarian aid micro-finance. Community health workers nutrition rural development . </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- QUESTION -->
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title"><i class="indicator fa fa-minus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#subAccording1" href="#collapse113">ahnames.com NS-server installation</a></h4>
+                                                                </div>
+                                                                <div id="collapse113" class="panel-collapse collapse">
+                                                                    <div class="panel-body">
+                                                                        <p>Hack, John Lennon, efficient small-scale farmers planned giving social responsibility life-expectancy. Transformative, deep engagement Andrew Carnegie, carbon emissions reductions meaningful cooperation. Forward-thinking fundraise stakeholders, time of extraordinary change human-centered design humanitarian aid micro-finance. Community health workers nutrition rural development . </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- QUESTION -->
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title"><i class="indicator fa fa-minus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#subAccording1" href="#collapse114">Creating subsidiary NS-servers</a></h4>
+                                                                </div>
+                                                                <div id="collapse114" class="panel-collapse collapse">
+                                                                    <div class="panel-body">
+                                                                        <p>Hack, John Lennon, efficient small-scale farmers planned giving social responsibility life-expectancy. Transformative, deep engagement Andrew Carnegie, carbon emissions reductions meaningful cooperation. Forward-thinking fundraise stakeholders, time of extraordinary change human-centered design humanitarian aid micro-finance. Community health workers nutrition rural development . </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
