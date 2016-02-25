@@ -1,5 +1,19 @@
 <?php
 $this->title = Yii::t('app', 'New domain zones: .PRO, .MOBI, at a great price!');
+$this->registerJs("
+$('[rel=\"shared-popover\"]').popover({
+    trigger: 'click',
+    container: 'body',
+    html: true,
+    template: '<div class=\"popover sharing\" role=\"tooltip\"><div class=\"arrow\"></div><h3 class=\"popover-title\"></h3><div class=\"popover-content\"></div></div>',
+    content: function () {
+      var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+      return clone;
+    }
+  }).click(function(e) {
+    e.preventDefault();
+  });
+");
 ?>
 
 <!-- Share buttons hidden popover -->
