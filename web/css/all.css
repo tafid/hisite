@@ -17903,3 +17903,27 @@ ul.topright li.activeLanguage a {
     display: flex;
     flex:1 0 auto;
 }
+
+.domain-features .circle {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+.domain-features .circle i {
+    position: absolute;
+    font-size: 65px;
+    color: #D9D9D9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.contactmethod h5 {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    color: #01ABEF;
+}
