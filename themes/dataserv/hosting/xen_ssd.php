@@ -12,12 +12,12 @@ $this->blocks['subTitle'] = Yii::t('app', 'Hosting by AHnames is an optimal and 
             <div class="h1-name-xen">XenSSD</div>
         </div>
         <div class="col-md-9 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="200ms">
-            <p>The main advantage of a VDS based on <a href="/en/vds?tab=4">Xen with SSD</a> is speed. It is more than
-                250 times faster than a conventional HDD. Due to Xen virtualization type, all resources are assigned to
-                user and the operation of your <a href="/en/vds?tab=4">VDS</a> does not depend on the main server's
-                load.</p>
-            <p>Virtual dedicated server based on Xen is a perfect solution for most medium and large projects because of
-                its performance that is highly competitive with the performance of a dedicated server.</p>
+            <p>
+                <?= Yii::t('app', 'The main advantage of a VDS based on {0} is speed. It is more than 250 times faster than a conventional HDD. Due to Xen virtualization type, all resources are assigned to user and the operation of your {1} does not depend on the main server\'s load.', ['<a href="/en/vds?tab=4">Xen with SSD</a>', '<a href="/en/vds?tab=4">VDS</a>']) ?>
+            </p>
+            <p>
+                <?= Yii::t('app', 'Virtual dedicated server based on Xen is a perfect solution for most medium and large projects because of its performance that is highly competitive with the performance of a dedicated server.') ?>
+            </p>
         </div>
     </div>
 </div>
