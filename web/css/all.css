@@ -17936,3 +17936,20 @@ ul.topright li.activeLanguage a {
     border-bottom: 1px solid rgb(204, 204, 204);
     color: #01ABEF;
 }
+
+.domain-features .square {
+    height: 60px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.domain-features .square i {
+    position: absolute;
+    font-size: 45px;
+    color: #D9D9D9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
