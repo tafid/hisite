@@ -352,7 +352,9 @@ JS
             <div class="alert alert-warning" role="alert">
                 <h6><?= Yii::t('app', 'It\'s important!') ?></h6>
                 <p>
-                    <?= Yii::t('app', 'Save the request for purchasing an SSL Certificate (CSR) and private key (RSA).<br> After purchasing the SSL certificate, you have to provide us with self SSL certificate and private key (RSA).<br> To generate the request for SSL you can on this page: {0}', ['<a rel="nofolow" target="_blank" href="//ssl.com.ua/online-CSR-generator">ssl.com.ua/online-CSR-generator</a>']) ?>
+                    <?= Yii::t('app', 'Save the request for purchasing an SSL Certificate (CSR) and private key (RSA).') ?><br>
+                    <?= Yii::t('app', 'After purchasing the SSL certificate, you have to provide us with self SSL certificate and private key (RSA).') ?><br>
+                    <?= Yii::t('app', 'To generate the request for SSL you can on this page: {0}', ['<a rel="nofolow" target="_blank" href="//ssl.com.ua/online-CSR-generator">ssl.com.ua/online-CSR-generator</a>']) ?>
                 </p>
             </div>
         </div>
