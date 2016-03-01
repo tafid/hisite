@@ -47,3 +47,5 @@ $this->blocks['subTitle'] = Yii::t('app', 'Domains reselling with AHnames is a g
     </div>
 </div>
 <!-- END OF FEATURES -->
+
+<?= $this->render('_bottomInfo') ?>
