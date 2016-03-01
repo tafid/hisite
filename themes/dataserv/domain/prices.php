@@ -1,5 +1,6 @@
 <?php
 $this->title = Yii::t('app', 'Prices');
+$this->blocks['subTitle'] = Yii::t('app', 'Domains search and registration');
 $this->registerCss(".servers-table { display: block; }");
 ?>
 

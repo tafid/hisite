@@ -16,7 +16,7 @@ $this->blocks['subTitle'] = Yii::t('app', 'Hosting by AHnames is an optimal and 
                 <div class="col-sm-9 col-md-10"><h5><?= Yii::t('app', '24/7 tech support') ?></h5>
                     <ul>
                         <li><?= Yii::t('app', 'Website transfer and initial VDS setup') ?>.</li>
-                        <li><a href="/en/vds/pages/monitoring">24/7 <?= Yii::t('app', 'monitoring') ?></a> (<?= Yii::t('app', 'external or internal + external') ?>).</li>
+                        <li><?= Html::a(Yii::t('app', '24/7 monitoring'), ['/hosting/advantages']) ?> (<?= Yii::t('app', 'external or internal + external') ?>).</li>
                         <li><?= Yii::t('app', 'Administration Package') ?>:
                             <ul>
                                 <li><b><?= Yii::t('app', 'Bronze') ?></b> — 60 <?= Yii::t('app', 'min/mon') ?>.</li>
@@ -44,8 +44,8 @@ $this->blocks['subTitle'] = Yii::t('app', 'Hosting by AHnames is an optimal and 
                 <div class="col-sm-9 col-md-10"><h5><?= Yii::t('app', 'Control Panel') ?></h5>
                     <p>
                         <?= Yii::t('app', 'When ordering any VDS, you can select a control panel: one developed by {0}, {1} (for Pro, Advance and Elite tariff plans) or "No panel" option', [
-                            Html::a('AHnames', '#'),
-                            Html::a('ISPmanager', '#'),
+                            Html::a('AHnames', ['/help/faq']),
+                            Html::a('ISPmanager', 'http://ispsystem.com/ru', ['target' => '_blank']),
                         ]) ?>.
                     </p>
                 </div>

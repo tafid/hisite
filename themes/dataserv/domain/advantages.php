@@ -1,6 +1,6 @@
 <?php
 $this->title = Yii::t('app', 'Advantages');
-
+$this->blocks['subTitle'] = Yii::t('app', 'Domains search and registration');
 ?>
 
 <div class="vps-features-tabs">
