@@ -3,6 +3,7 @@ use yii\helpers\Html;
 
 $this->title = Yii::t('app', 'OpenVz');
 $this->blocks['subTitle'] = Yii::t('app', 'Hosting by AHnames is an optimal and reliable solution for any project at affordable price');
+$this->registerCss(".products-table { display: table; }");
 ?>
 
 <!-- TEXT -->
@@ -23,112 +24,167 @@ $this->blocks['subTitle'] = Yii::t('app', 'Hosting by AHnames is an optimal and 
 <!-- PRICE BOXES -->
 <div class="pricingbox vps-comparison">
 
-    <div class="row spacing-25 equal">
-        <div class="col-md-15 col-sm-3">
-            <div class="pricing-plan purple wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
-                <div class="pricing-title"><?= Yii::t('app', 'OpenVZ Standart') ?></div>
-                <div class="pricing-price">$6.95<span>/m</span></div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>2400 MHz <?= Yii::t('app', 'CPU') ?></li>
-                        <li>1024 MB <?= Yii::t('app', 'RAM') ?></li>
-                        <li>20 GB SDD</li>
-                        <li>1 <?= Yii::t('app', 'dedicated IP Address') ?></li>
-                        <li><?= Html::a(Yii::t('app', '24x7 Support'), '#') ?> <?= Html::a(Yii::t('app', 'Bronze'), '#') ?></li>
-                        <li>1000 GB <?= Yii::t('app', 'Traffic') ?></li>
-                        <li>1 Gb/s <?= Yii::t('app', 'Connection Port') ?></li>
-                        <li style="font-size: small"><?= Yii::t('app', 'No panel') ?> / <?= Html::a('AHnames panel', '#') ?></li>
-                        <li style="font-size: smaller"><?= Yii::t('app', 'For landing pages and personal blogs.') ?></li>
-                    </ul>
-                </div>
-                <div class="text-center"><a class="mtr-btn button-raised ripple" href="javascript:void(0)"><?= Yii::t('app', 'ORDER NOW') ?></a></div>
-            </div>
-        </div>
+    <div class="row spacing-25">
+        <div class="col-sm-12">
+            <table class="products-table responsive">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>OpenVZ Standart</th>
+                    <th>OpenVZ Superior</th>
+                    <th>OpenVZ Extra</th>
+                    <th>OpenVZ Ultra</th>
+                    <th>OpenVZ Mega</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Disk Space</td>
+                    <td>1GB</td>
+                    <td>3GB</td>
+                    <td>6GB</td>
+                    <td>8GB</td>
+                    <td>8GB</td>
+                </tr>
 
-        <div class="col-md-15 col-sm-3">
-            <div class="pricing-plan purple wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
-                <div class="pricing-title"><?= Yii::t('app', 'OpenVZ Superior') ?></div>
-                <div class="pricing-price">$10.00<span>/m</span></div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>3600 MHz <?= Yii::t('app', 'CPU') ?></li>
-                        <li>2048 MB <?= Yii::t('app', 'RAM') ?></li>
-                        <li>30 GB SDD</li>
-                        <li>1 <?= Yii::t('app', 'Dedicated IP Address') ?></li>
-                        <li><?= Html::a(Yii::t('app', '24x7 Support'), '#') ?> <?= Html::a(Yii::t('app', 'Bronze'), '#') ?></li>
-                        <li>2000 GB <?= Yii::t('app', 'Traffic') ?></li>
-                        <li>1 Gb/s <?= Yii::t('app', 'Connection Port') ?></li>
-                        <li style="font-size: small"><?= Yii::t('app', 'No panel') ?> / <?= Html::a('AHnames panel', '#') ?></li>
-                        <li style="font-size: smaller"><?= Yii::t('app', 'For most online stores and on-line projects of moderate complexity.') ?></li>
-                    </ul>
-                </div>
-                <div class="text-center"><a class="mtr-btn button-raised ripple" href="javascript:void(0)"><?= Yii::t('app', 'ORDER NOW') ?></a></div>
-            </div>
-        </div>
+                <tr>
+                    <td>Hosted Domains</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>UNLIMITED</td>
+                    <td>UNLIMITED</td>
+                </tr>
 
-        <div class="col-md-15 col-sm-3">
-            <div class="pricing-plan purple wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
-                <div class="pricing-title"><?= Yii::t('app', 'OpenVZ Extra') ?></div>
-                <div class="pricing-price">$15.00<span>/m</span></div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>4800 MHz <?= Yii::t('app', 'CPU') ?></li>
-                        <li>3072 MB <?= Yii::t('app', 'RAM') ?></li>
-                        <li>50 GB SDD</li>
-                        <li>1 <?= Yii::t('app', 'Dedicated IP Address') ?></li>
-                        <li><?= Html::a(Yii::t('app', '24x7 Support'), '#') ?> <?= Html::a(Yii::t('app', 'Silver'), '#') ?></li>
-                        <li>3000 GB <?= Yii::t('app', 'Traffic') ?></li>
-                        <li>1 Gb/s <?= Yii::t('app', 'Connection Port') ?></li>
-                        <li style="font-size: small"><?= Yii::t('app', 'No panel') ?> / <?= Html::a('AHnames panel', '#') ?> / ISPManager</li>
-                        <li style="font-size: smaller"><?= Yii::t('app', 'For complex projects that require significant resources and administration.') ?></li>
-                    </ul>
-                </div>
-                <div class="text-center"><a class="mtr-btn button-raised ripple" href="javascript:void(0)"><?= Yii::t('app', 'ORDER NOW') ?></a></div>
-            </div>
-        </div>
+                <tr>
+                    <td>Softaculous</td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
 
-        <div class="col-md-15 col-sm-3">
-            <div class="pricing-plan purple wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
-                <div class="pricing-title"><?= Yii::t('app', 'OpenVZ Ultra') ?></div>
-                <div class="pricing-price">$25.00<span>/m</span></div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>9600 MHz <?= Yii::t('app', 'CPU') ?></li>
-                        <li>4096 MB <?= Yii::t('app', 'RAM') ?></li>
-                        <li>60 GB SDD</li>
-                        <li>2 <?= Yii::t('app', 'Dedicated IP Address') ?></li>
-                        <li><?= Html::a(Yii::t('app', '24x7 Support'), '#') ?> <?= Html::a(Yii::t('app', 'Gold'), '#') ?></li>
-                        <li>5000 GB <?= Yii::t('app', 'Traffic') ?></li>
-                        <li>1 Gb/s <?= Yii::t('app', 'Connection Port') ?></li>
-                        <li style="font-size: small"><?= Yii::t('app', 'No panel') ?> / <?= Html::a('AHnames panel', '#') ?> / ISPManager</li>
-                        <li style="font-size: smaller"><?= Yii::t('app', 'For resource intensive websites and high performance scripts.') ?></li>
-                    </ul>
-                </div>
-                <div class="text-center"><a class="mtr-btn button-raised ripple" href="javascript:void(0)"><?= Yii::t('app', 'ORDER NOW') ?></a></div>
-            </div>
-        </div>
+                <tr>
+                    <td>Unlimited FTP Accounts</td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
 
-        <div class="col-md-15 col-sm-3">
-            <div class="pricing-plan purple wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
-                <div class="pricing-title"><?= Yii::t('app', 'OpenVZ Mega') ?></div>
-                <div class="pricing-price">$35.00<span>/m</span></div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>12000 MHZ <?= Yii::t('app', 'CPU') ?></li>
-                        <li>8192 MB <?= Yii::t('app', 'RAM') ?></li>
-                        <li>80 GB SDD</li>
-                        <li>2 <?= Yii::t('app', 'Dedicated IP Address') ?></li>
-                        <li><?= Html::a(Yii::t('app', '24x7 Support'), '#') ?> <?= Html::a(Yii::t('app', 'Platinum'), '#') ?></li>
-                        <li>7000 GB <?= Yii::t('app', 'Traffic') ?></li>
-                        <li>1 Gb/s <?= Yii::t('app', 'Connection Port') ?></li>
-                        <li style="font-size: small"><?= Yii::t('app', 'No panel') ?> / <?= Html::a('AHnames panel', '#') ?> / ISPManager</li>
-                        <li style="font-size: smaller"><?= Yii::t('app', 'For resource-intensive projects. A reliable alternative to a dedicated server.') ?></li>
-                    </ul>
-                </div>
-                <div class="text-center"><a class="mtr-btn button-raised ripple" href="javascript:void(0)"><?= Yii::t('app', 'ORDER NOW') ?></a></div>
-            </div>
-        </div>
+                <tr>
+                    <td>Free Website Migration</td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
 
+                <tr>
+                    <td>Site Builder</td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+
+                <tr>
+                    <td>Free CDN</td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+
+                <tr>
+                    <td>Raid 10 Storage</td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+
+                <tr>
+                    <td>Bandwidth</td>
+                    <td>100GB</td>
+                    <td>300GB</td>
+                    <td>600GB</td>
+                    <td>800GB</td>
+                    <td>800GB</td>
+                </tr>
+
+                <tr>
+                    <td>Global Locations</td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+
+                <tr>
+                    <td>Unlimited Parked Domains</td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+
+                <tr>
+                    <td>24x7 Support</td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+
+                <tr class="price-comparison">
+                    <td>Price per Month</td>
+                    <td>$9.99</td>
+                    <td>$14.99</td>
+                    <td>$20.99</td>
+                    <td>$28.99</td>
+                    <td>$28.99</td>
+                </tr>
+
+                <tr class="price-comparison">
+                    <td>Price per Year</td>
+                    <td>$99.90</td>
+                    <td>$149.90</td>
+                    <td>$209.90</td>
+                    <td>$289.90</td>
+                    <td>$289.90</td>
+                </tr>
+
+                <tr class="price-comparison">
+                    <td>Price per 2 Years</td>
+                    <td>$199.80</td>
+                    <td>$299.80</td>
+                    <td>$419.80</td>
+                    <td>$579.80</td>
+                    <td>$579.80</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
+                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
+                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
+                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
+                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <!-- END OF PRICE BOXES -->
