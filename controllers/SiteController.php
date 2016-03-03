@@ -3,11 +3,13 @@
 namespace app\controllers;
 
 use Yii;
+use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\web\HttpException;
 
 class SiteController extends Controller
 {
@@ -30,7 +32,7 @@ class SiteController extends Controller
                 'actions' => [
                     'logout' => ['post'],
                 ],
-            ],
+            ]
         ];
     }
 
@@ -43,8 +45,20 @@ class SiteController extends Controller
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+                'foreColor' => 0x898BFE,
+                'maxLength' => 3,
+                'minLength' => 4,
             ],
         ];
+    }
+
+    public function actionPage($view = '')
+    {
+        try {
+            return $this->render('page/' . $view);
+        } catch (InvalidParamException $e) {
+            throw new HttpException(404);
+        }
     }
 
     public function actionIndex()

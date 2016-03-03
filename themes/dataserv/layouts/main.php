@@ -142,11 +142,10 @@ $menuItems = [
             <h4><?= Yii::t('app', 'Other') ?></h4>
             <?= Menu::widget([
                 'items' => [
-                    ['label' => Yii::t('app', 'About us'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Contacts'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'News'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Promotions'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Loyalty program'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'About us'), 'url' => ['/site/page', 'view' => 'about']],
+                    ['label' => Yii::t('app', 'Contacts'), 'url' => ['/site/contact']],
+                    ['label' => Yii::t('app', 'Promotions'), 'url' => ['/site/page', 'view' => 'promotions']],
+                    ['label' => Yii::t('app', 'Loyalty program'), 'url' => ['/site/page', 'view' => 'loyalty-program']],
                 ],
             ]) ?>
         </div>

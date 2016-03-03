@@ -14286,6 +14286,79 @@ yii.validation = (function ($) {
 
 })(window.jQuery);
 
+/**
+ * Yii Captcha widget.
+ *
+ * This is the JavaScript widget used by the yii\captcha\Captcha widget.
+ *
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @since 2.0
+ */
+(function ($) {
+    $.fn.yiiCaptcha = function (method) {
+        if (methods[method]) {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === 'object' || !method) {
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error('Method ' + method + ' does not exist on jQuery.yiiCaptcha');
+            return false;
+        }
+    };
+
+    var defaults = {
+        refreshUrl: undefined,
+        hashKey: undefined
+    };
+
+    var methods = {
+        init: function (options) {
+            return this.each(function () {
+                var $e = $(this);
+                var settings = $.extend({}, defaults, options || {});
+                $e.data('yiiCaptcha', {
+                    settings: settings
+                });
+
+                $e.on('click.yiiCaptcha', function () {
+                    methods.refresh.apply($e);
+                    return false;
+                });
+
+            });
+        },
+
+        refresh: function () {
+            var $e = this,
+                settings = this.data('yiiCaptcha').settings;
+            $.ajax({
+                url: $e.data('yiiCaptcha').settings.refreshUrl,
+                dataType: 'json',
+                cache: false,
+                success: function (data) {
+                    $e.attr('src', data.url);
+                    $('body').data(settings.hashKey, [data.hash1, data.hash2]);
+                }
+            });
+        },
+
+        destroy: function () {
+            return this.each(function () {
+                $(window).unbind('.yiiCaptcha');
+                $(this).removeData('yiiCaptcha');
+            });
+        },
+
+        data: function () {
+            return this.data('yiiCaptcha');
+        }
+    };
+})(window.jQuery);
+
+
 /*! Morphext - v2.4.5 - 2015-08-26 */!function(a){"use strict";function b(b,c){this.element=a(b),this.settings=a.extend({},d,c),this._defaults=d,this._init()}var c="Morphext",d={animation:"bounceIn",separator:",",speed:2e3,complete:a.noop};b.prototype={_init:function(){var b=this;this.phrases=[],this.element.addClass("morphext"),a.each(this.element.text().split(this.settings.separator),function(c,d){b.phrases.push(a.trim(d))}),this.index=-1,this.animate(),this.start()},animate:function(){this.index=++this.index%this.phrases.length,this.element[0].innerHTML='<span class="animated '+this.settings.animation+'">'+this.phrases[this.index]+"</span>",a.isFunction(this.settings.complete)&&this.settings.complete.call(this)},start:function(){var a=this;this._interval=setInterval(function(){a.animate()},this.settings.speed)},stop:function(){this._interval=clearInterval(this._interval)}},a.fn[c]=function(d){return this.each(function(){a.data(this,"plugin_"+c)||a.data(this,"plugin_"+c,new b(this,d))})}}(jQuery);
 /*!
  * hoverIntent v1.8.1 // 2014.08.11 // jQuery v1.9.1+
@@ -16124,7 +16197,6 @@ $(function(){$.fn.hasAttr=function(e){var t=this.attr(e);if(typeof t!==typeof un
             }, 600);
             return false;
         });
-
 
     });
 

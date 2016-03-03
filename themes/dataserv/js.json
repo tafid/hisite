@@ -4,6 +4,7 @@
   "vendor/yiisoft/yii2/assets/yii.js",
   "vendor/yiisoft/yii2/assets/yii.validation.js",
   "vendor/yiisoft/yii2/assets/yii.activeForm.js",
+  "vendor/yiisoft/yii2/assets/yii.captcha.js",
 
   "themes/dataserv/js/morphext.min.js",
   "themes/dataserv/js/hoverIntent.js",

@@ -6759,9 +6759,13 @@ ul.topright li.activeLanguage a {
     -ms-transform: translate(-50%, -50%);
 }
 
-.contactmethod h5 {
+.domain-features .contactmethod h5 {
     border-bottom: 1px solid rgb(204, 204, 204);
     color: #01ABEF;
+}
+
+.contact-elements .contactmethod h5 {
+    font-size: 16px;
 }
 
 .domain-features .square {

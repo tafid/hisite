@@ -5,6 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'HiSite',
     'basePath' => dirname(__DIR__),
+    'name' => 'AHnames',
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
@@ -59,10 +60,16 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'ignoreLanguageUrlPatterns' => [
-                '#^site/(login|register)#' => '#^(login|register)#',
-                '#^api/#' => '#^api/#',
+//                '#^site/(login|register)#' => '#^(login|register)#',
+//                '#^api/#' => '#^api/#',
+//                '' => 'site/index',
+//                'login' => 'site/login',
+//                'contacts' => 'site/contact',
+
             ],
-            'rules' => [],
+            'rules' => [
+
+            ],
         ],
 
         'i18n' => [
