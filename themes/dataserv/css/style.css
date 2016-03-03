@@ -6758,6 +6758,14 @@ ul.topright li.activeLanguage a {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
+.about-icons i {
+    font-size: 65px;
+    color: #FFF;
+}
+
+.about-icons p {
+    font-size: 16px;
+}
 
 .domain-features .contactmethod h5 {
     border-bottom: 1px solid rgb(204, 204, 204);
