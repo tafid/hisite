@@ -146,6 +146,7 @@ $menuItems = [
                     ['label' => Yii::t('app', 'Contacts'), 'url' => ['/site/contact']],
                     ['label' => Yii::t('app', 'Promotions'), 'url' => ['/site/page', 'view' => 'promotions']],
                     ['label' => Yii::t('app', 'Loyalty program'), 'url' => ['/site/page', 'view' => 'loyalty-program']],
+                    ['label' => Yii::t('app', 'Rules'), 'url' => ['/site/page', 'view' => 'rules']],
                 ],
             ]) ?>
         </div>
