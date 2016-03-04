@@ -7,7 +7,7 @@ $this->registerCss(".vps-features-tabs .tabs-left-vertical > .nav-tabs > li > a 
         <div class="col-sm-12">
 
             <!-- TABS -->
-            <div class="tabbable tabs-left-vertical wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <div class="tabbable tabs-left-vertical" data-wow-duration="1000ms" data-wow-delay="300ms">
 
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#termsOfUse" data-toggle="tab"><?= Yii::t('app', 'Domains terms of use') ?></a></li>
@@ -21,29 +21,26 @@ $this->registerCss(".vps-features-tabs .tabs-left-vertical > .nav-tabs > li > a 
                     <div class="tab-pane fade in active" id="termsOfUse">
                         <h4><?= Yii::t('app', 'Domains terms of use') ?></h4>
                         <hr class="small"/>
-                        <p class="subtitle">Indicator communities positive social change respect sustainability campaign.</p>
-                        <p>The Elders inclusive capitalism; growth best practices our ambitions pride solution tackle initiative. Equity pathway to a better life asylum collaborative cities provide.</p> <p>Medical supplies shifting landscape fundraising campaign sharing economy transform the world. Meaningful work celebrate nonviolent resistance; innovate country political. </p>
+                        <?= $this->render('_terms_of_use'); ?>
                     </div>
 
                     <div class="tab-pane fade" id="privacyPolicy">
                         <h4><?= Yii::t('app', 'Privacy Policy') ?></h4>
                         <hr class="small"/>
-                        <p class="subtitle">Equal opportunity social worker long-term emergency response volunteer</p>
-                        <p>Indicator communities positive social change respect sustainability campaign. Citizenry social worker institutions, honesty, opportunity fluctuation. Transform, social analysis, developing, dedicated countries. Informal economies growth, volunteer, immunize rural scalable aid. Collaborative cities disrupt local solutions achieve; Aga Khan initiative donation hack. Capacity building insurmountable challenges, Andrew Carnegie rural development 501(c)(3). Readiness investment liberal challenges of our times vulnerable.</p>
+                        <?= $this->render('_privacy_policy'); ?>
                     </div>
 
                     <div class="tab-pane fade" id="cancelationPolicy">
-                        <h4><?= Yii::t('app', 'Cancelation policy') ?></h4>
+                        <h4><?= Yii::t('app', 'Cancelation & Refunds') ?></h4>
                         <hr class="small"/>
-                        <p class="subtitle">Capacity building insurmountable challenges, Andrew Carnegie rural development</p>
-                        <p>Informal economies growth, volunteer, immunize rural scalable aid. Collaborative cities disrupt local solutions achieve; Aga Khan initiative donation hack. Capacity building insurmountable challenges, Andrew Carnegie rural development. Accelerate respect, storytelling economic independence economic security hack community health workers cause effectiveness. Donors inspire social change, significant, lifting people up, Oxfam local solutions global citizens raise.</p>
+                        <?= $this->render('_cancelation_policy'); ?>
                     </div>
 
                     <div class="tab-pane fade" id="domainRemovalAndAutoRenewalPolicy">
                         <h4><?= Yii::t('app', 'Domain removal and auto renewal Policy') ?></h4>
                         <hr class="small"/>
                         <p class="subtitle">Capacity building insurmountable challenges, Andrew Carnegie rural development</p>
-                        <p>Informal economies growth, volunteer, immunize rural scalable aid. Collaborative cities disrupt local solutions achieve; Aga Khan initiative donation hack. Capacity building insurmountable challenges, Andrew Carnegie rural development. Accelerate respect, storytelling economic independence economic security hack community health workers cause effectiveness. Donors inspire social change, significant, lifting people up, Oxfam local solutions global citizens raise.</p>
+                        <?= $this->render('_removal_and_auto_renewal'); ?>
                     </div>
 
                 </div>
