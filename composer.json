@@ -19,7 +19,11 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "codemix/yii2-localeurls": "^1.4",
-        "bower-asset/less-space": " *"
+        "bower-asset/less-space": " *",
+        "hiqdev/yii2-hiart": "*@dev",
+        "hiqdev/hipanel-module-hosting": "*@dev",
+        "hiqdev/hipanel-module-finance": "*@dev",
+        "hiqdev/hipanel-module-stock": "*@dev"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

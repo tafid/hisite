@@ -72,6 +72,27 @@ $config = [
             ],
         ],
 
+        'hiresource' => [
+            'class'  => 'hipanel\base\Connection',
+//            'auth'   => function () {
+//                if (Yii::$app->user->identity) {
+//                    return ['access_token' => Yii::$app->user->identity->getAccessToken()];
+//                }
+//
+//                if (Yii::$app->user->loginRequired() !== null) {
+//                    Yii::trace('Login is required. Redirecting to the login page', 'hipanel');
+//                    Yii::$app->response->send();
+//                    Yii::$app->end();
+//                }
+//
+//                return [];
+//            },
+            'config' => [
+                'api_url'  => $params['api_url'],
+                'base_uri' => $params['api_url'],
+            ],
+        ],
+
         'i18n' => [
             'translations' => [
                 'app*' => [
@@ -95,6 +116,11 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
+        'panels' => [
+            'hiresource' => [
+                'class' => 'hiqdev\hiart\DebugPanel',
+            ],
+        ],
     ];
 
     $config['bootstrap'][] = 'gii';
