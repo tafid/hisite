@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9ba4c04bd10fd76883fc5cda2a506009",
-    "content-hash": "e9e32ba3aeb10085c54ba2a79a2d77eb",
+    "hash": "112a08e2c4dc6c868284cda87a391593",
+    "content-hash": "6b17ba618f72091f141da410fae615f3",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -1010,12 +1010,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "ec6cbc1d5482ea3b7a2c3c65ded0d8e749b19efb"
+                "reference": "6a173ddae1a8e58be871f6d010e88c029eaf5cae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ec6cbc1d5482ea3b7a2c3c65ded0d8e749b19efb",
-                "reference": "ec6cbc1d5482ea3b7a2c3c65ded0d8e749b19efb",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/6a173ddae1a8e58be871f6d010e88c029eaf5cae",
+                "reference": "6a173ddae1a8e58be871f6d010e88c029eaf5cae",
                 "shasum": ""
             },
             "require": {
@@ -1064,7 +1064,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-03-09 22:09:58"
+            "time": "2016-03-11 16:36:56"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1348,6 +1348,69 @@
                 "plugin"
             ],
             "time": "2016-02-26 17:24:43"
+        },
+        {
+            "name": "hiqdev/hipanel-module-domain",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hiqdev/hipanel-module-domain.git",
+                "reference": "b10e9e4c2039b2d55c6bbd00c641317eab2e93fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-module-domain/zipball/b10e9e4c2039b2d55c6bbd00c641317eab2e93fe",
+                "reference": "b10e9e4c2039b2d55c6bbd00c641317eab2e93fe",
+                "shasum": ""
+            },
+            "require": {
+                "hiqdev/hipanel-core": "*",
+                "hiqdev/hipanel-module-client": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "hipanel\\modules\\domain\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Naumenko",
+                    "email": "silverfire@hiqdev.com",
+                    "homepage": "http://silverfire.me/",
+                    "role": "Lead backend developer"
+                },
+                {
+                    "name": "Andrii Vasyliev",
+                    "email": "sol@hiqdev.com",
+                    "homepage": "http://hipanel.com/",
+                    "role": "Project lead"
+                },
+                {
+                    "name": "Andrey Klochok",
+                    "email": "tafid@hiqdev.com",
+                    "homepage": "http://hiqdev.com/",
+                    "role": "Lead frontend developer"
+                },
+                {
+                    "name": "Yuriy Myronchuk",
+                    "email": "bladeroot@hiqdev.com",
+                    "homepage": "http://hiqdev.com/",
+                    "role": "QA Lead"
+                }
+            ],
+            "description": "Domain plugin for HiPanel",
+            "homepage": "https://github.com/hiqdev/hipanel-module-domain",
+            "keywords": [
+                "domain",
+                "hipanel",
+                "plugin"
+            ],
+            "time": "2016-03-04 15:57:44"
         },
         {
             "name": "hiqdev/hipanel-module-finance",
@@ -6507,7 +6570,8 @@
         "hiqdev/yii2-hiart": 20,
         "hiqdev/hipanel-module-hosting": 20,
         "hiqdev/hipanel-module-finance": 20,
-        "hiqdev/hipanel-module-stock": 20
+        "hiqdev/hipanel-module-stock": 20,
+        "hiqdev/hipanel-module-domain": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

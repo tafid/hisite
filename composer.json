@@ -23,7 +23,8 @@
         "hiqdev/yii2-hiart": "*@dev",
         "hiqdev/hipanel-module-hosting": "*@dev",
         "hiqdev/hipanel-module-finance": "*@dev",
-        "hiqdev/hipanel-module-stock": "*@dev"
+        "hiqdev/hipanel-module-stock": "*@dev",
+        "hiqdev/hipanel-module-domain": "*@dev"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
