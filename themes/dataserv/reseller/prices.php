@@ -50,8 +50,6 @@ JS
     , \yii\web\View::POS_LOAD);
 ?>
 
-<?php \yii\helpers\VarDumper::dump($tariffs, 10, true);?>
-
 <!-- PRICE BOXES -->
 <div class="pricingbox shared">
 
