@@ -50,6 +50,8 @@ JS
     , \yii\web\View::POS_LOAD);
 ?>
 
+<?php \yii\helpers\VarDumper::dump($tariffs, 10, true);?>
+
 <!-- PRICE BOXES -->
 <div class="pricingbox shared">
 
@@ -65,248 +67,30 @@ JS
     </div>
 
     <div class="row spacing-75">
-        <div class="col-md-12 silver-table">
+        <?php foreach ($tariffOptions as $tableName => $option) : ?>
+        <div class="col-md-12 <?= $tableName ?>">
             <table id="tld-table" class="tablesaw" data-tablesaw-mode="stack" data-wow-duration="1000ms" data-wow-delay="250ms" >
                 <thead>
                 <tr>
-                    <th>TLD</th>
-                    <th>REGISTRATION</th>
-                    <th>RENEWAL</th>
-                    <th>TRANSFER</th>
+                    <th><?= Yii::t('app', 'TLD') ?></th>
+                    <th><?= Yii::t('app', 'REGISTRATION') ?></th>
+                    <th><?= Yii::t('app', 'RENEWAL') ?></th>
+                    <th><?= Yii::t('app', 'TRANSFER') ?></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>COM</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                </tr>
-                <tr>
-                    <td>NET</td>
-                    <td>$13</td>
-                    <td>$13</td>
-                    <td>$13</td>
-                </tr>
-                <tr>
-                    <td>ORG</td>
-                    <td>$14</td>
-                    <td>$14</td>
-                    <td>$14</td>
-                </tr>
-                <tr>
-                    <td>BIZ</td>
-                    <td>$15</td>
-                    <td>$15</td>
-                    <td>$15</td>
-                </tr>
-                <tr>
-                    <td>AERO</td>
-                    <td>$22</td>
-                    <td>$22</td>
-                    <td>$22</td>
-                </tr>
-                <tr>
-                    <td>AC</td>
-                    <td>$32</td>
-                    <td>$32</td>
-                    <td>$32</td>
-                </tr>
-                <tr>
-                    <td>IO</td>
-                    <td>$42</td>
-                    <td>$42</td>
-                    <td>$42</td>
-                </tr>
-                <tr>
-                    <td>CLUB</td>
-                    <td>$18</td>
-                    <td>$18</td>
-                    <td>$18</td>
-                </tr>
-                <tr>
-                    <td>IS</td>
-                    <td>$52</td>
-                    <td>$52</td>
-                    <td>$52</td>
-                </tr>
-                <tr>
-                    <td>US</td>
-                    <td>$9</td>
-                    <td>$9</td>
-                    <td>$9</td>
-                </tr>
-                <tr>
-                    <td>EDU</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                </tr>
+                <?php foreach ($zones as $z) : ?>
+                    <tr>
+                        <td class="right_column"><b>.<?= strtoupper($z) ?></b></td>
+                        <td><?= Yii::$app->formatter->asCurrency($info[$option]['zone:.' . $z]['dregistration']['price'], 'usd') ?> / <?= Yii::t('app', 'year') ?></td>
+                        <td><?= Yii::$app->formatter->asCurrency($info[$option]['zone:.' . $z]['drenewal']['price'], 'usd') ?> / <?= Yii::t('app', 'year') ?></td>
+                        <td><?= Yii::$app->formatter->asCurrency($info[$option]['zone:.' . $z]['dtransfer']['price'], 'usd') ?></td>
+                    </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
-
-        <div class="col-md-12 gold-table">
-            <table id="tld-table" class="tablesaw" data-tablesaw-mode="stack" data-wow-duration="1000ms" data-wow-delay="250ms" >
-                <thead>
-                <tr>
-                    <th>TLD</th>
-                    <th>REGISTRATION</th>
-                    <th>RENEWAL</th>
-                    <th>TRANSFER</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>COM</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                </tr>
-                <tr>
-                    <td>NET</td>
-                    <td>$13</td>
-                    <td>$13</td>
-                    <td>$13</td>
-                </tr>
-                <tr>
-                    <td>ORG</td>
-                    <td>$14</td>
-                    <td>$14</td>
-                    <td>$14</td>
-                </tr>
-                <tr>
-                    <td>BIZ</td>
-                    <td>$15</td>
-                    <td>$15</td>
-                    <td>$15</td>
-                </tr>
-                <tr>
-                    <td>AERO</td>
-                    <td>$22</td>
-                    <td>$22</td>
-                    <td>$22</td>
-                </tr>
-                <tr>
-                    <td>AC</td>
-                    <td>$32</td>
-                    <td>$32</td>
-                    <td>$32</td>
-                </tr>
-                <tr>
-                    <td>IO</td>
-                    <td>$42</td>
-                    <td>$42</td>
-                    <td>$42</td>
-                </tr>
-                <tr>
-                    <td>CLUB</td>
-                    <td>$18</td>
-                    <td>$18</td>
-                    <td>$18</td>
-                </tr>
-                <tr>
-                    <td>IS</td>
-                    <td>$52</td>
-                    <td>$52</td>
-                    <td>$52</td>
-                </tr>
-                <tr>
-                    <td>US</td>
-                    <td>$9</td>
-                    <td>$9</td>
-                    <td>$9</td>
-                </tr>
-                <tr>
-                    <td>EDU</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="col-md-12 platinum-table">
-            <table id="tld-table" class="tablesaw" data-tablesaw-mode="stack" data-wow-duration="1000ms" data-wow-delay="250ms" >
-                <thead>
-                <tr>
-                    <th>TLD</th>
-                    <th>REGISTRATION</th>
-                    <th>RENEWAL</th>
-                    <th>TRANSFER</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>COM</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                </tr>
-                <tr>
-                    <td>NET</td>
-                    <td>$13</td>
-                    <td>$13</td>
-                    <td>$13</td>
-                </tr>
-                <tr>
-                    <td>ORG</td>
-                    <td>$14</td>
-                    <td>$14</td>
-                    <td>$14</td>
-                </tr>
-                <tr>
-                    <td>BIZ</td>
-                    <td>$15</td>
-                    <td>$15</td>
-                    <td>$15</td>
-                </tr>
-                <tr>
-                    <td>AERO</td>
-                    <td>$22</td>
-                    <td>$22</td>
-                    <td>$22</td>
-                </tr>
-                <tr>
-                    <td>AC</td>
-                    <td>$32</td>
-                    <td>$32</td>
-                    <td>$32</td>
-                </tr>
-                <tr>
-                    <td>IO</td>
-                    <td>$42</td>
-                    <td>$42</td>
-                    <td>$42</td>
-                </tr>
-                <tr>
-                    <td>CLUB</td>
-                    <td>$18</td>
-                    <td>$18</td>
-                    <td>$18</td>
-                </tr>
-                <tr>
-                    <td>IS</td>
-                    <td>$52</td>
-                    <td>$52</td>
-                    <td>$52</td>
-                </tr>
-                <tr>
-                    <td>US</td>
-                    <td>$9</td>
-                    <td>$9</td>
-                    <td>$9</td>
-                </tr>
-                <tr>
-                    <td>EDU</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                    <td>$12</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        <?php endforeach; ?>
     </div>
 
 </div>

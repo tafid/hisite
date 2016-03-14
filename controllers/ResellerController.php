@@ -12,15 +12,22 @@ class ResellerController extends Controller
     {
         $list = self::make_sub(self::make([2013590,2013498,2013544]), 'id');
         $tariffs = Tariff::perform('GetInfo', $list, true);
+        $zones = Domain::perform('GetZones', [], true);
 
         foreach ($tariffs as $id => $v) {
             $range = substr($v['name'],15);
             if (!$range) $range = '0';
             else $range = preg_replace('/\D/','',$range);
-            $info[$range] = self::domain($tariffs[$id]['resources'], Domain::perform('GetZones', [], true));
+            $info[$range] = self::domain($tariffs[$id]['resources'], $zones);
         };
 
-        return $this->render('prices', compact('info'));
+        $tariffOptions = [
+            'silver-table' => 0,
+            'gold-table' => 100,
+            'platinum-table' => 1000,
+        ];
+
+        return $this->render('prices', compact('info', 'zones', 'tariffOptions'));
     }
 
     public static function domain ($resources, $zones) {
