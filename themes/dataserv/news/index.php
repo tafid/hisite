@@ -1,6 +1,18 @@
 <?php
+use yii\helpers\Html;
+use yii\widgets\ListView;
+
 $this->title = Yii::t('app', 'News');
 ?>
+
+<?= ListView::widget([
+    'dataProvider' => $dataProvider,
+    'itemOptions' => ['class' => 'item'],
+    'itemView' => function ($model, $key, $index, $widget) {
+        return Html::a(Html::encode($model->id), ['view', 'id' => $model->id]);
+    },
+]) ?>
+
 <!-- Blog -->
 <div class="blog">
     <div class="row">

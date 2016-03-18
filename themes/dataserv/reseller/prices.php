@@ -1,7 +1,5 @@
 <?php
 
-use yii\helpers\Html;
-
 $this->title = Yii::t('app', 'Prices');
 $this->blocks['subTitle'] = Yii::t('app', 'Domains reselling with AHnames is a great choice, if you want to run your own domain registration service');
 $this->registerCss("
