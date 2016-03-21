@@ -1,4 +1,6 @@
 <?php
+use yii\helpers\Html;
+
 $this->title = Yii::t('app', 'Prices');
 $this->blocks['subTitle'] = Yii::t('app', 'Domains search and registration');
 $this->registerCss(".servers-table { display: block; }");
@@ -10,113 +12,33 @@ $this->registerCss(".servers-table { display: block; }");
         <div class="row">
             <div class="col-sm-12">
 
-                <table class="server-products-table responsive tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+                <table id="tld-table" class="tablesaw" data-tablesaw-mode="stack">
                     <thead>
                     <tr>
-                        <th><?= Yii::t('app', 'Domain zones') ?></th>
-                        <th>Registration</th>
-                        <th>Renewal</th>
-                        <th>Transfer</th>
-                        <th>ORDER</th>
+                        <th><?= Yii::t('app', 'Domain sones') ?></th>
+                        <th><?= Yii::t('app', 'Registration') ?></th>
+                        <th><?= Yii::t('app', 'Renewal') ?></th>
+                        <th><?= Yii::t('app', 'Transfer') ?></th>
+                        <th><?= Yii::t('app', 'Action') ?></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Intel Core 2 Duo E 6600</td>
-                        <td>2×2.8GHz</td>
-                        <td>4GB</td>
-                        <td>2×500 GB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2 x Intel Xeon E5335 Quad Core</td>
-                        <td>4×2.13GHz</td>
-                        <td>12GB</td>
-                        <td>2x1TB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Intel Core2 QUAD Q8200</td>
-                        <td>2.0GHz</td>
-                        <td>16GB</td>
-                        <td>2x1TB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Intel Core 2 Duo E 6600</td>
-                        <td>2×2.8GHz</td>
-                        <td>4GB</td>
-                        <td>2×500 GB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2 x Intel Xeon E5335 Quad Core</td>
-                        <td>4×2.13GHz</td>
-                        <td>12GB</td>
-                        <td>2x1TB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Intel Core2 QUAD Q8200</td>
-                        <td>2.0GHz</td>
-                        <td>16GB</td>
-                        <td>2x1TB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Intel Core 2 Duo E 6600</td>
-                        <td>2×2.8GHz</td>
-                        <td>4GB</td>
-                        <td>2×500 GB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2 x Intel Xeon E5335 Quad Core</td>
-                        <td>4×2.13GHz</td>
-                        <td>12GB</td>
-                        <td>2x1TB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Intel Core2 QUAD Q8200</td>
-                        <td>2.0GHz</td>
-                        <td>16GB</td>
-                        <td>2x1TB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Intel Core 2 Duo E 6600</td>
-                        <td>2×2.8GHz</td>
-                        <td>4GB</td>
-                        <td>2×500 GB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2 x Intel Xeon E5335 Quad Core</td>
-                        <td>4×2.13GHz</td>
-                        <td>12GB</td>
-                        <td>2x1TB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Intel Core2 QUAD Q8200</td>
-                        <td>2.0GHz</td>
-                        <td>16GB</td>
-                        <td>2x1TB 7.2K</td>
-                        <td><span><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)"><?= Yii::t('app', 'Buy domain')?></a></span>
-                        </td>
-                    </tr>
+                    <?php if (!empty($domains)) : ?>
+                        <?php foreach ($domainZones as $zone) : ?>
+                            <?php $hide = false; foreach ($domains['zone:.'.$zone] as $v) if ( floatval($v['price']) == 0 ) $hide = true; ?>
+                            <?php if (!$hide) : ?>
+                                <tr>
+                                    <td><?= Html::tag('span', $zone, ['class' => '']) ?></td>
+                                    <td><b><?= Yii::$app->formatter->asCurrency($domains['zone:.' . $zone]['dregistration']['price'],'usd') ?></b> / <?= Yii::t('app', 'year') ?></td>
+                                    <td><?= Yii::$app->formatter->asCurrency($domains['zone:.' . $zone]['drenewal']['price'],'usd') ?> / <?= Yii::t('app', 'year') ?></td>
+                                    <td><b><?= Yii::$app->formatter->asCurrency($domains['zone:.' . $zone]['dtransfer']['price'],'usd') ?></b></td>
+                                    <td>
+                                        <?= Html::a(Yii::t('app', 'ORDER NOW'), '#', ['class' => 'mtr-btn button-fab ripple btn-sm has-ripple']) ?>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach ?>
+                    <?php endif; ?>
                     </tbody>
                 </table>
             </div>
@@ -153,8 +75,10 @@ $this->registerCss(".servers-table { display: block; }");
         <div class="col-sm-6">
             <div class="row wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
                 <div class="col-sm-3 col-md-2"><img src="/images/icon13.png" alt=""/></div>
-                <div class="col-sm-9 col-md-10"><h5><?= Yii::t('app', 'Simple domain registration, renewal and transfer') ?></h5>
-                    <p>You can register a domain name in one of the following zones:<b> .COM, .NET, .ORG, .INFO, .BIZ, .ME, .NAME, .CC, .XXX, .RU, .SU, .COM.UA, .KIEV.UA.</b> or <b>.TV</b></p>
+                <div class="col-sm-9 col-md-10">
+                    <h5><?= Yii::t('app', 'Simple domain registration, renewal and transfer') ?></h5>
+                    <p>You can register a domain name in one of the following zones:<b> .COM, .NET, .ORG, .INFO,
+                            .BIZ, .ME, .NAME, .CC, .XXX, .RU, .SU, .COM.UA, .KIEV.UA.</b> or <b>.TV</b></p>
                     <p>Registering a domain will only take few seconds!</p>
                 </div>
             </div>

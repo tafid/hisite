@@ -2,6 +2,7 @@
 
 return [
     'adminEmail' => 'admin@example.com',
+    'seller' => 'ahnames',
     'product' => [
         'domain' => '{Lang:Domain}',
         'svds' => '{Lang:Xen VDS + SSD}',
