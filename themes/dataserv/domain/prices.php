@@ -7,7 +7,7 @@ $this->registerCss(".servers-table { display: block; }");
 ?>
 
 
-<div class="servers-table">
+<div class="domain-prices">
     <div class="row">
         <div class="row">
             <div class="col-sm-12">

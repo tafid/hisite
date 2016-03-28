@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "112a08e2c4dc6c868284cda87a391593",
-    "content-hash": "6b17ba618f72091f141da410fae615f3",
+    "hash": "9277b100211783c378338c12025f6220",
+    "content-hash": "bb65cb92c51c8a5f226890e3795aeb3d",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -824,12 +824,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cebe/markdown.git",
-                "reference": "e4499350d8a94c4c693a7e784295eff7a717ae67"
+                "reference": "e2a490ceec590bf5bfd1b43bd424fb9dceceb7c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cebe/markdown/zipball/e4499350d8a94c4c693a7e784295eff7a717ae67",
-                "reference": "e4499350d8a94c4c693a7e784295eff7a717ae67",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/e2a490ceec590bf5bfd1b43bd424fb9dceceb7c5",
+                "reference": "e2a490ceec590bf5bfd1b43bd424fb9dceceb7c5",
                 "shasum": ""
             },
             "require": {
@@ -876,7 +876,7 @@
                 "markdown",
                 "markdown-extra"
             ],
-            "time": "2016-02-09 22:09:46"
+            "time": "2016-03-18 13:28:11"
         },
         {
             "name": "cebe/yii2-gravatar",
@@ -921,16 +921,16 @@
         },
         {
             "name": "codemix/yii2-localeurls",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codemix/yii2-localeurls.git",
-                "reference": "ff3cfcc9fdcc310038625849f3bad9f8d21341da"
+                "reference": "342ffbd5f5d9a1264a82f21ccc669ebcc3102703"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/ff3cfcc9fdcc310038625849f3bad9f8d21341da",
-                "reference": "ff3cfcc9fdcc310038625849f3bad9f8d21341da",
+                "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/342ffbd5f5d9a1264a82f21ccc669ebcc3102703",
+                "reference": "342ffbd5f5d9a1264a82f21ccc669ebcc3102703",
                 "shasum": ""
             },
             "require": {
@@ -958,7 +958,7 @@
                 "locale",
                 "yii2"
             ],
-            "time": "2016-02-27 10:08:17"
+            "time": "2016-03-21 21:06:23"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -1010,12 +1010,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "6a173ddae1a8e58be871f6d010e88c029eaf5cae"
+                "reference": "d094e337976dff9d8e2424e8485872194e768662"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/6a173ddae1a8e58be871f6d010e88c029eaf5cae",
-                "reference": "6a173ddae1a8e58be871f6d010e88c029eaf5cae",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/d094e337976dff9d8e2424e8485872194e768662",
+                "reference": "d094e337976dff9d8e2424e8485872194e768662",
                 "shasum": ""
             },
             "require": {
@@ -1064,7 +1064,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-03-11 16:36:56"
+            "time": "2016-03-21 20:02:09"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1181,12 +1181,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/hipanel-core.git",
-                "reference": "7b64a0124989f450ebc8553e440f8086383961ec"
+                "reference": "11847f83313425b8a353923731707bf60a3be195"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/hipanel-core/zipball/7b64a0124989f450ebc8553e440f8086383961ec",
-                "reference": "7b64a0124989f450ebc8553e440f8086383961ec",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-core/zipball/11847f83313425b8a353923731707bf60a3be195",
+                "reference": "11847f83313425b8a353923731707bf60a3be195",
                 "shasum": ""
             },
             "require": {
@@ -1284,7 +1284,65 @@
                 "hipanel",
                 "hosting"
             ],
-            "time": "2016-03-14 11:13:52"
+            "time": "2016-03-28 16:12:25"
+        },
+        {
+            "name": "hiqdev/hipanel-domain-checker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hiqdev/hipanel-domain-checker.git",
+                "reference": "888335d35a566283276f6bd3f8a25f04a74d457a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-domain-checker/zipball/888335d35a566283276f6bd3f8a25f04a74d457a",
+                "reference": "888335d35a566283276f6bd3f8a25f04a74d457a",
+                "shasum": ""
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "hipanel\\modules\\domainchecker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Naumenko",
+                    "email": "silverfire@hiqdev.com",
+                    "homepage": "http://silverfire.me/",
+                    "role": "Lead backend developer"
+                },
+                {
+                    "name": "Andrii Vasyliev",
+                    "email": "sol@hiqdev.com",
+                    "homepage": "http://hipanel.com/",
+                    "role": "Project lead"
+                },
+                {
+                    "name": "Andrey Klochok",
+                    "email": "tafid@hiqdev.com",
+                    "homepage": "http://hiqdev.com/",
+                    "role": "Lead frontend developer"
+                },
+                {
+                    "name": "Yuriy Myronchuk",
+                    "email": "bladeroot@hiqdev.com",
+                    "homepage": "http://hiqdev.com/",
+                    "role": "QA Lead"
+                }
+            ],
+            "description": "HiPanel Domain Checker module",
+            "homepage": "https://github.com/hiqdev/hipanel-domain-checker",
+            "keywords": [
+                "domain-checker",
+                "hipanel"
+            ],
+            "time": "2016-03-25 15:38:03"
         },
         {
             "name": "hiqdev/hipanel-module-client",
@@ -1292,12 +1350,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/hipanel-module-client.git",
-                "reference": "dd7f75c7af11434ffcf7d03e058539bed785337a"
+                "reference": "1ca428d98a22cf713681a491635c7a27b94e8583"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/hipanel-module-client/zipball/dd7f75c7af11434ffcf7d03e058539bed785337a",
-                "reference": "dd7f75c7af11434ffcf7d03e058539bed785337a",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-module-client/zipball/1ca428d98a22cf713681a491635c7a27b94e8583",
+                "reference": "1ca428d98a22cf713681a491635c7a27b94e8583",
                 "shasum": ""
             },
             "require": {
@@ -1347,7 +1405,7 @@
                 "hipanel",
                 "plugin"
             ],
-            "time": "2016-02-26 17:24:43"
+            "time": "2016-03-28 16:10:59"
         },
         {
             "name": "hiqdev/hipanel-module-domain",
@@ -1355,16 +1413,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/hipanel-module-domain.git",
-                "reference": "b10e9e4c2039b2d55c6bbd00c641317eab2e93fe"
+                "reference": "4e712113fcf677ef28c7bc3f269e87cccd723ff0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/hipanel-module-domain/zipball/b10e9e4c2039b2d55c6bbd00c641317eab2e93fe",
-                "reference": "b10e9e4c2039b2d55c6bbd00c641317eab2e93fe",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-module-domain/zipball/4e712113fcf677ef28c7bc3f269e87cccd723ff0",
+                "reference": "4e712113fcf677ef28c7bc3f269e87cccd723ff0",
                 "shasum": ""
             },
             "require": {
                 "hiqdev/hipanel-core": "*",
+                "hiqdev/hipanel-domain-checker": "*",
                 "hiqdev/hipanel-module-client": "*"
             },
             "type": "yii2-extension",
@@ -1410,7 +1469,7 @@
                 "hipanel",
                 "plugin"
             ],
-            "time": "2016-03-04 15:57:44"
+            "time": "2016-03-25 15:37:21"
         },
         {
             "name": "hiqdev/hipanel-module-finance",
@@ -1418,12 +1477,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/hipanel-module-finance.git",
-                "reference": "10bbc4bbbdc67faa9f69deaa8131f20c5c65b008"
+                "reference": "e2bc5747eb6482aa7c4918430625b1b6c63f685c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/hipanel-module-finance/zipball/10bbc4bbbdc67faa9f69deaa8131f20c5c65b008",
-                "reference": "10bbc4bbbdc67faa9f69deaa8131f20c5c65b008",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-module-finance/zipball/e2bc5747eb6482aa7c4918430625b1b6c63f685c",
+                "reference": "e2bc5747eb6482aa7c4918430625b1b6c63f685c",
                 "shasum": ""
             },
             "require": {
@@ -1484,7 +1543,7 @@
                 "hipanel",
                 "plugin"
             ],
-            "time": "2016-03-10 12:36:16"
+            "time": "2016-03-25 13:14:47"
         },
         {
             "name": "hiqdev/hipanel-module-hosting",
@@ -1492,12 +1551,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/hipanel-module-hosting.git",
-                "reference": "d19e155f5b07521c930445a117e0cb4de9201e74"
+                "reference": "2cd995a913a88c17acf762cb40c2426af66daacd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/hipanel-module-hosting/zipball/d19e155f5b07521c930445a117e0cb4de9201e74",
-                "reference": "d19e155f5b07521c930445a117e0cb4de9201e74",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-module-hosting/zipball/2cd995a913a88c17acf762cb40c2426af66daacd",
+                "reference": "2cd995a913a88c17acf762cb40c2426af66daacd",
                 "shasum": ""
             },
             "require": {
@@ -1544,7 +1603,7 @@
                 "hosting",
                 "plugin"
             ],
-            "time": "2016-03-11 18:28:15"
+            "time": "2016-03-28 16:07:41"
         },
         {
             "name": "hiqdev/hipanel-module-stock",
@@ -1552,12 +1611,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/hipanel-module-stock.git",
-                "reference": "4ab7f4d9dd6699ae8050b87683fea00185b31b6d"
+                "reference": "089dabb726cfb83ab37cd5ca8fcaa83b141ba775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/hipanel-module-stock/zipball/4ab7f4d9dd6699ae8050b87683fea00185b31b6d",
-                "reference": "4ab7f4d9dd6699ae8050b87683fea00185b31b6d",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-module-stock/zipball/089dabb726cfb83ab37cd5ca8fcaa83b141ba775",
+                "reference": "089dabb726cfb83ab37cd5ca8fcaa83b141ba775",
                 "shasum": ""
             },
             "type": "yii2-extension",
@@ -1603,7 +1662,7 @@
                 "plugin",
                 "stock"
             ],
-            "time": "2016-03-09 17:27:37"
+            "time": "2016-03-22 17:01:48"
         },
         {
             "name": "hiqdev/payment-icons",
@@ -1722,12 +1781,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/php-merchant.git",
-                "reference": "bcb0a1dc9d98cf177cd640f4e5f3e176653e9995"
+                "reference": "f6159901aaa22ce9e86fcd4e42229642a633f2d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/php-merchant/zipball/bcb0a1dc9d98cf177cd640f4e5f3e176653e9995",
-                "reference": "bcb0a1dc9d98cf177cd640f4e5f3e176653e9995",
+                "url": "https://api.github.com/repos/hiqdev/php-merchant/zipball/f6159901aaa22ce9e86fcd4e42229642a633f2d2",
+                "reference": "f6159901aaa22ce9e86fcd4e42229642a633f2d2",
                 "shasum": ""
             },
             "type": "library",
@@ -1776,7 +1835,7 @@
                 "payum",
                 "php"
             ],
-            "time": "2016-01-25 16:48:06"
+            "time": "2016-03-25 15:01:38"
         },
         {
             "name": "hiqdev/yii2-asset-adminlte",
@@ -2521,12 +2580,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/yii2-cart.git",
-                "reference": "41376faaf6a1edcf441365d2edbdb54000c6822c"
+                "reference": "10efe687cc7f41dbf1a9ecb0d3cbe3f287026a1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/yii2-cart/zipball/41376faaf6a1edcf441365d2edbdb54000c6822c",
-                "reference": "41376faaf6a1edcf441365d2edbdb54000c6822c",
+                "url": "https://api.github.com/repos/hiqdev/yii2-cart/zipball/10efe687cc7f41dbf1a9ecb0d3cbe3f287026a1f",
+                "reference": "10efe687cc7f41dbf1a9ecb0d3cbe3f287026a1f",
                 "shasum": ""
             },
             "require": {
@@ -2581,7 +2640,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-03-04 15:12:20"
+            "time": "2016-03-21 17:25:56"
         },
         {
             "name": "hiqdev/yii2-collection",
@@ -2780,12 +2839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/yii2-hiart.git",
-                "reference": "1b7a4ac6df0dd6f8583fc59e8a5c0621cb332759"
+                "reference": "25859bc6073c13df74c519a0f83eb9c74be31c71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/yii2-hiart/zipball/1b7a4ac6df0dd6f8583fc59e8a5c0621cb332759",
-                "reference": "1b7a4ac6df0dd6f8583fc59e8a5c0621cb332759",
+                "url": "https://api.github.com/repos/hiqdev/yii2-hiart/zipball/25859bc6073c13df74c519a0f83eb9c74be31c71",
+                "reference": "25859bc6073c13df74c519a0f83eb9c74be31c71",
                 "shasum": ""
             },
             "require": {
@@ -2840,7 +2899,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2016-03-07 16:21:58"
+            "time": "2016-03-25 12:18:39"
         },
         {
             "name": "hiqdev/yii2-higrid",
@@ -2973,12 +3032,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/yii2-merchant.git",
-                "reference": "7e9b380419de99a03c926a16c620bc1c2e2069b4"
+                "reference": "e7681d7b16284d259fa4dd0a940bec945011cbc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/yii2-merchant/zipball/7e9b380419de99a03c926a16c620bc1c2e2069b4",
-                "reference": "7e9b380419de99a03c926a16c620bc1c2e2069b4",
+                "url": "https://api.github.com/repos/hiqdev/yii2-merchant/zipball/e7681d7b16284d259fa4dd0a940bec945011cbc6",
+                "reference": "e7681d7b16284d259fa4dd0a940bec945011cbc6",
                 "shasum": ""
             },
             "require": {
@@ -3037,7 +3096,7 @@
                 "payum",
                 "yii2"
             ],
-            "time": "2016-03-11 18:27:47"
+            "time": "2016-03-25 17:08:54"
         },
         {
             "name": "hiqdev/yii2-pluginmanager",
@@ -3170,12 +3229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/yii2-theme-adminlte.git",
-                "reference": "d1d65b1e4580ea2397f6f5788775742f6925e387"
+                "reference": "ccfaf5fbcb195c63a875b16578bcbb2ecaf9902f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/yii2-theme-adminlte/zipball/d1d65b1e4580ea2397f6f5788775742f6925e387",
-                "reference": "d1d65b1e4580ea2397f6f5788775742f6925e387",
+                "url": "https://api.github.com/repos/hiqdev/yii2-theme-adminlte/zipball/ccfaf5fbcb195c63a875b16578bcbb2ecaf9902f",
+                "reference": "ccfaf5fbcb195c63a875b16578bcbb2ecaf9902f",
                 "shasum": ""
             },
             "require": {
@@ -3234,7 +3293,7 @@
                 "theme",
                 "yii2"
             ],
-            "time": "2016-02-29 10:42:13"
+            "time": "2016-03-24 09:13:07"
         },
         {
             "name": "hiqdev/yii2-thememanager",
@@ -3484,12 +3543,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "16e4c250f77837e98e0db7f8cfc8b199b147a274"
+                "reference": "22184efc859b5319c0652dbfe35bfbadc0a2ff0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/16e4c250f77837e98e0db7f8cfc8b199b147a274",
-                "reference": "16e4c250f77837e98e0db7f8cfc8b199b147a274",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/22184efc859b5319c0652dbfe35bfbadc0a2ff0a",
+                "reference": "22184efc859b5319c0652dbfe35bfbadc0a2ff0a",
                 "shasum": ""
             },
             "type": "library",
@@ -3529,7 +3588,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2016-03-14 03:52:56"
+            "time": "2016-03-25 07:10:51"
         },
         {
             "name": "kartik-v/bootstrap-popover-x",
@@ -3581,12 +3640,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-star-rating.git",
-                "reference": "9a9c2befce0c76db975a6a8d28073efa7b4922b3"
+                "reference": "2443b49d33139a59e6e40aa60872bfb4fd76fa59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-star-rating/zipball/9a9c2befce0c76db975a6a8d28073efa7b4922b3",
-                "reference": "9a9c2befce0c76db975a6a8d28073efa7b4922b3",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-star-rating/zipball/2443b49d33139a59e6e40aa60872bfb4fd76fa59",
+                "reference": "2443b49d33139a59e6e40aa60872bfb4fd76fa59",
                 "shasum": ""
             },
             "type": "library",
@@ -3617,7 +3676,7 @@
                 "star",
                 "svg"
             ],
-            "time": "2016-03-01 18:20:14"
+            "time": "2016-03-22 14:58:18"
         },
         {
             "name": "kartik-v/dependent-dropdown",
@@ -3857,12 +3916,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "aee1795980be62974a5c35a61fd596c61c0fae6b"
+                "reference": "e4a33f62ff43bca27a7604516039e0aa3977c069"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/aee1795980be62974a5c35a61fd596c61c0fae6b",
-                "reference": "aee1795980be62974a5c35a61fd596c61c0fae6b",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/e4a33f62ff43bca27a7604516039e0aa3977c069",
+                "reference": "e4a33f62ff43bca27a7604516039e0aa3977c069",
                 "shasum": ""
             },
             "require": {
@@ -3898,7 +3957,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-03-08 04:08:06"
+            "time": "2016-03-18 19:28:34"
         },
         {
             "name": "kartik-v/yii2-helpers",
@@ -4197,12 +4256,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-affix.git",
-                "reference": "e11b2eb80893a3b1a0dd7ce50ea3256ebb55da84"
+                "reference": "15f8a87d35483c291c8a2238b9a25f7da5c951d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-affix/zipball/e11b2eb80893a3b1a0dd7ce50ea3256ebb55da84",
-                "reference": "e11b2eb80893a3b1a0dd7ce50ea3256ebb55da84",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-affix/zipball/15f8a87d35483c291c8a2238b9a25f7da5c951d7",
+                "reference": "15f8a87d35483c291c8a2238b9a25f7da5c951d7",
                 "shasum": ""
             },
             "require": {
@@ -4238,7 +4297,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-02-15 14:35:24"
+            "time": "2016-03-21 16:55:54"
         },
         {
             "name": "kartik-v/yii2-widget-alert",
@@ -4350,12 +4409,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-datepicker.git",
-                "reference": "bc22b97c342f9cbea25e5eee6ce7312ed0561cbd"
+                "reference": "af32eeee557fa12e1b362e24fd8d0bc14713e361"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/bc22b97c342f9cbea25e5eee6ce7312ed0561cbd",
-                "reference": "bc22b97c342f9cbea25e5eee6ce7312ed0561cbd",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/af32eeee557fa12e1b362e24fd8d0bc14713e361",
+                "reference": "af32eeee557fa12e1b362e24fd8d0bc14713e361",
                 "shasum": ""
             },
             "require": {
@@ -4396,7 +4455,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-02-28 17:19:12"
+            "time": "2016-03-25 08:49:17"
         },
         {
             "name": "kartik-v/yii2-widget-datetimepicker",
@@ -5221,12 +5280,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "fc36239be5a3abf0619fd24edd8e8bdc53ab5e24"
+                "reference": "eb4bfe1366364e1fb0c2313156553336a92ff5e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/fc36239be5a3abf0619fd24edd8e8bdc53ab5e24",
-                "reference": "fc36239be5a3abf0619fd24edd8e8bdc53ab5e24",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/eb4bfe1366364e1fb0c2313156553336a92ff5e7",
+                "reference": "eb4bfe1366364e1fb0c2313156553336a92ff5e7",
                 "shasum": ""
             },
             "require": {
@@ -5264,7 +5323,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2016-03-10 12:01:42"
+            "time": "2016-03-27 12:52:15"
         },
         {
             "name": "omnilight/yii2-shopping-cart",
@@ -5877,12 +5936,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "88ceadba3fc19ec90f72b6ba895347b7fecd3dfb"
+                "reference": "d44ea5685555d6f768632e0f08301f55616617a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/88ceadba3fc19ec90f72b6ba895347b7fecd3dfb",
-                "reference": "88ceadba3fc19ec90f72b6ba895347b7fecd3dfb",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/d44ea5685555d6f768632e0f08301f55616617a3",
+                "reference": "d44ea5685555d6f768632e0f08301f55616617a3",
                 "shasum": ""
             },
             "require": {
@@ -5963,7 +6022,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-03-14 12:11:50"
+            "time": "2016-03-28 14:33:30"
         },
         {
             "name": "yiisoft/yii2-authclient",
@@ -5971,12 +6030,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-authclient.git",
-                "reference": "f946784cc1edb5ca128bce1dc5e9ff77e4194e70"
+                "reference": "22cd09896e664e03e4d00695704332a25998b56e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/f946784cc1edb5ca128bce1dc5e9ff77e4194e70",
-                "reference": "f946784cc1edb5ca128bce1dc5e9ff77e4194e70",
+                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/22cd09896e664e03e4d00695704332a25998b56e",
+                "reference": "22cd09896e664e03e4d00695704332a25998b56e",
                 "shasum": ""
             },
             "require": {
@@ -6011,7 +6070,7 @@
                 "oauth",
                 "yii2"
             ],
-            "time": "2016-02-27 21:03:45"
+            "time": "2016-03-28 15:58:56"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -6019,12 +6078,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "4133d6b26f48615de38ea1ec04eb00c4b7057bc9"
+                "reference": "e64170ffa5678be6cb8c3decf92feac8142aa523"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/4133d6b26f48615de38ea1ec04eb00c4b7057bc9",
-                "reference": "4133d6b26f48615de38ea1ec04eb00c4b7057bc9",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/e64170ffa5678be6cb8c3decf92feac8142aa523",
+                "reference": "e64170ffa5678be6cb8c3decf92feac8142aa523",
                 "shasum": ""
             },
             "require": {
@@ -6061,7 +6120,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2016-03-04 00:48:53"
+            "time": "2016-03-21 19:11:20"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -6069,12 +6128,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-composer.git",
-                "reference": "d33d1046a5951f2f7823fe343f28ddc58b3421a4"
+                "reference": "348122de0b2c2e343b579f93fcda1da78cab4912"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/d33d1046a5951f2f7823fe343f28ddc58b3421a4",
-                "reference": "d33d1046a5951f2f7823fe343f28ddc58b3421a4",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/348122de0b2c2e343b579f93fcda1da78cab4912",
+                "reference": "348122de0b2c2e343b579f93fcda1da78cab4912",
                 "shasum": ""
             },
             "require": {
@@ -6108,7 +6167,7 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2016-02-06 01:03:32"
+            "time": "2016-03-21 19:11:44"
         },
         {
             "name": "yiisoft/yii2-imagine",
@@ -6116,12 +6175,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-imagine.git",
-                "reference": "d87e6a0d1adfd6fa5ef49c18228b2fc9bca04299"
+                "reference": "a6c34ef6b69fb4670ba987ce4b9cfdb2131a8b99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/d87e6a0d1adfd6fa5ef49c18228b2fc9bca04299",
-                "reference": "d87e6a0d1adfd6fa5ef49c18228b2fc9bca04299",
+                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/a6c34ef6b69fb4670ba987ce4b9cfdb2131a8b99",
+                "reference": "a6c34ef6b69fb4670ba987ce4b9cfdb2131a8b99",
                 "shasum": ""
             },
             "require": {
@@ -6156,7 +6215,7 @@
                 "imagine",
                 "yii2"
             ],
-            "time": "2016-02-21 23:09:41"
+            "time": "2016-03-21 19:13:31"
         },
         {
             "name": "yiisoft/yii2-jui",
@@ -6164,12 +6223,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-jui.git",
-                "reference": "1425ab29929dd195f468d3c4eb340ab509f28b83"
+                "reference": "226ffd897b26965a357e187cdf67f6c2e43e3139"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/1425ab29929dd195f468d3c4eb340ab509f28b83",
-                "reference": "1425ab29929dd195f468d3c4eb340ab509f28b83",
+                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/226ffd897b26965a357e187cdf67f6c2e43e3139",
+                "reference": "226ffd897b26965a357e187cdf67f6c2e43e3139",
                 "shasum": ""
             },
             "require": {
@@ -6206,7 +6265,7 @@
                 "jQuery UI",
                 "yii2"
             ],
-            "time": "2015-12-24 06:23:53"
+            "time": "2016-03-21 19:14:08"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -6214,12 +6273,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "2cca1bb86444a6438b0720f8c60120a400982366"
+                "reference": "20775fef1047cd927908270a8d7983580304eb57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/2cca1bb86444a6438b0720f8c60120a400982366",
-                "reference": "2cca1bb86444a6438b0720f8c60120a400982366",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/20775fef1047cd927908270a8d7983580304eb57",
+                "reference": "20775fef1047cd927908270a8d7983580304eb57",
                 "shasum": ""
             },
             "require": {
@@ -6256,7 +6315,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2015-12-07 11:40:31"
+            "time": "2016-03-21 19:16:09"
         }
     ],
     "packages-dev": [
@@ -6293,12 +6352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "588da2fff1b9da3acb9b6e1d7395e820102bde01"
+                "reference": "68c0d749b7a9bb527a7b0d3226fa397f26005955"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/588da2fff1b9da3acb9b6e1d7395e820102bde01",
-                "reference": "588da2fff1b9da3acb9b6e1d7395e820102bde01",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/68c0d749b7a9bb527a7b0d3226fa397f26005955",
+                "reference": "68c0d749b7a9bb527a7b0d3226fa397f26005955",
                 "shasum": ""
             },
             "require": {
@@ -6335,7 +6394,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-03-10 07:12:46"
+            "time": "2016-03-24 17:39:55"
         },
         {
             "name": "phpspec/php-diff",
@@ -6377,12 +6436,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-codeception.git",
-                "reference": "ee239c244fd011f11c8827f97ebe7600d03f1841"
+                "reference": "e01b3c46917b3f00c42f6a4aabf612cc36d792e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/ee239c244fd011f11c8827f97ebe7600d03f1841",
-                "reference": "ee239c244fd011f11c8827f97ebe7600d03f1841",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/e01b3c46917b3f00c42f6a4aabf612cc36d792e6",
+                "reference": "e01b3c46917b3f00c42f6a4aabf612cc36d792e6",
                 "shasum": ""
             },
             "require": {
@@ -6414,7 +6473,7 @@
                 "codeception",
                 "yii2"
             ],
-            "time": "2015-11-20 08:52:21"
+            "time": "2016-03-21 19:11:26"
         },
         {
             "name": "yiisoft/yii2-debug",
@@ -6422,12 +6481,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "a29ed1039604a576329c8d33138d29065d9f98d5"
+                "reference": "081795536b31d29106b0d1de0cb3aefa3e05e995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/a29ed1039604a576329c8d33138d29065d9f98d5",
-                "reference": "a29ed1039604a576329c8d33138d29065d9f98d5",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/081795536b31d29106b0d1de0cb3aefa3e05e995",
+                "reference": "081795536b31d29106b0d1de0cb3aefa3e05e995",
                 "shasum": ""
             },
             "require": {
@@ -6461,7 +6520,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2016-03-06 21:22:38"
+            "time": "2016-03-21 19:12:39"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -6469,12 +6528,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-faker.git",
-                "reference": "186c77214e0a4b75f10380b4e6e5f82788922cb7"
+                "reference": "a8daa97749e7154d91676405a1c59ed81e1ca999"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/186c77214e0a4b75f10380b4e6e5f82788922cb7",
-                "reference": "186c77214e0a4b75f10380b4e6e5f82788922cb7",
+                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/a8daa97749e7154d91676405a1c59ed81e1ca999",
+                "reference": "a8daa97749e7154d91676405a1c59ed81e1ca999",
                 "shasum": ""
             },
             "require": {
@@ -6508,7 +6567,7 @@
                 "faker",
                 "yii2"
             ],
-            "time": "2015-12-18 01:52:12"
+            "time": "2016-03-21 19:13:03"
         },
         {
             "name": "yiisoft/yii2-gii",
@@ -6516,12 +6575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "ce42838abcbef076ebaf46147671d518ae69d028"
+                "reference": "989d6c52c92e51f0d562729c329ee1012191cba2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/ce42838abcbef076ebaf46147671d518ae69d028",
-                "reference": "ce42838abcbef076ebaf46147671d518ae69d028",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/989d6c52c92e51f0d562729c329ee1012191cba2",
+                "reference": "989d6c52c92e51f0d562729c329ee1012191cba2",
                 "shasum": ""
             },
             "require": {
@@ -6561,7 +6620,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2016-02-21 20:39:29"
+            "time": "2016-03-21 19:13:26"
         }
     ],
     "aliases": [],
@@ -6571,7 +6630,8 @@
         "hiqdev/hipanel-module-hosting": 20,
         "hiqdev/hipanel-module-finance": 20,
         "hiqdev/hipanel-module-stock": 20,
-        "hiqdev/hipanel-module-domain": 20
+        "hiqdev/hipanel-module-domain": 20,
+        "hiqdev/hipanel-domain-checker": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
