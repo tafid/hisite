@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 
 $this->title = Yii::t('app', 'Prices');
-$this->blocks['subTitle'] = Yii::t('app', 'Domains search and registration');
+$this->blocks['subHeaderClass'] = 'domainavailability';
 $this->registerCss(".servers-table { display: block; }");
 ?>
 

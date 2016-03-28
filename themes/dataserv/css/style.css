@@ -6615,7 +6615,7 @@ ul.topright li.activeLanguage a {
     text-transform: uppercase;
 }
 
-.domainavailability {
+.domainavailability.front-page {
     background-color: #000000;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -6623,7 +6623,7 @@ ul.topright li.activeLanguage a {
     background-size: cover;
 }
 
-.domainavailability > .row {
+.domainavailability.front-page > .row {
     margin-top: 290px;
 }
 
