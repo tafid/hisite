@@ -5,6 +5,9 @@
   "vendor/yiisoft/yii2/assets/yii.validation.js",
   "vendor/yiisoft/yii2/assets/yii.activeForm.js",
   "vendor/yiisoft/yii2/assets/yii.captcha.js",
+  "vendor/hiqdev/hipanel-domain-checker/src/assets/DomainCheckPluginAssets/js/DomainCheckPlugin.js",
+  "vendor/hiqdev/hipanel-core/src/frontend/assets/js/hipanel.js",
+
 
   "themes/dataserv/js/morphext.min.js",
   "themes/dataserv/js/hoverIntent.js",
@@ -16,9 +19,6 @@
   "themes/dataserv/js/jquery.form.min.js",
   "themes/dataserv/js/jquery.slicknav.min.js",
   "themes/dataserv/js/retina.min.js",
-  "themes/dataserv/js/custom.js"
+  "themes/dataserv/js/custom.js",
+  "themes/dataserv/js/isotope.pkgd.min.js"
 ]
-
-
-
-

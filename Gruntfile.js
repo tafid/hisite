@@ -30,15 +30,15 @@ module.exports = function (grunt) {
         },
         copy: {
             main: {
-                files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: grunt.file.readJSON('themes/dataserv/fonts.json'),
-                        dest: 'web/fonts/',
-                        filter: 'isFile'
-                    }
-                ]
+                //files: [
+                //    {
+                //        expand: true,
+                //        flatten: true,
+                //        src: grunt.file.readJSON('themes/dataserv/fonts.json'),
+                //        dest: 'web/fonts/',
+                //        filter: 'isFile'
+                //    }
+                //]
             }
         },
         uglify: {

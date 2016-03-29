@@ -17965,3 +17965,7 @@ ul.topright li.activeLanguage a {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
+
+.blog .sidebar .widget ul li.active a {
+    color: red;
+}
