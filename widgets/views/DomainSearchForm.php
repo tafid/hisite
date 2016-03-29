@@ -1,11 +1,11 @@
-<form action="" method="post" class="material">
+<form action="<?= \yii\helpers\Url::to('/domainchecker/domainchecker/check-domain') ?>" method="post" class="material">
     <div class="row">
         <input type="hidden" name="direct" value="true" />
         <div class="col-sm-9">
-            <input type="text" name="domain" placeholder="<?= Yii::t('app', 'Domain Search') ?>">
+            <input type="text" name="Domain[domain]" placeholder="<?= Yii::t('app', 'Domain Search') ?>">
         </div>
         <div class="col-sm-2">
-            <select name="ext" data-placeholder="<?= Yii::t('app', 'Zone') ?>">
+            <select name="Domain[zone]" data-placeholder="<?= Yii::t('app', 'Zone') ?>">
                 <option>.com</option>
                 <option>.net</option>
                 <option>.org</option>

@@ -7,6 +7,12 @@ $config = [
     'basePath' => dirname(__DIR__),
     'name' => 'AHnames',
     'bootstrap' => ['log'],
+    'modules' => [
+        'domainchecker' => [
+            'class' => 'hipanel\modules\domainchecker\Module',
+            'viewPath' => '@app/themes/dataserv/modules'
+        ]
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation

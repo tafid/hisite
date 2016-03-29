@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9277b100211783c378338c12025f6220",
-    "content-hash": "bb65cb92c51c8a5f226890e3795aeb3d",
+    "hash": "16ad0fb486af51e6eb275561ce8836a7",
+    "content-hash": "f6638ca6b8ff449919bfb86ada44949c",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -1406,6 +1406,70 @@
                 "plugin"
             ],
             "time": "2016-03-28 16:10:59"
+        },
+        {
+            "name": "hiqdev/hipanel-module-dns",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hiqdev/hipanel-module-dns.git",
+                "reference": "f1511fe25582ce3f356106e2631275f7fa93b76e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hiqdev/hipanel-module-dns/zipball/f1511fe25582ce3f356106e2631275f7fa93b76e",
+                "reference": "f1511fe25582ce3f356106e2631275f7fa93b76e",
+                "shasum": ""
+            },
+            "require": {
+                "hiqdev/hipanel-core": "*",
+                "hiqdev/hipanel-module-client": "*",
+                "yiisoft/yii2": "2.*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "hipanel\\modules\\dns\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Naumenko",
+                    "email": "silverfire@hiqdev.com",
+                    "homepage": "http://silverfire.me/",
+                    "role": "Lead backend developer"
+                },
+                {
+                    "name": "Andrii Vasyliev",
+                    "email": "sol@hiqdev.com",
+                    "homepage": "http://hipanel.com/",
+                    "role": "Project lead"
+                },
+                {
+                    "name": "Andrey Klochok",
+                    "email": "tafid@hiqdev.com",
+                    "homepage": "http://hiqdev.com/",
+                    "role": "Lead frontend developer"
+                },
+                {
+                    "name": "Yuriy Myronchuk",
+                    "email": "bladeroot@hiqdev.com",
+                    "homepage": "http://hiqdev.com/",
+                    "role": "QA Lead"
+                }
+            ],
+            "description": "HiPanel DNS Module",
+            "homepage": "https://github.com/hiqdev/hipanel-module-dns",
+            "keywords": [
+                "dns",
+                "hipanel",
+                "module"
+            ],
+            "time": "2016-03-16 20:04:43"
         },
         {
             "name": "hiqdev/hipanel-module-domain",
@@ -3229,12 +3293,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hiqdev/yii2-theme-adminlte.git",
-                "reference": "ccfaf5fbcb195c63a875b16578bcbb2ecaf9902f"
+                "reference": "732878d7ee5ca3f7103e41bc8fc669941a4faf31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hiqdev/yii2-theme-adminlte/zipball/ccfaf5fbcb195c63a875b16578bcbb2ecaf9902f",
-                "reference": "ccfaf5fbcb195c63a875b16578bcbb2ecaf9902f",
+                "url": "https://api.github.com/repos/hiqdev/yii2-theme-adminlte/zipball/732878d7ee5ca3f7103e41bc8fc669941a4faf31",
+                "reference": "732878d7ee5ca3f7103e41bc8fc669941a4faf31",
                 "shasum": ""
             },
             "require": {
@@ -3293,7 +3357,7 @@
                 "theme",
                 "yii2"
             ],
-            "time": "2016-03-24 09:13:07"
+            "time": "2016-03-29 11:31:06"
         },
         {
             "name": "hiqdev/yii2-thememanager",
@@ -4409,12 +4473,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-datepicker.git",
-                "reference": "af32eeee557fa12e1b362e24fd8d0bc14713e361"
+                "reference": "3f7b38886e334a2c8c4262f155d98812461efd36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/af32eeee557fa12e1b362e24fd8d0bc14713e361",
-                "reference": "af32eeee557fa12e1b362e24fd8d0bc14713e361",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/3f7b38886e334a2c8c4262f155d98812461efd36",
+                "reference": "3f7b38886e334a2c8c4262f155d98812461efd36",
                 "shasum": ""
             },
             "require": {
@@ -4455,7 +4519,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-03-25 08:49:17"
+            "time": "2016-03-29 09:44:50"
         },
         {
             "name": "kartik-v/yii2-widget-datetimepicker",
@@ -6631,7 +6695,8 @@
         "hiqdev/hipanel-module-finance": 20,
         "hiqdev/hipanel-module-stock": 20,
         "hiqdev/hipanel-module-domain": 20,
-        "hiqdev/hipanel-domain-checker": 20
+        "hiqdev/hipanel-domain-checker": 20,
+        "hiqdev/hipanel-module-dns": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
