@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 $this->title = Yii::t('app', 'Domain check');
 $this->blocks['subHeaderClass'] = 'domainavailability';
+$this->blocks['dropDownZonesOptions'] = $dropDownZonesOptions;
 
 ?>
 
@@ -11,94 +12,89 @@ $this->blocks['subHeaderClass'] = 'domainavailability';
 <div class="blog">
     <div class="row">
         <div class="col-sm-8">
-
-            <!-- Blog Post-->
             <article>
                 <div class="post-content">
-                    <h2><a href="">Policy. Youth save lives</a></h2>
-                    <div class="themeta">POSTED BY <a href="">AUDEMEDIA</a> ON 12 AUGUST 2015, <a href="">2 COMMENTS</a></div>
-                    <hr/>
-                    <p>Altruism UNHCR carbon rights. Insurmountable challenges; mobilize, protect humanitarian relief gender investment. Making progress effect compassion emergency response theory of social change grantees health. Volunteer fairness, international lifting people up, social movement empower.</p>
-
-                    <a class="mtr-btn button-navy ripple" href="">Continue reading →</a>
+                    <div class="domain-list">
+                        <?php foreach ($results as $line) : ?>
+                            <?= $this->render('_checkDomainLine', ['line' => $line, 'requestedDomain' => $requestedDomain]) ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </article>
-            <!-- End of Blog Post-->
-
         </div>
 
         <div class="col-sm-4 filters">
             <div class="sidebar">
 
                 <div class="widget">
-                    <h3 class="badge"><?= Yii::t('app', 'Status') ?></h3>
-                    <ul data-filter-group="status">
-                        <li class="active"><a href="#" data-filter=""><?= Yii::t('app', 'All') ?></a></li>
-                        <li><a href="#" data-filter=".available"><?= Yii::t('app', 'Available') ?></a></li>
-                        <li><a href="#" data-filter=".unavailable"><?= Yii::t('app', 'Unavailable') ?></a>
+                    <h3 class="badge"><?= Yii::t('hipanel/domainchecker', 'Status') ?></h3>
+                    <ul class="filter-nav" data-filter-group="status">
+                        <li class="active"><a href="#" data-filter=""><?= Yii::t('hipanel/domainchecker', 'All') ?></a></li>
+                        <li><a href="#" data-filter=".available"><?= Yii::t('hipanel/domainchecker', 'Available') ?></a></li>
+                        <li><a href="#" data-filter=".unavailable"><?= Yii::t('hipanel/domainchecker', 'Unavailable') ?></a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="widget">
-                    <h3 class="badge"><?= Yii::t('app', 'Special') ?></h3>
-                    <ul data-filter-group="status">
-                        <li class="active"><a href="#" data-filter=""><?= Yii::t('app', 'All') ?></a></li>
-                        <li><a href="#" data-filter=".popular"><?= Yii::t('app', 'Popular Domains') ?></a></li>
-                        <li><a href="#" data-filter=".promotion"><?= Yii::t('app', 'Promotion') ?></a></li>
+                    <h3 class="badge"><?= Yii::t('hipanel/domainchecker', 'Special') ?></h3>
+                    <ul class="filter-nav" data-filter-group="status">
+                        <li class="active"><a href="#" data-filter=""><?= Yii::t('hipanel/domainchecker', 'All') ?></a></li>
+                        <li><a href="#" data-filter=".popular"><?= Yii::t('hipanel/domainchecker', 'Popular Domains') ?></a></li>
+                        <li><a href="#" data-filter=".promotion"><?= Yii::t('hipanel/domainchecker', 'Promotion') ?></a></li>
                     </ul>
                 </div>
 
                 <div class="widget">
-                    <h3 class="badge"><?= Yii::t('app', 'Categories') ?></h3>
-                    <ul data-filter-group="status">
+                    <h3 class="badge"><?= Yii::t('hipanel/domainchecker', 'Categories') ?></h3>
+                    <ul class="filter-nav" data-filter-group="status">
                         <li class="active">
-                            <a href="#" data-filter=""><?= Yii::t('app', 'All') ?>
+                            <a href="#" data-filter=""><?= Yii::t('hipanel/domainchecker', 'All') ?>
                                 <span class="label label-default pull-right"><?= count($results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".adult"><?= Yii::t('app', 'Adult') ?>
+                            <a href="#" data-filter=".adult"><?= Yii::t('hipanel/domainchecker', 'Adult') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('adult', $results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".geo"><?= Yii::t('app', 'GEO') ?>
+                            <a href="#" data-filter=".geo"><?= Yii::t('hipanel/domainchecker', 'GEO') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('geo', $results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".general"><?= Yii::t('app', 'General') ?>
+                            <a href="#" data-filter=".general"><?= Yii::t('hipanel/domainchecker', 'General') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('general', $results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".nature"><?= Yii::t('app', 'Nature') ?>
+                            <a href="#" data-filter=".nature"><?= Yii::t('hipanel/domainchecker', 'Nature') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('nature', $results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".internet"><?= Yii::t('app', 'Internet') ?>
+                            <a href="#" data-filter=".internet"><?= Yii::t('hipanel/domainchecker', 'Internet') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('internet', $results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".sport"><?= Yii::t('app', 'Sport') ?>
+                            <a href="#" data-filter=".sport"><?= Yii::t('hipanel/domainchecker', 'Sport') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('sport', $results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".society"><?= Yii::t('app', 'Society') ?>
+                            <a href="#" data-filter=".society"><?= Yii::t('hipanel/domainchecker', 'Society') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('society', $results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".audio_music"><?= Yii::t('app', 'Audio&Music') ?>
+                            <a href="#" data-filter=".audio_music"><?= Yii::t('hipanel/domainchecker', 'Audio&Music') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('audio_music', $results) ?></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-filter=".home_gifts"><?= Yii::t('app', 'Home&Gifts') ?>
+                            <a href="#" data-filter=".home_gifts"><?= Yii::t('hipanel/domainchecker', 'Home&Gifts') ?>
                                 <span class="label label-default pull-right"><?= Domain::getCategoriesCount('home_gifts', $results) ?></span>
                             </a>
                         </li>

@@ -15,8 +15,8 @@ class DomainSearchForm extends Widget
     public function run()
     {
         return $this->render((new\ReflectionClass($this))->getShortName(), [
-            'model' => $this->model ? : new Domain(),
-            'dropDownZonesOptions' => [
+            'model' => $this->model ? : new Domain(['scenario' => 'check-domain']),
+            'dropDownZonesOptions' => $this->dropDownZonesOptions ?: [
                 'com' => '.com',
                 'net' => '.net',
                 'org' => '.org',

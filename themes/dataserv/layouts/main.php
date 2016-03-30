@@ -110,7 +110,9 @@ $menuItems = [
                 <div class="col-sm-12 col-md-9 center-block">
                     <?= Html::tag('h1', $this->title, ['class' => 'text-center']) ?>
                     <div class="domain-form-container">
-                        <?= \app\widgets\DomainSearchForm::widget() ?>
+                        <?= \app\widgets\DomainSearchForm::widget([
+                            'dropDownZonesOptions' => !empty($this->blocks['dropDownZonesOptions']) ? $this->blocks['dropDownZonesOptions'] : null
+                        ]) ?>
                     </div>
                 </div>
             </div>

@@ -79,7 +79,7 @@ $config = [
         ],
 
         'hiresource' => [
-            'class'  => 'hipanel\base\Connection',
+            'class' => 'hipanel\base\Connection',
 //            'auth'   => function () {
 //                if (Yii::$app->user->identity) {
 //                    return ['access_token' => Yii::$app->user->identity->getAccessToken()];
@@ -94,7 +94,7 @@ $config = [
 //                return [];
 //            },
             'config' => [
-                'api_url'  => $params['api_url'],
+                'api_url' => $params['api_url'],
                 'base_uri' => $params['api_url'],
             ],
         ],
@@ -108,6 +108,14 @@ $config = [
                     'fileMap' => [
                         'app' => 'app.php',
                         'app/error' => 'error.php',
+                    ],
+                ],
+                'hipanel/dns' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'hipanel/dns' => 'dns.php',
                     ],
                 ],
             ],
