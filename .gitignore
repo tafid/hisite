@@ -15,6 +15,7 @@ Thumbs.db
 # composer vendor dir
 /vendor
 /node_modules
+composer.lock
 
 # composer itself is not needed
 composer.phar
