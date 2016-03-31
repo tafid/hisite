@@ -7,6 +7,7 @@ use hipanel\modules\finance\models\Calculation;
 use hipanel\modules\finance\models\Tariff;
 use hipanel\modules\stock\models\Part;
 use Yii;
+use yii\base\Exception;
 use yii\web\Controller;
 
 class HostingController extends Controller
@@ -51,11 +52,11 @@ class HostingController extends Controller
         $prices = Calculation::perform('CalcValue', $pkg, true);
         $j = 0.01;
         foreach ($_pkgs as $key => $v) {
-            if (err::not($prices[$key])) {
+            try {
                 $_pkgs[$key]['resources'] = ResourcesHelper::server($v['resources'], $parts);
                 $_pkgs[$key]['price'] = $prices[$key]['value']['usd']['price'];
                 $_pkgs[$key]['value'] = $prices[$key]['value']['usd']['value'];
-            } else {
+            } catch (Exception $e) {
                 unset($_pkgs[$key]);
             }
             unset($_pkgs[$key]);
