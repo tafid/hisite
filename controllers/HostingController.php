@@ -45,7 +45,8 @@ class HostingController extends Controller
                     'tariff_id' => $key,
                     'tariff' => $v['name'],
                 );
-                if (!Yii::$app->user->isGuest) $pkg[$key]['seller'] = Yii::$app->params['seller'];
+                if (Yii::$app->user->getIsGuest())
+                    $pkg[$key]['seller'] = Yii::$app->params['seller'];
             }
         }
         $parts = Part::find()->where(['ids' => self::cjoin($parts)])->all();
