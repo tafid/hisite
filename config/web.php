@@ -19,7 +19,7 @@ $config = [
             'cookieValidationKey' => '6WbP9JyuVvFfMaTSXTLVxRgQX20WvS7B',
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => 'hipanel\base\Cache',
         ],
         'user' => [
             'identityClass' => 'app\models\User',
