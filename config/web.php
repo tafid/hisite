@@ -118,6 +118,14 @@ $config = [
                         'hipanel/dns' => 'dns.php',
                     ],
                 ],
+                'hipanel/domain' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                    'basePath' => '@hipanel/modules/domain/messages',
+                    'fileMap' => [
+                        'hipanel/domain' => 'domain.php',
+                    ],
+                ],
             ],
         ],
 
