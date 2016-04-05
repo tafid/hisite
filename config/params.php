@@ -12,9 +12,6 @@ return [
 //        'grouping'          => '{Lang:Grouping}',
         'resources' => '{Lang:Resources}',
     ],
-    'vdsproduct' => [
-        'svds' => 'XenSSD',
-        'ovds' => 'OpenVZ',
-    ],
     'api_url' => 'http://hicore.dev',
+//    'api_url' => 'http://hiapi.ahnames.com',
 ];

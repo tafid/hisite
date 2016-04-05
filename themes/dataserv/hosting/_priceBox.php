@@ -1,38 +1,59 @@
 <?php
-$tariffTypes = Yii::$app->params['vdsproduct'];
+use yii\helpers\Html;
+
+$name = $this->context->action->controller->action->id == 'xen-ssd' ? 'XenSSD' : 'OpenVZ';
+$type = $this->context->action->controller->action->id == 'xen-ssd' ? 'svds' : 'ovds';
+
+$type_items_count = 0;
+
+foreach ($packages as $package) {
+    if ($package['type'] == $type) {
+        $type_items_count++;
+    }
+}
 ?>
 
-<?php foreach ($tariffTypes as $type => $name) : ?>
-
-<?php endforeach; ?>
-<!-- PRICE BOXES -->
 <div class="pricingbox vps-comparison">
-
     <div class="row spacing-25">
         <div class="col-sm-12">
             <table class="products-table responsive">
+                <?php
+//                $i = 0;
+//                $packages = array_reverse($packages);
+//                foreach ($packages as $pk => $package) {
+//                    if ($package['type'] != $type) {
+//                        continue;
+//                    }
+//
+//                    foreach ($package['resources'] as $k => &$v)
+//                        $v['partno'] = trim(str_ireplace(['xen', 'openvz', 'cpu', 'ram', 'hdd', 'ssd'], '', $v['partno']));
+//
+//                    print $this->render('_packageLine', [
+//                        'package' => $package,
+//                        'i' => $i
+//                    ]);
+//
+//                    $i++;
+//                }
+                ?>
                 <thead>
                 <tr>
                     <th></th>
-                    <th>OpenVZ Standart</th>
-                    <th>OpenVZ Superior</th>
-                    <th>OpenVZ Extra</th>
-                    <th>OpenVZ Ultra</th>
-                    <th>OpenVZ Mega</th>
+                    <?php foreach ($packages as $package) : ?>
+                        <?= Html::tag('th', $package['name']) ?>
+                    <?php endforeach; ?>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Disk Space</td>
-                    <td>1GB</td>
-                    <td>3GB</td>
-                    <td>6GB</td>
-                    <td>8GB</td>
-                    <td>8GB</td>
+                    <td>CPU</td>
+                    <?php foreach ($packages as $package) : ?>
+                        <?= Html::tag('td', $package['name']) ?>
+                    <?php endforeach; ?>
                 </tr>
 
                 <tr>
-                    <td>Hosted Domains</td>
+                    <td>RAM</td>
                     <td>1</td>
                     <td>3</td>
                     <td>6</td>
@@ -139,24 +160,6 @@ $tariffTypes = Yii::$app->params['vdsproduct'];
                     <td>$28.99</td>
                 </tr>
 
-                <tr class="price-comparison">
-                    <td>Price per Year</td>
-                    <td>$99.90</td>
-                    <td>$149.90</td>
-                    <td>$209.90</td>
-                    <td>$289.90</td>
-                    <td>$289.90</td>
-                </tr>
-
-                <tr class="price-comparison">
-                    <td>Price per 2 Years</td>
-                    <td>$199.80</td>
-                    <td>$299.80</td>
-                    <td>$419.80</td>
-                    <td>$579.80</td>
-                    <td>$579.80</td>
-                </tr>
-
                 <tr>
                     <td></td>
                     <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
@@ -171,4 +174,3 @@ $tariffTypes = Yii::$app->params['vdsproduct'];
         </div>
     </div>
 </div>
-<!-- END OF PRICE BOXES -->
