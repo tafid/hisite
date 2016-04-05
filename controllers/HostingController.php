@@ -3,27 +3,19 @@
 namespace app\controllers;
 
 use app\helpers\ResourcesHelper;
-use hipanel\modules\finance\models\Calculation;
-use hipanel\modules\finance\models\Tariff;
+use app\models\hosting\Calculation;
+use app\models\hosting\Tariff;
 use hipanel\modules\stock\models\Part;
+use hiqdev\hiart\Collection;
+use hiqdev\hiart\ErrorResponseException;
 use Yii;
 use yii\base\Exception;
 use yii\helpers\Html;
 use yii\web\Controller;
+use yii\web\UnprocessableEntityHttpException;
 
 class HostingController extends Controller
 {
-    static public function cjoin($array, $delimiter = ',')
-    {
-        if (!is_array($array)) return $array;
-        $res = array(); /// TODO redo without created array - just concatenate string for efficiency
-        foreach ($array as $a) {
-            $b = trim($a);
-            if ($b) array_push($res, $b);
-        };
-        return join($delimiter, $res);
-    }
-
 
     /**
      * @param $type (svds|ovds)
@@ -31,49 +23,82 @@ class HostingController extends Controller
      */
     private function packages($type)
     {
+        $part_ids = [];
         $parts = [];
-        $_pkgs = Tariff::find(['scenario' => 'get-available-info'])
-            ->joinWith('resources')
-            ->andWhere(['type' => $type])
-            ->andWhere(['seller' => Yii::$app->params['seller']])
-            ->all();
-        foreach ($_pkgs as $key => $v) {
-            foreach ($v['resources'] as $value) {
-                if ($value['object_id']) $parts[] = $value['object_id'];
-                $pkg[$key] = array(
-                    'object' => 'server',
-                    'tariff_id' => $key,
-                    'tariff' => $v['name'],
-                );
-                if (Yii::$app->user->getIsGuest())
-                    $pkg[$key]['seller'] = Yii::$app->params['seller'];
-            }
+
+        $cacheKeys = [
+            Yii::$app->params['seller'],
+            Yii::$app->user->id,
+            $type,
+        ];
+
+        /** @var \app\models\hosting\Tariff[] $tariffs */
+        $tariffs = Yii::$app->getCache()->getTimeCached(3600, $cacheKeys, function ($seller, $client_id, $type) {
+            return Tariff::find(['scenario' => 'get-available-info'])
+                ->joinWith('resources')
+                ->where([
+                    'type' => $type,
+                    'seller' => $seller
+                ])->all();
+        });
+
+
+        foreach ($tariffs as $tariff) {
+//            TODO: выяснить что это. Зачем оно надо, если у голых тарифов нет партов?
+//            foreach ($tariff->resources as $resource) {
+//                /** @var Resource $resource */
+//                if ($resource->object_id) {
+//                    $part_ids[] = $resource->object_id;
+//                }
+//            }
+            $calculations[] = $tariff->getCalculationModel();
         }
-        $parts = Part::find()->where(['ids' => self::cjoin($parts)])->all();
-        $prices = Calculation::perform('CalcValue', $pkg, true);
+        if (!empty($part_ids)) {
+            $parts = Part::find()->where(['id' => $parts])->all();
+        }
+
+        foreach ($calculations as $calculation) {
+            $data[$calculation->getPrimaryKey()] = $calculation->getAttributes();
+        }
+
+        try {
+            $prices = Calculation::perform('CalcValue', $data, true);
+        } catch (ErrorResponseException $e) {
+            $prices = $e->errorInfo['response'];
+        } catch (\Exception $e) {
+            throw new UnprocessableEntityHttpException('Failed to calculate cart value', 0, $e);
+        }
+
         $j = 0.01;
-        foreach ($_pkgs as $key => $v) {
+
+        foreach ($tariffs as $key => $v) {
             try {
-                $_pkgs[$key]->resources = ResourcesHelper::server($v['resources'], $parts);
-                $_pkgs[$key]->price = $prices[$key]['value']['usd']['price'];
-                $_pkgs[$key]->value = $prices[$key]['value']['usd']['value'];
+                $tariffs[$key]->resources = ResourcesHelper::server($v['resources'], $parts);
+                $tariffs[$key]->price = $prices[$key]['value']['usd']['price'];
+                $tariffs[$key]->value = $prices[$key]['value']['usd']['value'];
             } catch (Exception $e) {
-                unset($_pkgs[$key]);
+                unset($tariffs[$key]);
             }
             $t = 0.00;
             $existPrice = false;
             while ($t <= $j) {
-                if ($vs[($_pkgs[$key]->value + $t) * 100]) $existPrice = true;
+                if ($vs[($tariffs[$key]->value + $t) * 100]) {
+                    $existPrice = true;
+                }
                 $t += 0.01;
             }
-            if (!$_pkgs[$key]->value || $existPrice) $j += 0.01;
-            $vs[($_pkgs[$key]->value + $j) * 100] = $key;
+            if (!$tariffs[$key]->value || $existPrice) {
+                $j += 0.01;
+            }
+            $vs[($tariffs[$key]->value + $j) * 100] = $key;
         }
         ksort($vs);
-        foreach ($vs as $id)
-            $packages["0$id"] = $_pkgs[$id];
 
-        return $packages;
+        foreach ($vs as $id) {
+            $result["0$id"] = $tariffs[$id];
+        }
+
+        return $result;
     }
 
     public function actionXenSsd()
@@ -116,35 +141,35 @@ class HostingController extends Controller
     public function priceAttributeData($type)
     {
         return [
-            'cpu' =>[
+            'cpu' => [
                 'label' => Yii::t('app', 'CPU'),
                 'buildValue' => function ($resource) {
                     return $resource['cpu']['partno'];
                 }
             ],
-            'ram' =>[
+            'ram' => [
                 'label' => Yii::t('app', 'RAM'),
                 'tooltip' => $type == 'svds' ? Yii::t('app', 'Additional $4/1 GB') : Yii::t('app', 'Additional $4/1 GB')
             ],
-            'hd' =>[
+            'hd' => [
                 'label' => $type == 'svds' ? Yii::t('app', 'SSD') : Yii::t('app', 'HDD+SSD cache'),
             ],
-            'dedicated_ip' =>[
+            'dedicated_ip' => [
                 'label' => Yii::t('app', 'Dedicated IP'),
             ],
-            'support' =>[
+            'support' => [
                 'label' => Html::a(Yii::t('app', 'Support 24/7'), '#'),
             ],
-            'traffic' =>[
+            'traffic' => [
                 'label' => Yii::t('app', 'Traffic'),
             ],
-            'port' =>[
+            'port' => [
                 'label' => Yii::t('app', 'Connection Port'),
             ],
-            'control_panel' =>[
+            'control_panel' => [
                 'label' => Html::a(Yii::t('app', 'Control panel'), '#'),
             ],
-            'purpose' =>[
+            'purpose' => [
                 'label' => Yii::t('app', 'Purpose'),
             ],
         ];
