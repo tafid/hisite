@@ -80,7 +80,7 @@ module.exports = function (grunt) {
             },
             fonts: {
                 files: [
-                    'vendor/bower/bootstrap/fonts/*'
+                    'vendor/bower-asset/bootstrap/fonts/*'
                 ],
                 tasks: ['copy'],
                 options: {

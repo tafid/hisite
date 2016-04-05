@@ -1,4 +1,4 @@
 [
-  "vendor/bower/bootstrap/fonts/*",
+  "vendor/bower-asset/bootstrap/fonts/*",
   "themes/dataserv/fonts/*"
 ]

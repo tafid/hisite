@@ -208,8 +208,9 @@
         }
     });
 
-    $( document ).on( "scroll", function() {
-        $('.domain-list').domainsCheck().startQuerier();
+    $(document).on("scroll", function() {
+        if ($('.domain-list').length) {
+            $('.domain-list').domainsCheck().startQuerier();
+        }
     });
-
 })(jQuery);
