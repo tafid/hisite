@@ -10,9 +10,9 @@ $menuItems = [
     ['label' => Yii::t('app', 'Domains'), 'url' => '#', 'items' => [
         ['label' => Yii::t('app', 'Prices'), 'url' => ['/domain/prices']],
         ['label' => Yii::t('app', 'Advantages'), 'url' => ['/domain/advantages']],
-        ['label' => Yii::t('app', 'Transfer'), 'url' => ['/domain/transfer']],
+//        ['label' => Yii::t('app', 'Transfer'), 'url' => ['/domain/transfer']],
         ['label' => Yii::t('app', 'Premium Package'), 'url' => ['/domain/premium-package']],
-        ['label' => Yii::t('app', 'Whois lookup'), 'url' => ['/domain/whois-lookup']],
+//        ['label' => Yii::t('app', 'Whois lookup'), 'url' => ['/domain/whois-lookup']],
     ]],
     ['label' => Yii::t('app', 'Hosting'), 'url' => '#', 'items' => [
         ['label' => Yii::t('app', 'XEN SSD'), 'url' => ['/hosting/xen-ssd']],
