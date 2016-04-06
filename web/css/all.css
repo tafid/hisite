@@ -18016,6 +18016,10 @@ select2-container .select2-choice, .select2-container .select2-choices, .select2
     clear: both;
 }
 
+.domain-line > div {
+    white-space: nowrap;
+}
+
 .domain-list:after {
     content: '';
     display: block;
@@ -18059,6 +18063,7 @@ select2-container .select2-choice, .select2-container .select2-choices, .select2
 
 .domain-line .domain-taken {
     color: #ccc;
+    font-size: 12px;
 }
 
 .domain-line .domain-whois {
