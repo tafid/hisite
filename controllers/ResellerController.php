@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\helpers\ArrayHalper;
+use app\helpers\ArrayHelper;
 use app\helpers\ResourcesHelper;
 use hipanel\modules\domain\models\Domain;
 use hipanel\modules\finance\models\Tariff;
@@ -12,7 +12,7 @@ class ResellerController extends Controller
 {
     public function actionPrices()
     {
-        $list = ArrayHalper::make_sub(ArrayHalper::make([2013590, 2013498, 2013544]), 'id');
+        $list = ArrayHelper::make_sub(ArrayHelper::make([2013590, 2013498, 2013544]), 'id');
         $tariffs = Tariff::perform('GetInfo', $list, true);
         $zones = Domain::perform('GetZones', [], true);
 

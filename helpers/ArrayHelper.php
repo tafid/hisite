@@ -1,9 +1,7 @@
 <?php
 namespace app\helpers;
 
-use yii\helpers\ArrayHelper;
-
-class ArrayHalper extends ArrayHelper
+class ArrayHelper extends \yii\helpers\ArrayHelper
 {
     public static function make($keys, $vals = null)
     {
