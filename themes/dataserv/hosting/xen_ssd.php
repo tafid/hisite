@@ -27,7 +27,7 @@ $this->registerCss(".products-table { display: table; }");
 </div>
 <!-- END OF TEXT -->
 
-<?= $this->render('_priceBox', compact('packages', 'tariffTypes', 'testVDSPurchased')); ?>
+<?= $this->render('_priceBox', compact('tariffs', 'tariffTypes', 'testVDSPurchased')); ?>
 
 <div class="domain-features-text">
     <div class="row">

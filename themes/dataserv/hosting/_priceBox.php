@@ -4,13 +4,9 @@ use yii\helpers\Html;
 $name = $this->context->action->controller->action->id == 'xen-ssd' ? 'XenSSD' : 'OpenVZ';
 $type = $this->context->action->controller->action->id == 'xen-ssd' ? 'svds' : 'ovds';
 
-$type_items_count = 0;
-
-foreach ($packages as $package) {
-    if ($package['type'] == $type) {
-        $type_items_count++;
-    }
-}
+/**
+ * @var array $tariffs
+ */
 ?>
 
 <div class="pricingbox vps-comparison">
@@ -19,17 +15,17 @@ foreach ($packages as $package) {
             <table class="products-table responsive">
                 <?php
 //                $i = 0;
-//                $packages = array_reverse($packages);
-//                foreach ($packages as $pk => $package) {
-//                    if ($package['type'] != $type) {
+//                $tariffs = array_reverse($tariffs);
+//                foreach ($tariffs as $pk => $tariff) {
+//                    if ($tariff['type'] != $type) {
 //                        continue;
 //                    }
 //
-//                    foreach ($package['resources'] as $k => &$v)
+//                    foreach ($tariff['resources'] as $k => &$v)
 //                        $v['partno'] = trim(str_ireplace(['xen', 'openvz', 'cpu', 'ram', 'hdd', 'ssd'], '', $v['partno']));
 //
 //                    print $this->render('_packageLine', [
-//                        'package' => $package,
+//                        'package' => $tariff,
 //                        'i' => $i
 //                    ]);
 //
@@ -39,16 +35,17 @@ foreach ($packages as $package) {
                 <thead>
                 <tr>
                     <th></th>
-                    <?php foreach ($packages as $package) : ?>
-                        <?= Html::tag('th', $package['name']) ?>
-                    <?php endforeach; ?>
+                    <?php foreach ($tariffs as $tariff) {
+                        $a = $tariff->model->name;
+                        echo Html::tag('th', $tariff->model->name);
+                    } ?>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td>CPU</td>
-                    <?php foreach ($packages as $package) : ?>
-                        <?= Html::tag('td', $package['name']) ?>
+                    <?php foreach ($tariffs as $tariff) : ?>
+
                     <?php endforeach; ?>
                 </tr>
 
@@ -153,11 +150,9 @@ foreach ($packages as $package) {
 
                 <tr class="price-comparison">
                     <td>Price per Month</td>
-                    <td>$9.99</td>
-                    <td>$14.99</td>
-                    <td>$20.99</td>
-                    <td>$28.99</td>
-                    <td>$28.99</td>
+                    <?php foreach ($tariffs as $tariff) {
+                        echo Html::tag('td', Yii::$app->formatter->asCurrency($tariff->price));
+                    } ?>
                 </tr>
 
                 <tr>

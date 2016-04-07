@@ -2,7 +2,9 @@
 
 namespace app\models\hosting;
 
-class Tariff extends \hipanel\modules\finance\models\Tariff
+use hipanel\modules\finance\models\CalculableModelInterface;
+
+class Tariff extends \hipanel\modules\finance\models\Tariff implements CalculableModelInterface
 {
     /**
      * Method creates and returns corresponding Calculation model
@@ -15,5 +17,10 @@ class Tariff extends \hipanel\modules\finance\models\Tariff
             'tariff' => $this->name,
             'tariff_id' => $this->id
         ]);
+    }
+
+    public function getResources()
+    {
+        return $this->hasMany(Resource::className(), ['tariff_id' => 'id']);
     }
 }
