@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use hiqdev\yii2\cart\widgets\PanelTopCart;
 use yii\helpers\Html;
 use yii\widgets\Menu;
 
@@ -57,12 +58,13 @@ $menuItems = [
         </div>
         <div class="col-sm-9">
             <ul class="topright">
+                <?= PanelTopCart::widget() ?>
                 <?php if (Yii::$app->user->isGuest) : ?>
                     <li><i class="fa fa-unlock-alt"></i> <a href="#" data-toggle="modal" data-target="#LoginModal">CLIENT AREA</a></li>
                 <?php else : ?>
-                    <li>PANEL</li>
+                    <li><?= Html::a(Yii::t('app', 'PANEL'), '#'); ?></li>
                 <?php endif; ?>
-                <li><i class="fa fa-commenting-o"></i> <a href="#"><?= Yii::t('app', 'ONLINE CHAT') ?></a></li>
+                <!--li><i class="fa fa-commenting-o"></i> <a href="#"><?= Yii::t('app', 'ONLINE CHAT') ?></a></li-->
                 <?= \app\widgets\LanguageDropdown::widget() ?>
             </ul>
         </div>

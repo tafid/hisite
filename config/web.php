@@ -11,6 +11,10 @@ $config = [
         'domainchecker' => [
             'class' => 'hipanel\modules\domainchecker\Module',
             'viewPath' => '@app/themes/dataserv/modules'
+        ],
+        'cart' => [
+            'class'  => 'hiqdev\yii2\cart\Module',
+            'viewPath' => '@app/themes/dataserv/modules'
         ]
     ],
     'components' => [
