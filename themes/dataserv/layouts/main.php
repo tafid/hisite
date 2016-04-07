@@ -3,7 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use hiqdev\yii2\cart\widgets\PanelTopCart;
+use app\widgets\PanelTopCart;
 use yii\helpers\Html;
 use yii\widgets\Menu;
 

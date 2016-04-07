@@ -6910,3 +6910,29 @@ select2-container .select2-choice, .select2-container .select2-choices, .select2
 .filter-nav li:hover {
     background-color: #EEEEEE;
 }
+
+/**
+ * -------------------------
+ * @section Navigational Bar
+ * -------------------------
+ */
+
+#top-cart {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#top-cart .nav, #top-cart > a > span {
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+    font-size: 11px;
+}
+
+#top-cart a.quick-nav {
+    margin: 0 0 0 15px;
+    padding: 0;
+    color: #fff!important;
+}
+
