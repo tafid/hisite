@@ -6,7 +6,7 @@ use yii\grid\GridView;
 use yii\helpers\Html;
 
 $this->title = Yii::t('cart', 'Cart');
-$this->params['breadcrumbs'][] = $this->title;
+$this->blocks['subTitle'] = Yii::t('cart', 'Date') . ': ' . Yii::$app->formatter->asDate(new DateTime());
 
 /**
  * @var \yii\data\ActiveDataProvider $dataProvider
@@ -15,24 +15,16 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <section class="invoice">
-    <!-- title row -->
-    <div class="row">
-        <div class="col-xs-12">
-            <h2 class="page-header">
-                <i class="fa fa-shopping-cart"></i> &nbsp;
-                <?= Yii::t('cart', 'Your order') ?>: &nbsp; <?= Yii::t('cart', '{0, plural, one{# position} other{# positions}}', $cart->count) ?>
-                <small class="pull-right"><?= Yii::t('cart', 'Date') ?>: <?= Yii::$app->formatter->asDate(new DateTime()) ?></small>
-            </h2>
-        </div>
-    </div>
-
-    <!-- Table row -->
-    <div class="row">
+    <!-- Table row ---->
+    <div class="row md-pt-50">
         <div class="col-xs-12 table-responsive">
             <?php
             echo GridView::widget([
                 'dataProvider' => $dataProvider,
                 'layout' => '{items}',
+                'tableOptions' => [
+                    'class' => 'table md-mb-50'
+                ],
                 'rowOptions' => function ($model, $key, $index, $grid) {
                     return $model->getRowOptions($key, $index, $grid);
                 },
@@ -68,6 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'value' => function ($model) use ($cart) {
                             return $cart->formatCurrency($model->cost);
                         },
+                        'format' => 'raw',
                     ],
                     'actions' => [
                         'class' => ActionColumn::className(),
@@ -87,11 +80,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <!-- accepted payments column -->
-        <div class="col-xs-6">
+        <div class="col-xs-8">
             <?= $module->paymentMethods ?>
         </div>
         <!-- /.col -->
-        <div class="col-xs-6">
+        <div class="col-xs-4">
             <p class="lead"><?= Yii::t('cart', 'Amount due') ?>:</p>
             <div class="table-responsive">
                 <table class="table">
@@ -120,9 +113,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- /.row -->
 
     <!-- this row will not appear when printing -->
-    <div class="row no-print">
+    <div class="row no-print md-pb-30">
         <div class="col-xs-4">
-            <?= Html::a('<i class="fa fa-trash"></i> ' . Yii::t('cart', 'Clear cart'), ['clear'], ['class' => 'btn btn-default']); ?>
+            <?= Html::a('<i class="fa fa-trash"></i> ' . Yii::t('cart', 'Clear cart'), ['clear'], ['class' => 'btn btn-danger no-radius btn-lg used']); ?>
         </div>
         <div class="col-xs-8"><span class="pull-right">
             <?php if ($module->termsPage) : ?>
@@ -142,7 +135,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php if ($module->orderButton) : ?>
                 <?= $module->orderButton ?>
             <?php else : ?>
-                <?= Html::a('<i class="fa fa-credit-card"></i> ' . Yii::t('cart', 'Make order'), $module->orderPage, ['id' => 'make-order-button', 'class' => ($module->termsPage) ? 'btn btn-success disabled' : 'btn btn-success']); ?>
+                <?= Html::a('<i class="fa fa-credit-card"></i> ' . Yii::t('cart', 'Make order'), $module->orderPage, ['id' => 'make-order-button', 'class' => ($module->termsPage) ? 'btn btn-success no-radius btn-lg used disabled' : 'btn btn-success no-radius btn-lg used']); ?>
             <?php endif ?>
         </span></div>
     </div>

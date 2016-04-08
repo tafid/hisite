@@ -81,16 +81,17 @@
 
     });
 
-
     // DOMAIN CHECK
     $(document).on('click', 'a.add-to-cart-button', function(event) {
         event.preventDefault();
         var addToCartElem = $(this);
         addToCartElem.button('loading');
         $.post(addToCartElem.data('domain-url'), function() {
-            Hisite.updateCart('#top-cart', function() {
+            Hisite.updateCart(addToCartElem.data('topcart'), function() {
                 addToCartElem.button('complete');
-                setTimeout(function () {addToCartElem.addClass('disabled')}, 0);
+                setTimeout(function () {
+                    addToCartElem.addClass('disabled');
+                }, 0);
             });
         });
 

@@ -9,6 +9,7 @@ use yii\helpers\Url;
 
 /** @var array $line */
 $addToCartPath = '/domain/add-to-cart-registration';
+$topcartUrl = '/cart/cart/topcart';
 ?>
 
 <div class="domain-iso-line
@@ -56,6 +57,7 @@ $addToCartPath = '/domain/add-to-cart-registration';
                     'data-loading-text' => '<i class="fa fa-circle-o-notch fa-spin fa-lg"></i>&nbsp;&nbsp;' . Yii::t('hipanel/domainchecker', 'Adding'),
                     'data-complete-text' => '<i class="fa fa-check fa-lg"></i>&nbsp;&nbsp;' . Yii::t('hipanel/domainchecker', 'In cart'),
                     'data-domain-url' => Url::to([$addToCartPath, 'name' => $line['fqdn']]),
+                    'data-topcart' => Url::toRoute([$topcartUrl]),
                 ]) ?>
             <?php elseif ($line['isAvailable'] === false) : ?>
                 <?= Html::a('<i class="fa fa-search"></i>&nbsp; ' . Yii::t('hipanel/domainchecker', 'WHOIS'), 'https://ahnames.com/ru/search/whois/#' . $line['fqdn'], ['target' => '_blank', 'class' => 'btn btn-default btn-flat']) ?>

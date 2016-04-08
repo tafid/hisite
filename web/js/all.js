@@ -16512,16 +16512,17 @@ c(d.prototype,b.prototype),d.prototype._getElementOffset=e,d.prototype.layout=f,
 
     });
 
-
     // DOMAIN CHECK
     $(document).on('click', 'a.add-to-cart-button', function(event) {
         event.preventDefault();
         var addToCartElem = $(this);
         addToCartElem.button('loading');
         $.post(addToCartElem.data('domain-url'), function() {
-            Hisite.updateCart('#top-cart', function() {
+            Hisite.updateCart(addToCartElem.data('topcart'), function() {
                 addToCartElem.button('complete');
-                setTimeout(function () {addToCartElem.addClass('disabled')}, 0);
+                setTimeout(function () {
+                    addToCartElem.addClass('disabled');
+                }, 0);
             });
         });
 
@@ -16649,10 +16650,10 @@ c(d.prototype,b.prototype),d.prototype._getElementOffset=e,d.prototype.layout=f,
 var Hisite = (function () {
 
     var publicMethods = {
-        updateCart: function (selector, callback) {
-            $(selector).html('<i class="fa fa-refresh fa-spin fa-lg"></i>');
-            $.get("/cart/cart/topcart", function(data) {
-                $("li.dropdown.notifications-menu").replaceWith( data );
+        updateCart: function (topcartUrl, callback) {
+            $('#top-cart i').replaceWith('<i class="fa fa-refresh fa-spin"></i>');
+            $.post(topcartUrl, function(data) {
+                $('#top-cart').replaceWith( data );
             }).done(callback());
         }
     };

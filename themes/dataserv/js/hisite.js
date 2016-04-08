@@ -1,10 +1,10 @@
 var Hisite = (function () {
 
     var publicMethods = {
-        updateCart: function (selector, callback) {
-            $(selector).html('<i class="fa fa-refresh fa-spin fa-lg"></i>');
-            $.get("/cart/cart/topcart", function(data) {
-                $("li.dropdown.notifications-menu").replaceWith( data );
+        updateCart: function (topcartUrl, callback) {
+            $('#top-cart i').replaceWith('<i class="fa fa-refresh fa-spin"></i>');
+            $.post(topcartUrl, function(data) {
+                $('#top-cart').replaceWith( data );
             }).done(callback());
         }
     };
