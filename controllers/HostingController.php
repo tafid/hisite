@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\hosting\Calculation;
+use app\models\hosting\Package;
 use app\models\hosting\Tariff;
 use hipanel\modules\stock\models\Part;
 use hiqdev\hiart\ErrorResponseException;
@@ -18,8 +19,9 @@ class HostingController extends Controller
     /**
      * @param $type (svds|ovds)
      * @return mixed
+     * @throws UnprocessableEntityHttpException
      */
-    private function getAvailableTariffs($type)
+    private function getAvailablePackages($type)
     {
         $part_ids = [];
         $parts = [];
@@ -44,43 +46,43 @@ class HostingController extends Controller
         }
 
         if (!empty($part_ids)) {
-            $parts = Part::find()->where(['id' => $part_ids])->all();
+            $parts = Part::find()->where(['id' => $part_ids])->indexBy('id')->all();
         }
 
-        $data = [];
+        $calculationData = [];
         foreach ($calculations as $calculation) {
-            $data[$calculation->getPrimaryKey()] = $calculation->getAttributes();
+            $calculationData[$calculation->getPrimaryKey()] = $calculation->getAttributes();
         }
 
         try {
-            $prices = Calculation::perform('CalcValue', $data, true);
+            $prices = Calculation::perform('CalcValue', $calculationData, true);
         } catch (ErrorResponseException $e) {
             $prices = $e->errorInfo['response'];
         } catch (\Exception $e) {
             throw new UnprocessableEntityHttpException('Failed to calculate tariff value', 0, $e);
         }
 
-        $result = [];
+        $packages = [];
 
         foreach ($tariffs as $tariff) {
-            $id = $tariff->id;
+            $package = new Package([
+                'tariff' => $tariff,
+                'calculation' => $prices[$tariff->id],
+            ]);
+            $package->loadParts($parts);
 
-            $item['model'] = $tariff;
-            $item['calculation'] = $prices[$id];
-            $item['price'] = $prices[$id]['value']['usd']['value'];
-
-            $result[] = (object)$item;
+            $packages[] = $package;
         }
 
-        ArrayHelper::multisort($result, 'price', SORT_ASC, SORT_NUMERIC);
+        ArrayHelper::multisort($packages, 'price', SORT_ASC, SORT_NUMERIC);
 
-        return $result;
+        return $packages;
     }
 
     public function actionXenSsd()
     {
         return $this->render('xen_ssd', [
-            'tariffs' => $this->getAvailableTariffs('svds'),
+            'packages' => $this->getAvailablePackages(Tariff::TYPE_XEN),
             'tariffTypes' => Yii::$app->params['vdsproduct'],
             'testVDSPurchased' => ['id' => 1]
         ]);
@@ -89,7 +91,7 @@ class HostingController extends Controller
     public function actionOpenVz()
     {
         return $this->render('xen_ssd', [
-            'tariffs' => $this->getAvailableTariffs('ovds'),
+            'packages' => $this->getAvailablePackages(Tariff::TYPE_OPENVZ),
             'tariffTypes' => Yii::$app->params['vdsproduct'],
             'testVDSPurchased' => ['id' => 1]
         ]);

@@ -6,6 +6,9 @@ use hipanel\modules\finance\models\CalculableModelInterface;
 
 class Tariff extends \hipanel\modules\finance\models\Tariff implements CalculableModelInterface
 {
+    const TYPE_XEN = 'svds';
+    const TYPE_OPENVZ = 'ovds';
+
     /**
      * Method creates and returns corresponding Calculation model
      *

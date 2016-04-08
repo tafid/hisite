@@ -1,11 +1,8 @@
 <?php
 use yii\helpers\Html;
 
-$name = $this->context->action->controller->action->id == 'xen-ssd' ? 'XenSSD' : 'OpenVZ';
-$type = $this->context->action->controller->action->id == 'xen-ssd' ? 'svds' : 'ovds';
-
 /**
- * @var array $tariffs
+ * @var \app\models\hosting\Package[] $packages
  */
 ?>
 
@@ -13,145 +10,105 @@ $type = $this->context->action->controller->action->id == 'xen-ssd' ? 'svds' : '
     <div class="row spacing-25">
         <div class="col-sm-12">
             <table class="products-table responsive">
-                <?php
-//                $i = 0;
-//                $tariffs = array_reverse($tariffs);
-//                foreach ($tariffs as $pk => $tariff) {
-//                    if ($tariff['type'] != $type) {
-//                        continue;
-//                    }
-//
-//                    foreach ($tariff['resources'] as $k => &$v)
-//                        $v['partno'] = trim(str_ireplace(['xen', 'openvz', 'cpu', 'ram', 'hdd', 'ssd'], '', $v['partno']));
-//
-//                    print $this->render('_packageLine', [
-//                        'package' => $tariff,
-//                        'i' => $i
-//                    ]);
-//
-//                    $i++;
-//                }
-                ?>
                 <thead>
                 <tr>
                     <th></th>
-                    <?php foreach ($tariffs as $tariff) {
-                        $a = $tariff->model->name;
-                        echo Html::tag('th', $tariff->model->name);
+                    <?php foreach ($packages as $package) {
+                        echo Html::tag('th', $package->name);
                     } ?>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>CPU</td>
-                    <?php foreach ($tariffs as $tariff) : ?>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('cpu'));
 
-                    <?php endforeach; ?>
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', Yii::t('app', '{0, plural, one{# core} other{# cores}}',
+                            [$package->getResourceValue('cpu')]));
+                    } ?>
+                </tr>
+                <tr>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('ram'));
+
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', Yii::t('yii', '{nFormatted} GB', ['nFormatted' => $package->getResourceValue('ram')]));
+                    } ?>
+                </tr>
+                <tr>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('hdd'));
+
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', Yii::t('yii', '{nFormatted} GB', ['nFormatted' => $package->getResourceValue('hdd')]));
+                    } ?>
                 </tr>
 
                 <tr>
-                    <td>RAM</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>6</td>
-                    <td>UNLIMITED</td>
-                    <td>UNLIMITED</td>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('ip'));
+
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', $package->getResourceValue('ip'));
+                    } ?>
+                </tr>
+                <tr>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('support_time'));
+
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', $package->getResourceValue('support_time'));
+                    } ?>
+                </tr>
+                <tr>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('ip'));
+
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', $package->getResourceValue('ip'));
+                    } ?>
                 </tr>
 
                 <tr>
-                    <td>Softaculous</td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('traffic'));
+
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', Yii::t('yii', '{nFormatted} GB', ['nFormatted' => $package->getResourceValue('traffic')]));
+                    } ?>
                 </tr>
 
                 <tr>
-                    <td>Unlimited FTP Accounts</td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('speed'));
+
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', Yii::t('yii', '{n} Gbit/s', ['n' => $package->getResourceValue('speed')]));
+                    } ?>
                 </tr>
 
                 <tr>
-                    <td>Free Website Migration</td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('panel'));
 
-                <tr>
-                    <td>Site Builder</td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', Yii::t('yii', '{n} Gbit/s', ['n' => $package->getResourceValue('speed')]));
+                    } ?>
                 </tr>
-
                 <tr>
-                    <td>Free CDN</td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
+                    <?php
+                    echo Html::tag('td', $packages[0]->getResourceTitle('purpose'));
 
-                <tr>
-                    <td>Raid 10 Storage</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-
-                <tr>
-                    <td>Bandwidth</td>
-                    <td>100GB</td>
-                    <td>300GB</td>
-                    <td>600GB</td>
-                    <td>800GB</td>
-                    <td>800GB</td>
-                </tr>
-
-                <tr>
-                    <td>Global Locations</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-
-                <tr>
-                    <td>Unlimited Parked Domains</td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                </tr>
-
-                <tr>
-                    <td>24x7 Support</td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
-                    <td><i class="fa fa-check"></i></td>
+                    foreach ($packages as $package) {
+                        echo Html::tag('td', $package->getResourceValue('purpose'));
+                    } ?>
                 </tr>
 
                 <tr class="price-comparison">
                     <td>Price per Month</td>
-                    <?php foreach ($tariffs as $tariff) {
-                        echo Html::tag('td', Yii::$app->formatter->asCurrency($tariff->price));
+                    <?php foreach ($packages as $package) {
+                        echo Html::tag('td', Yii::t('app', '{price}/mo', ['price' => Yii::$app->formatter->asCurrency($package->getPrice())]));
                     } ?>
                 </tr>
 

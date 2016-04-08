@@ -18,6 +18,9 @@ $config = [
         ]
     ],
     'components' => [
+        'formatter' => [
+            'sizeFormatBase' => 1000,
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '6WbP9JyuVvFfMaTSXTLVxRgQX20WvS7B',
