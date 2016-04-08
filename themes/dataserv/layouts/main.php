@@ -8,28 +8,28 @@ use yii\helpers\Html;
 use yii\widgets\Menu;
 
 $menuItems = [
-    ['label' => Yii::t('app', 'Domains'), 'url' => '#', 'items' => [
-        ['label' => Yii::t('app', 'Prices'), 'url' => ['/domain/prices']],
-        ['label' => Yii::t('app', 'Advantages'), 'url' => ['/domain/advantages']],
-//        ['label' => Yii::t('app', 'Transfer'), 'url' => ['/domain/transfer']],
-        ['label' => Yii::t('app', 'Premium Package'), 'url' => ['/domain/premium-package']],
-//        ['label' => Yii::t('app', 'Whois lookup'), 'url' => ['/domain/whois-lookup']],
+    ['label' => Yii::t('hisite', 'Domains'), 'url' => '#', 'items' => [
+        ['label' => Yii::t('hisite', 'Prices'), 'url' => ['/domain/prices']],
+        ['label' => Yii::t('hisite', 'Advantages'), 'url' => ['/domain/advantages']],
+//        ['label' => Yii::t('hisite', 'Transfer'), 'url' => ['/domain/transfer']],
+        ['label' => Yii::t('hisite', 'Premium Package'), 'url' => ['/domain/premium-package']],
+//        ['label' => Yii::t('hisite', 'Whois lookup'), 'url' => ['/domain/whois-lookup']],
     ]],
-    ['label' => Yii::t('app', 'Hosting'), 'url' => '#', 'items' => [
-        ['label' => Yii::t('app', 'XEN SSD'), 'url' => ['/hosting/xen-ssd']],
-        ['label' => Yii::t('app', 'OpenVZ'), 'url' => ['/hosting/open-vz']],
-        ['label' => Yii::t('app', 'Tariffs details'), 'url' => ['/hosting/tariffs-details']],
-        ['label' => Yii::t('app', 'Advantages'), 'url' => ['/hosting/advantages']],
-        ['label' => Yii::t('app', 'What is VDS'), 'url' => ['/hosting/what-is-vds']],
+    ['label' => Yii::t('hisite', 'Hosting'), 'url' => '#', 'items' => [
+        ['label' => Yii::t('hisite', 'XEN SSD'), 'url' => ['/hosting/xen-ssd']],
+        ['label' => Yii::t('hisite', 'OpenVZ'), 'url' => ['/hosting/open-vz']],
+        ['label' => Yii::t('hisite', 'Tariffs details'), 'url' => ['/hosting/tariffs-details']],
+        ['label' => Yii::t('hisite', 'Advantages'), 'url' => ['/hosting/advantages']],
+        ['label' => Yii::t('hisite', 'What is VDS'), 'url' => ['/hosting/what-is-vds']],
     ]],
-    ['label' => Yii::t('app', 'For resellers'), 'url' => '#', 'items' => [
-        ['label' => Yii::t('app', 'Prices'), 'url' => ['/reseller/prices']],
-        ['label' => Yii::t('app', 'Advantages'), 'url' => ['/reseller/advantages']],
-        ['label' => Yii::t('app', 'API'), 'url' => ['/reseller/api']],
+    ['label' => Yii::t('hisite', 'For resellers'), 'url' => '#', 'items' => [
+        ['label' => Yii::t('hisite', 'Prices'), 'url' => ['/reseller/prices']],
+        ['label' => Yii::t('hisite', 'Advantages'), 'url' => ['/reseller/advantages']],
+        ['label' => Yii::t('hisite', 'API'), 'url' => ['/reseller/api']],
     ]],
-    ['label' => Yii::t('app', 'News'), 'url' => '/news/index'],
-    ['label' => Yii::t('app', 'Help'), 'url' => '#', 'items' => [
-        ['label' => Yii::t('app', 'FAQ'), 'url' => ['/help/faq']],
+    ['label' => Yii::t('hisite', 'News'), 'url' => '/news/index'],
+    ['label' => Yii::t('hisite', 'Help'), 'url' => '#', 'items' => [
+        ['label' => Yii::t('hisite', 'FAQ'), 'url' => ['/help/faq']],
     ]],
 ];
 ?>
@@ -53,7 +53,7 @@ $menuItems = [
     <div class="row">
         <div class="col-sm-3">
             <ul class="top left">
-                <li><i class="fa fa-envelope-o"></i> 24/7 <?= Yii::t('app', 'tech support') ?> <?= Html::mailto('support@ahnames.com', 'support@ahnames.com') ?></li>
+                <li><i class="fa fa-envelope-o"></i> 24/7 <?= Yii::t('hisite', 'tech support') ?> <?= Html::mailto('support@ahnames.com', 'support@ahnames.com') ?></li>
             </ul>
         </div>
         <div class="col-sm-9">
@@ -62,9 +62,9 @@ $menuItems = [
                 <?php if (Yii::$app->user->isGuest) : ?>
                     <li><i class="fa fa-unlock-alt"></i> <a href="#" data-toggle="modal" data-target="#LoginModal">CLIENT AREA</a></li>
                 <?php else : ?>
-                    <li><?= Html::a(Yii::t('app', 'PANEL'), '#'); ?></li>
+                    <li><?= Html::a(Yii::t('hisite', 'PANEL'), '#'); ?></li>
                 <?php endif; ?>
-                <!--li><i class="fa fa-commenting-o"></i> <a href="#"><?= Yii::t('app', 'ONLINE CHAT') ?></a></li-->
+                <!--li><i class="fa fa-commenting-o"></i> <a href="#"><?= Yii::t('hisite', 'ONLINE CHAT') ?></a></li-->
                 <?= \app\widgets\LanguageDropdown::widget() ?>
             </ul>
         </div>
@@ -134,35 +134,35 @@ $menuItems = [
     <div class="row">
 
         <div class="col-sm-3">
-            <h4><?= Yii::t('app', 'Domains') ?></h4>
+            <h4><?= Yii::t('hisite', 'Domains') ?></h4>
             <?= Menu::widget([
                 'items' => $menuItems[0]['items'],
             ]) ?>
         </div>
 
         <div class="col-sm-3">
-            <h4><?= Yii::t('app', 'Hosting') ?></h4>
+            <h4><?= Yii::t('hisite', 'Hosting') ?></h4>
             <?= Menu::widget([
                 'items' => $menuItems[1]['items'],
             ]) ?>
         </div>
 
         <div class="col-sm-3">
-            <h4><?= Yii::t('app', 'For resellers') ?></h4>
+            <h4><?= Yii::t('hisite', 'For resellers') ?></h4>
             <?= Menu::widget([
                 'items' => $menuItems[2]['items'],
             ]) ?>
         </div>
 
         <div class="col-sm-3">
-            <h4><?= Yii::t('app', 'Other') ?></h4>
+            <h4><?= Yii::t('hisite', 'Other') ?></h4>
             <?= Menu::widget([
                 'items' => [
-                    ['label' => Yii::t('app', 'About us'), 'url' => ['/site/page', 'view' => 'about']],
-                    ['label' => Yii::t('app', 'Contacts'), 'url' => ['/site/contact']],
-                    ['label' => Yii::t('app', 'Promotions'), 'url' => ['/site/page', 'view' => 'promotions']],
-                    ['label' => Yii::t('app', 'Loyalty program'), 'url' => ['/site/page', 'view' => 'loyalty-program']],
-                    ['label' => Yii::t('app', 'Rules'), 'url' => ['/site/page', 'view' => 'rules']],
+                    ['label' => Yii::t('hisite', 'About us'), 'url' => ['/site/page', 'view' => 'about']],
+                    ['label' => Yii::t('hisite', 'Contacts'), 'url' => ['/site/contact']],
+                    ['label' => Yii::t('hisite', 'Promotions'), 'url' => ['/site/page', 'view' => 'promotions']],
+                    ['label' => Yii::t('hisite', 'Loyalty program'), 'url' => ['/site/page', 'view' => 'loyalty-program']],
+                    ['label' => Yii::t('hisite', 'Rules'), 'url' => ['/site/page', 'view' => 'rules']],
                 ],
             ]) ?>
         </div>

@@ -16,7 +16,7 @@ $("#testimonials-carousel").owlCarousel({
 <div class="testimonials">
     <div class="row">
         <div class="col-sm-12">
-            <h3><?= Yii::t('app', 'Our news') ?></h3>
+            <h3><?= Yii::t('hisite', 'Our news') ?></h3>
             <hr class="hr-awesome">
             <div id="testimonials-carousel" class="owl-carousel">
 
@@ -76,7 +76,7 @@ $("#testimonials-carousel").owlCarousel({
 
             </div>
             <p class="text-center md-mt-50">
-                <?= Html::a(Yii::t('app', 'READ ALL NEWS'), ['/news/index'], ['class' => 'mtr-btn button-purple ripple btn-lg order-vps has-ripple']) ?>
+                <?= Html::a(Yii::t('hisite', 'READ ALL NEWS'), ['/news/index'], ['class' => 'mtr-btn button-purple ripple btn-lg order-vps has-ripple']) ?>
             </p>
         </div>
     </div>

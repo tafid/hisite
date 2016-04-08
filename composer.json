@@ -19,7 +19,8 @@
         "hiqdev/hipanel-module-domain": "*@dev",
         "hiqdev/hipanel-domain-checker": "*@dev",
         "hiqdev/hipanel-module-dns": "*@dev",
-        "hiqdev/yii2-cart": "*@dev"
+        "hiqdev/yii2-cart": "*@dev",
+        "ahnames/yii2-asset-ahnames": "*@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",
