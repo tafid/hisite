@@ -2,14 +2,12 @@
 
 namespace app\controllers;
 
-use app\helpers\ResourcesHelper;
 use app\models\hosting\Calculation;
 use app\models\hosting\Tariff;
 use hipanel\modules\stock\models\Part;
-use hiqdev\hiart\Collection;
 use hiqdev\hiart\ErrorResponseException;
 use Yii;
-use yii\base\Exception;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\web\Controller;
 use yii\web\UnprocessableEntityHttpException;
@@ -21,7 +19,7 @@ class HostingController extends Controller
      * @param $type (svds|ovds)
      * @return mixed
      */
-    private function packages($type)
+    private function getAvailableTariffs($type)
     {
         $part_ids = [];
         $parts = [];
@@ -33,30 +31,23 @@ class HostingController extends Controller
         ];
 
         /** @var \app\models\hosting\Tariff[] $tariffs */
-        $tariffs = Yii::$app->getCache()->getTimeCached(3600, $cacheKeys, function ($seller, $client_id, $type) {
+        $tariffs = Yii::$app->getCache()->getTimeCached(2, $cacheKeys, function ($seller, $client_id, $type) {
             return Tariff::find(['scenario' => 'get-available-info'])
                 ->joinWith('resources')
-                ->where([
-                    'type' => $type,
-                    'seller' => $seller
-                ])->all();
+                ->where(['type' => $type, 'seller' => $seller])
+                ->all();
         });
 
-
         foreach ($tariffs as $tariff) {
-//            TODO: выяснить что это. Зачем оно надо, если у голых тарифов нет партов?
-//            foreach ($tariff->resources as $resource) {
-//                /** @var Resource $resource */
-//                if ($resource->object_id) {
-//                    $part_ids[] = $resource->object_id;
-//                }
-//            }
+            $part_ids += array_filter(ArrayHelper::getColumn($tariff->resources, 'object_id'));
             $calculations[] = $tariff->getCalculationModel();
         }
+
         if (!empty($part_ids)) {
-            $parts = Part::find()->where(['id' => $parts])->all();
+            $parts = Part::find()->where(['id' => $part_ids])->all();
         }
 
+        $data = [];
         foreach ($calculations as $calculation) {
             $data[$calculation->getPrimaryKey()] = $calculation->getAttributes();
         }
@@ -66,37 +57,22 @@ class HostingController extends Controller
         } catch (ErrorResponseException $e) {
             $prices = $e->errorInfo['response'];
         } catch (\Exception $e) {
-            throw new UnprocessableEntityHttpException('Failed to calculate cart value', 0, $e);
+            throw new UnprocessableEntityHttpException('Failed to calculate tariff value', 0, $e);
         }
 
-        $j = 0.01;
+        $result = [];
 
-        foreach ($tariffs as $key => $v) {
-            try {
-                $tariffs[$key]->resources = ResourcesHelper::server($v['resources'], $parts);
-                $tariffs[$key]->price = $prices[$key]['value']['usd']['price'];
-                $tariffs[$key]->value = $prices[$key]['value']['usd']['value'];
-            } catch (Exception $e) {
-                unset($tariffs[$key]);
-            }
-            $t = 0.00;
-            $existPrice = false;
-            while ($t <= $j) {
-                if ($vs[($tariffs[$key]->value + $t) * 100]) {
-                    $existPrice = true;
-                }
-                $t += 0.01;
-            }
-            if (!$tariffs[$key]->value || $existPrice) {
-                $j += 0.01;
-            }
-            $vs[($tariffs[$key]->value + $j) * 100] = $key;
-        }
-        ksort($vs);
+        foreach ($tariffs as $tariff) {
+            $id = $tariff->id;
 
-        foreach ($vs as $id) {
-            $result["0$id"] = $tariffs[$id];
+            $item['model'] = $tariff;
+            $item['calculation'] = $prices[$id];
+            $item['price'] = $prices[$id]['value']['usd']['value'];
+
+            $result[] = (object)$item;
         }
+
+        ArrayHelper::multisort($result, 'price', SORT_ASC, SORT_NUMERIC);
 
         return $result;
     }
@@ -104,7 +80,7 @@ class HostingController extends Controller
     public function actionXenSsd()
     {
         return $this->render('xen_ssd', [
-            'packages' => $this->packages('svds'),
+            'tariffs' => $this->getAvailableTariffs('svds'),
             'tariffTypes' => Yii::$app->params['vdsproduct'],
             'testVDSPurchased' => ['id' => 1]
         ]);
@@ -113,7 +89,7 @@ class HostingController extends Controller
     public function actionOpenVz()
     {
         return $this->render('xen_ssd', [
-            'packages' => $this->packages('ovds'),
+            'tariffs' => $this->getAvailableTariffs('ovds'),
             'tariffTypes' => Yii::$app->params['vdsproduct'],
             'testVDSPurchased' => ['id' => 1]
         ]);
