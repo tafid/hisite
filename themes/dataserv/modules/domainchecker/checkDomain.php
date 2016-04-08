@@ -50,52 +50,52 @@ $this->blocks['dropDownZonesOptions'] = $dropDownZonesOptions;
                     <ul class="filter-nav" data-filter-group="status">
                         <li class="active">
                             <a href="#" data-filter=""><?= Yii::t('hipanel/domainchecker', 'All') ?>
-                                <span class="label label-default pull-right"><?= count($results) ?></span>
+                                <span class="badge"><?= count($results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".adult"><?= Yii::t('hipanel/domainchecker', 'Adult') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('adult', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('adult', $results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".geo"><?= Yii::t('hipanel/domainchecker', 'GEO') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('geo', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('geo', $results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".general"><?= Yii::t('hipanel/domainchecker', 'General') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('general', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('general', $results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".nature"><?= Yii::t('hipanel/domainchecker', 'Nature') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('nature', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('nature', $results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".internet"><?= Yii::t('hipanel/domainchecker', 'Internet') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('internet', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('internet', $results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".sport"><?= Yii::t('hipanel/domainchecker', 'Sport') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('sport', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('sport', $results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".society"><?= Yii::t('hipanel/domainchecker', 'Society') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('society', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('society', $results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".audio_music"><?= Yii::t('hipanel/domainchecker', 'Audio&Music') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('audio_music', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('audio_music', $results) ?></span>
                             </a>
                         </li>
                         <li>
                             <a href="#" data-filter=".home_gifts"><?= Yii::t('hipanel/domainchecker', 'Home&Gifts') ?>
-                                <span class="label label-default pull-right"><?= Domain::getCategoriesCount('home_gifts', $results) ?></span>
+                                <span class="badge"><?= Domain::getCategoriesCount('home_gifts', $results) ?></span>
                             </a>
                         </li>
                     </ul>

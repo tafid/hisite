@@ -3,13 +3,25 @@
 namespace app\controllers;
 
 use app\helpers\ResourcesHelper;
+use hipanel\modules\domain\cart\DomainRegistrationProduct;
 use hipanel\modules\domain\models\Domain;
 use hipanel\modules\finance\models\Tariff;
+use hiqdev\yii2\cart\actions\AddToCartAction;
 use Yii;
 use yii\web\Controller;
 
 class DomainController extends Controller
 {
+    public function actions()
+    {
+        return [
+            'add-to-cart-registration' => [
+                'class' => AddToCartAction::class,
+                'productClass' => DomainRegistrationProduct::class,
+            ]
+        ];
+    }
+
     public function actionPrices()
     {
         $domains = array_shift(Tariff::perform('GetAvailableInfo', [

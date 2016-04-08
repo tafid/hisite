@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /** @var array $line */
-$addToCartPath = '/domain/domain/add-to-cart-registration';
+$addToCartPath = '/domain/add-to-cart-registration';
 ?>
 
 <div class="domain-iso-line
@@ -21,9 +21,9 @@ $addToCartPath = '/domain/domain/add-to-cart-registration';
         data-domain="<?= $line['fqdn'] ?>">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <?php if (isset($line['isAvailable'])) : ?>
-                <span class="domain-img"><i class="fa fa-globe fa-lg"></i></span>
+                <span class="domain-img"><i class="fa fa-globe"></i></span>
             <?php else : ?>
-                <span class="domain-img"><i class="fa fa-circle-o-notch fa-spin fa-lg"></i></span>
+                <span class="domain-img"><i class="fa fa-circle-o-notch fa-spin"></i></span>
             <?php endif; ?>
 
             <?php if ($line['isAvailable'] === true) : ?>
