@@ -41,7 +41,7 @@ class HostingController extends Controller
         });
 
         foreach ($tariffs as $tariff) {
-            $part_ids += array_filter(ArrayHelper::getColumn($tariff->resources, 'object_id'));
+            $part_ids = ArrayHelper::merge($part_ids, array_filter(ArrayHelper::getColumn($tariff->resources, 'object_id')));
             $calculations[] = $tariff->getCalculationModel();
         }
 
@@ -110,46 +110,5 @@ class HostingController extends Controller
     public function actionWhatIsVds()
     {
         return $this->render('what_is_vds');
-    }
-
-    /**
-     * @param $type (svds|ovds)
-     * @return array
-     */
-    public function priceAttributeData($type)
-    {
-        return [
-            'cpu' => [
-                'label' => Yii::t('app', 'CPU'),
-                'buildValue' => function ($resource) {
-                    return $resource['cpu']['partno'];
-                }
-            ],
-            'ram' => [
-                'label' => Yii::t('app', 'RAM'),
-                'tooltip' => $type == 'svds' ? Yii::t('app', 'Additional $4/1 GB') : Yii::t('app', 'Additional $4/1 GB')
-            ],
-            'hd' => [
-                'label' => $type == 'svds' ? Yii::t('app', 'SSD') : Yii::t('app', 'HDD+SSD cache'),
-            ],
-            'dedicated_ip' => [
-                'label' => Yii::t('app', 'Dedicated IP'),
-            ],
-            'support' => [
-                'label' => Html::a(Yii::t('app', 'Support 24/7'), '#'),
-            ],
-            'traffic' => [
-                'label' => Yii::t('app', 'Traffic'),
-            ],
-            'port' => [
-                'label' => Yii::t('app', 'Connection Port'),
-            ],
-            'control_panel' => [
-                'label' => Html::a(Yii::t('app', 'Control panel'), '#'),
-            ],
-            'purpose' => [
-                'label' => Yii::t('app', 'Purpose'),
-            ],
-        ];
     }
 }

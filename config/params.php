@@ -14,4 +14,5 @@ return [
     ],
 //    'api_url' => 'http://hicore.dev',
     'api_url' => 'https://hiapi.ahnames.com',
+    'currency' => 'USD',
 ];

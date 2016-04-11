@@ -24,30 +24,36 @@ use yii\helpers\Html;
                     echo Html::tag('td', $packages[0]->getResourceTitle('cpu'));
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', Yii::t('app', '{0, plural, one{# core} other{# cores}}',
-                            [$package->getResourceValue('cpu')]));
+                        echo Html::tag('td', $package->getResourceValue('cpu'));
                     } ?>
                 </tr>
                 <tr>
                     <?php
-                    echo Html::tag('td', $packages[0]->getResourceTitle('ram'));
+                    $title = $packages[0]->getResourceTitle('ram');
+                    $overuse = Html::tag('span', Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ram')));
+                    echo Html::tag('td', $title . $overuse);
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', Yii::t('yii', '{nFormatted} GB', ['nFormatted' => $package->getResourceValue('ram')]));
+                        echo Html::tag('td', $package->getResourceValue('ram'));
                     } ?>
                 </tr>
                 <tr>
                     <?php
-                    echo Html::tag('td', $packages[0]->getResourceTitle('hdd'));
+                    $title = $packages[0]->getResourceTitle('hdd');
+                    $overuse = Html::tag('span', Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('hdd')));
+                    echo Html::tag('td', $title . $overuse);
+
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', Yii::t('yii', '{nFormatted} GB', ['nFormatted' => $package->getResourceValue('hdd')]));
+                        echo Html::tag('td', $package->getResourceValue('hdd'));
                     } ?>
                 </tr>
 
                 <tr>
                     <?php
-                    echo Html::tag('td', $packages[0]->getResourceTitle('ip'));
+                    $title = $packages[0]->getResourceTitle('ip');
+                    $overuse = Html::tag('span', Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ip')));
+                    echo Html::tag('td', $title . $overuse);
 
                     foreach ($packages as $package) {
                         echo Html::tag('td', $package->getResourceValue('ip'));
@@ -63,19 +69,12 @@ use yii\helpers\Html;
                 </tr>
                 <tr>
                     <?php
-                    echo Html::tag('td', $packages[0]->getResourceTitle('ip'));
+                    $title = $packages[0]->getResourceTitle('traffic');
+                    $overuse = Html::tag('span', Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('traffic')));
+                    echo Html::tag('td', $title . $overuse);
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', $package->getResourceValue('ip'));
-                    } ?>
-                </tr>
-
-                <tr>
-                    <?php
-                    echo Html::tag('td', $packages[0]->getResourceTitle('traffic'));
-
-                    foreach ($packages as $package) {
-                        echo Html::tag('td', Yii::t('yii', '{nFormatted} GB', ['nFormatted' => $package->getResourceValue('traffic')]));
+                        echo Html::tag('td', $package->getResourceValue('traffic'));
                     } ?>
                 </tr>
 
@@ -84,7 +83,7 @@ use yii\helpers\Html;
                     echo Html::tag('td', $packages[0]->getResourceTitle('speed'));
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', Yii::t('yii', '{n} Gbit/s', ['n' => $package->getResourceValue('speed')]));
+                        echo Html::tag('td', $package->getResourceValue('speed'));
                     } ?>
                 </tr>
 
@@ -93,7 +92,7 @@ use yii\helpers\Html;
                     echo Html::tag('td', $packages[0]->getResourceTitle('panel'));
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', Yii::t('yii', '{n} Gbit/s', ['n' => $package->getResourceValue('speed')]));
+                        echo Html::tag('td', $package->getResourceValue('panel'));
                     } ?>
                 </tr>
                 <tr>
@@ -108,7 +107,7 @@ use yii\helpers\Html;
                 <tr class="price-comparison">
                     <td>Price per Month</td>
                     <?php foreach ($packages as $package) {
-                        echo Html::tag('td', Yii::t('app', '{price}/mo', ['price' => Yii::$app->formatter->asCurrency($package->getPrice())]));
+                        echo Html::tag('td', Yii::t('app', '{price}/mo', ['price' => Yii::$app->formatter->asCurrency($package->getPrice(), Yii::$app->params['currency'])]));
                     } ?>
                 </tr>
 
