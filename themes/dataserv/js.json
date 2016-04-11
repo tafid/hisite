@@ -25,5 +25,7 @@
   "themes/dataserv/js/retina.min.js",
   "themes/dataserv/js/isotope.pkgd.min.js",
   "themes/dataserv/js/custom.js",
+  "themes/dataserv/js/tablesaw.js",
+  "themes/dataserv/js/tablesaw-init.js",
   "themes/dataserv/js/hisite.js"
 ]

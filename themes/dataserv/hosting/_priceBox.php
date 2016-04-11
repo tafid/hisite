@@ -9,7 +9,7 @@ use yii\helpers\Html;
 <div class="pricingbox vps-comparison">
     <div class="row spacing-25">
         <div class="col-sm-12">
-            <table class="products-table responsive">
+            <table class="products-table responsive tablesaw tablesaw-stack" data-tablesaw-mode="stack">
                 <thead>
                 <tr>
                     <th></th>
