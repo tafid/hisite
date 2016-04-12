@@ -110,7 +110,7 @@ $info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"
                     echo Html::tag('td', $packages[0]->getResourceTitle('panel'));
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', $package->getResourceValue('panel'));
+                        echo Html::tag('td', $package->getResourceValue('panel'), ['style' => 'font-size: smaller;']);
                     } ?>
                 </tr>
                 <tr>
@@ -118,7 +118,7 @@ $info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"
                     echo Html::tag('td', $packages[0]->getResourceTitle('purpose'));
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', $package->getResourceValue('purpose'), ['style' => 'font-size: small;']);
+                        echo Html::tag('td', $package->getResourceValue('purpose'), ['style' => 'font-size: smaller;']);
                     } ?>
                 </tr>
 
