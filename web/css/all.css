@@ -18942,3 +18942,7 @@ select2-container .select2-choice, .select2-container .select2-choices, .select2
     color: #fff!important;
 }
 
+table.tablesaw tr td:first-child {
+    white-space: nowrap;
+    width: 20%;
+}

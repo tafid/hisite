@@ -4,6 +4,8 @@ use yii\helpers\Html;
 /**
  * @var \app\models\hosting\Package[] $packages
  */
+
+$info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"></i>'
 ?>
 
 <div class="pricingbox vps-comparison">
@@ -30,7 +32,11 @@ use yii\helpers\Html;
                 <tr>
                     <?php
                     $title = $packages[0]->getResourceTitle('ram');
-                    $overuse = Html::tag('span', Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ram')));
+                    $overuse = Html::tag('span', $info, ['class' => 'pull-right', 'data' => [
+                        'trigger' => 'hover',
+                        'toggle' => 'popover',
+                        'content' => Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ram')),
+                    ]]);
                     echo Html::tag('td', $title . $overuse);
 
                     foreach ($packages as $package) {
@@ -40,7 +46,11 @@ use yii\helpers\Html;
                 <tr>
                     <?php
                     $title = $packages[0]->getResourceTitle('hdd');
-                    $overuse = Html::tag('span', Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('hdd')));
+                    $overuse = Html::tag('span', $info, ['class' => 'pull-right', 'data' => [
+                        'trigger' => 'hover',
+                        'toggle' => 'popover',
+                        'content' => Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('hdd')),
+                    ]]);
                     echo Html::tag('td', $title . $overuse);
 
 
@@ -52,7 +62,11 @@ use yii\helpers\Html;
                 <tr>
                     <?php
                     $title = $packages[0]->getResourceTitle('ip');
-                    $overuse = Html::tag('span', Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ip')));
+                    $overuse = Html::tag('span', $info, ['class' => 'pull-right', 'data' => [
+                        'trigger' => 'hover',
+                        'toggle' => 'popover',
+                        'content' => Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ip')),
+                    ]]);
                     echo Html::tag('td', $title . $overuse);
 
                     foreach ($packages as $package) {
@@ -70,7 +84,11 @@ use yii\helpers\Html;
                 <tr>
                     <?php
                     $title = $packages[0]->getResourceTitle('traffic');
-                    $overuse = Html::tag('span', Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('traffic')));
+                    $overuse = Html::tag('span', $info, ['class' => 'pull-right', 'data' => [
+                        'trigger' => 'hover',
+                        'toggle' => 'popover',
+                        'content' => Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('traffic')),
+                    ]]);
                     echo Html::tag('td', $title . $overuse);
 
                     foreach ($packages as $package) {
@@ -100,7 +118,7 @@ use yii\helpers\Html;
                     echo Html::tag('td', $packages[0]->getResourceTitle('purpose'));
 
                     foreach ($packages as $package) {
-                        echo Html::tag('td', $package->getResourceValue('purpose'));
+                        echo Html::tag('td', $package->getResourceValue('purpose'), ['style' => 'font-size: small;']);
                     } ?>
                 </tr>
 
