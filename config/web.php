@@ -17,6 +17,10 @@ $config = [
         'cart' => [
             'class'  => 'hiqdev\yii2\cart\Module',
             'viewPath' => '@app/themes/dataserv/modules'
+        ],
+        'news' => [
+            'class'  => 'hisite\modules\news\Module',
+            'viewPath' => '@app/themes/dataserv/modules'
         ]
     ],
     'components' => [

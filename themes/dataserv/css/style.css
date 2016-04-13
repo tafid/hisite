@@ -6940,3 +6940,8 @@ table.tablesaw tr td:first-child {
     white-space: nowrap;
     width: 20%;
 }
+
+.blog nav ul.pagination li.active a {
+    color: #fff;
+    padding: 10px 18px 8px;
+}

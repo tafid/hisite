@@ -27,7 +27,7 @@ $menuItems = [
         ['label' => Yii::t('hisite', 'Advantages'), 'url' => ['/reseller/advantages']],
         ['label' => Yii::t('hisite', 'API'), 'url' => ['/reseller/api']],
     ]],
-    ['label' => Yii::t('hisite', 'News'), 'url' => '/news/index'],
+    ['label' => Yii::t('hisite', 'News'), 'url' => '/news/article/index'],
     ['label' => Yii::t('hisite', 'Help'), 'url' => '#', 'items' => [
         ['label' => Yii::t('hisite', 'FAQ'), 'url' => ['/help/faq']],
     ]],

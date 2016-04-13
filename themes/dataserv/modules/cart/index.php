@@ -119,7 +119,6 @@ $this->blocks['subTitle'] = Yii::t('cart', 'Date') . ': ' . Yii::$app->formatter
         </div>
         <div class="col-xs-8"><span class="pull-right">
             <?php if ($module->termsPage) : ?>
-                <?php \hiqdev\assets\icheck\iCheckAsset::register($this) ?>
                 <?php $this->registerJs("
                         jQuery('input').iCheck({
                             checkboxClass: 'icheckbox_minimal-blue',
