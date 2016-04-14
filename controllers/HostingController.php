@@ -2,98 +2,56 @@
 
 namespace app\controllers;
 
-use app\models\hosting\Calculation;
-use app\models\hosting\Package;
-use app\models\hosting\Tariff;
-use hipanel\modules\stock\models\Part;
-use hiqdev\hiart\ErrorResponseException;
+use hipanel\modules\server\cart\ServerOrderProduct;
+use hipanel\modules\server\cart\Tariff;
+use hipanel\modules\server\helpers\ServerHelper;
+use hiqdev\yii2\cart\actions\AddToCartAction;
 use Yii;
-use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 use yii\web\Controller;
-use yii\web\UnprocessableEntityHttpException;
 
 class HostingController extends Controller
 {
-
-    /**
-     * @param $type (svds|ovds)
-     * @return mixed
-     * @throws UnprocessableEntityHttpException
-     */
-    private function getAvailablePackages($type)
+    public function actions()
     {
-        $part_ids = [];
-        $parts = [];
-
-        $cacheKeys = [
-            Yii::$app->params['seller'],
-            Yii::$app->user->id,
-            $type,
+        return [
+            'add-to-cart' => [
+                'class' => AddToCartAction::class,
+                'productClass' => ServerOrderProduct::class
+            ]
         ];
+    }
 
-        /** @var \app\models\hosting\Tariff[] $tariffs */
-        $tariffs = Yii::$app->getCache()->getTimeCached(2, $cacheKeys, function ($seller, $client_id, $type) {
-            return Tariff::find(['scenario' => 'get-available-info'])
-                ->joinWith('resources')
-                ->where(['type' => $type, 'seller' => $seller])
-                ->all();
-        });
+    public function actionOrder($id)
+    {
+        $package = ServerHelper::getAvailablePackages(null, $id);
+        $osImages = ServerHelper::getOsimages($package->tariff->type);
 
-        foreach ($tariffs as $tariff) {
-            $part_ids = ArrayHelper::merge($part_ids, array_filter(ArrayHelper::getColumn($tariff->resources, 'object_id')));
-            $calculations[] = $tariff->getCalculationModel();
-        }
-
-        if (!empty($part_ids)) {
-            $parts = Part::find()->where(['id' => $part_ids])->indexBy('id')->all();
-        }
-
-        $calculationData = [];
-        foreach ($calculations as $calculation) {
-            $calculationData[$calculation->getPrimaryKey()] = $calculation->getAttributes();
-        }
-
-        try {
-            $prices = Calculation::perform('CalcValue', $calculationData, true);
-        } catch (ErrorResponseException $e) {
-            $prices = $e->errorInfo['response'];
-        } catch (\Exception $e) {
-            throw new UnprocessableEntityHttpException('Failed to calculate tariff value', 0, $e);
-        }
-
-        $packages = [];
-
-        foreach ($tariffs as $tariff) {
-            $package = new Package([
-                'tariff' => $tariff,
-                'calculation' => $prices[$tariff->id],
-            ]);
-            $package->loadParts($parts);
-
-            $packages[] = $package;
-        }
-
-        ArrayHelper::multisort($packages, 'price', SORT_ASC, SORT_NUMERIC);
-
-        return $packages;
+        return $this->render('order', [
+            'package' => $package,
+            'product' => new ServerOrderProduct([
+                'tariff_id' => $package->tariff->id,
+                'package' => $package
+            ]),
+            'groupedOsimages' => ServerHelper::groupOsmages($osImages),
+            'panels' => ServerHelper::getPanels(),
+        ]);
     }
 
     public function actionXenSsd()
     {
         return $this->render('xen_ssd', [
-            'packages' => $this->getAvailablePackages(Tariff::TYPE_XEN),
+            'packages' => ServerHelper::getAvailablePackages(Tariff::TYPE_XEN),
             'tariffTypes' => Yii::$app->params['vdsproduct'],
-            'testVDSPurchased' => ['id' => 1]
+//            'testVDSPurchased' => ['id' => 1]
         ]);
     }
 
     public function actionOpenVz()
     {
         return $this->render('xen_ssd', [
-            'packages' => $this->getAvailablePackages(Tariff::TYPE_OPENVZ),
+            'packages' => ServerHelper::getAvailablePackages(Tariff::TYPE_OPENVZ),
             'tariffTypes' => Yii::$app->params['vdsproduct'],
-            'testVDSPurchased' => ['id' => 1]
+//            'testVDSPurchased' => ['id' => 1]
         ]);
     }
 
