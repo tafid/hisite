@@ -9,14 +9,47 @@ $config = [
     'bootstrap' => ['log'],
     'language' => 'en',
     'sourceLanguage' => 'en',
+    'aliases' => [
+        '@bill'   => '/finance/bill',
+        '@purse'  => '/finance/purse',
+        '@tariff' => '/finance/tariff',
+        '@pay'    => '/merchant/pay',
+        '@cart'   => '/cart/cart',
+    ],
     'modules' => [
         'domainchecker' => [
             'class' => 'hipanel\modules\domainchecker\Module',
             'viewPath' => '@app/themes/dataserv/modules'
         ],
+        'finance' => [
+            'class' => 'hipanel\modules\finance\Module',
+        ],
         'cart' => [
             'class'  => 'hiqdev\yii2\cart\Module',
-            'viewPath' => '@app/themes/dataserv/modules'
+            'viewPath' => '@app/themes/dataserv/modules',
+            'termsPage'      => Yii::$app->params['orgUrl'] . 'rules',
+            'orderPage'      => '/finance/cart/select',
+            /*'orderButton'    => function ($module) {
+                return Yii::$app->getView()->render('@hipanel/modules/finance/views/cart/order-button', [
+                    'module' => $module,
+                ]);
+            },*/
+            'paymentMethods' => function () {
+                return Yii::$app->getView()->render('@hipanel/modules/finance/views/cart/payment-methods', [
+                    'merchants' => Yii::$app->getModule('merchant')->getCollection([])->getItems(),
+                ]);
+            },
+            'shoppingCartOptions' => [
+                'on cartChange' => ['hipanel\modules\finance\cart\CartCalculator', 'execute'],
+            ],
+        ],
+        'merchant' => [
+            'class'           => 'hiqdev\yii2\merchant\Module',
+            'returnPage'      => '/finance/pay/return',
+            'notifyPage'      => '/finance/pay/notify',
+            'finishPage'      => '/finance/bill',
+            'depositClass'    => 'hipanel\modules\finance\merchant\Deposit',
+            'collectionClass' => 'hipanel\modules\finance\merchant\Collection',
         ],
         'news' => [
             'class'  => 'hisite\modules\news\Module',
@@ -114,6 +147,7 @@ $config = [
         ],
 
         'i18n' => [
+            'class' => 'hipanel\base\I18N',
             'translations' => [
                 'app*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
@@ -146,6 +180,23 @@ $config = [
                     'basePath' => '@hipanel/modules/domain/messages',
                     'fileMap' => [
                         'hipanel/domain' => 'domain.php',
+                    ],
+                ],
+                'hipanel/server*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@hipanel/modules/server/messages',
+                    'fileMap' => [
+                        'hipanel/server' => 'server.php',
+                        'hipanel/server/os' => 'os.php',
+                        'hipanel/server/panel' => 'panel.php',
+                        'hipanel/server/rrd' => 'rrd.php',
+                    ],
+                ],
+                'hipanel/finance' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@hipanel/modules/finance/messages',
+                    'fileMap' => [
+                        'hipanel/finance' => 'finance.php',
                     ],
                 ],
             ],
