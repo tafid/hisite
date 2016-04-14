@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 
 /**
- * @var \app\models\hosting\Package[] $packages
+ * @var \hipanel\modules\server\models\Package[] $packages
  */
 
 $info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"></i>'
@@ -35,7 +35,7 @@ $info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"
                     $overuse = Html::tag('span', $info, ['class' => 'pull-right', 'data' => [
                         'trigger' => 'hover',
                         'toggle' => 'popover',
-                        'content' => Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ram')),
+                        'content' => Yii::t('hisite/hosting', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ram')),
                     ]]);
                     echo Html::tag('td', $title . $overuse);
 
@@ -49,7 +49,7 @@ $info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"
                     $overuse = Html::tag('span', $info, ['class' => 'pull-right', 'data' => [
                         'trigger' => 'hover',
                         'toggle' => 'popover',
-                        'content' => Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('hdd')),
+                        'content' => Yii::t('hisite/hosting', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('hdd')),
                     ]]);
                     echo Html::tag('td', $title . $overuse);
 
@@ -65,7 +65,7 @@ $info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"
                     $overuse = Html::tag('span', $info, ['class' => 'pull-right', 'data' => [
                         'trigger' => 'hover',
                         'toggle' => 'popover',
-                        'content' => Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ip')),
+                        'content' => Yii::t('hisite/hosting', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('ip')),
                     ]]);
                     echo Html::tag('td', $title . $overuse);
 
@@ -87,7 +87,7 @@ $info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"
                     $overuse = Html::tag('span', $info, ['class' => 'pull-right', 'data' => [
                         'trigger' => 'hover',
                         'toggle' => 'popover',
-                        'content' => Yii::t('app', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('traffic')),
+                        'content' => Yii::t('hisite/hosting', 'Additionally {price}/{unit}', $packages[0]->getOverusePrice('traffic')),
                     ]]);
                     echo Html::tag('td', $title . $overuse);
 
@@ -125,19 +125,20 @@ $info = '<i class="fa fa-info-circle" aria-hidden="true" style="color: #3E65BF;"
                 <tr class="price-comparison">
                     <td>Price per Month</td>
                     <?php foreach ($packages as $package) {
-                        echo Html::tag('td', Yii::t('app', '{price}/mo', ['price' => Yii::$app->formatter->asCurrency($package->getPrice(), Yii::$app->params['currency'])]));
+                        echo Html::tag('td', $package->getDisplayPrice());
                     } ?>
                 </tr>
 
                 <tr>
                     <td></td>
-                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
-                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
-                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
-                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
-                    <td><a class="mtr-btn button-fab ripple btn-sm" href="javascript:void(0)">ORDER NOW</a></td>
+                    <?php foreach ($packages as $package) {
+                        $button = Html::a(Yii::t('hisite', 'ORDER NOW'), [
+                            'hosting/order',
+                            'id' => $package->tariff->id,
+                        ], ['class' => 'mtr-btn button-fab ripple btn-sm']);
+                        echo Html::tag('td', $button);
+                    } ?>
                 </tr>
-
                 </tbody>
             </table>
         </div>
