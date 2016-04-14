@@ -1,7 +1,9 @@
 [
   "vendor/bower-asset/bootstrap/dist/css/bootstrap.css",
   "vendor/bower-asset/less-space/dist/less-space.css",
+  "vendor/bower-asset/icheck/skins/minimal/blue.css",
 
+  "vendor/hiqdev/hipanel-module-server/src/assets/css/OsSelection.css",
 
   "themes/dataserv/css/bootstrap-theme.min.css",
   "themes/dataserv/css/block_grid_bootstrap.css",

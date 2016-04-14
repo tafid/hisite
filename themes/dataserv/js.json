@@ -1,5 +1,6 @@
 [
   "vendor/bower-asset/jquery/dist/jquery.js",
+  "vendor/bower-asset/icheck/icheck.js",
 
   "themes/dataserv/js/jquery-ui.min.js",
 
@@ -10,6 +11,7 @@
   "vendor/yiisoft/yii2/assets/yii.captcha.js",
   "vendor/yiisoft/yii2/assets/yii.gridView.js",
   "vendor/hiqdev/hipanel-domain-checker/src/assets/DomainCheckPluginAssets/js/DomainCheckPlugin.js",
+  "vendor/hiqdev/hipanel-module-server/src/assets/js/OsSelection.js",
   "vendor/hiqdev/hipanel-core/src/frontend/assets/js/hipanel.js",
 
 
