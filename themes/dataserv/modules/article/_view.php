@@ -8,7 +8,7 @@ use yii\helpers\StringHelper;
 <!-- Blog Post-->
 <article>
     <div class="post-content">
-        <h2><?= Html::a($model->article_name, ['/news/article/view', 'id' => $model->id]) ?></h2>
+        <h2><?= Html::a(Html::encode($model->data[Yii::$app->language]['title']), ['/news/article/view', 'id' => $model->id]) ?></h2>
         <div class="themeta"><?= Yii::$app->formatter->asDate($model->post_date)?></div>
         <hr/>
         <p>
@@ -18,7 +18,6 @@ use yii\helpers\StringHelper;
                 <?= StringHelper::truncateWords($model->data[Yii::$app->language]['short_text'], 50) ?>
             <?php endif; ?>
         </p>
-
         <?= Html::a(Yii::t('hisite/news', 'Continue reading {arrow}', ['arrow' => '&rarr;']), ['/news/article/view', 'id' => $model->id], ['class' => 'mtr-btn button-navy ripple']) ?>
     </div>
 </article>

@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use app\widgets\PanelTopCart;
+use hisite\modules\news\widgets\NewsRotatorWidget;
 use yii\helpers\Html;
 use yii\widgets\Menu;
 
@@ -126,7 +127,7 @@ $menuItems = [
     <?= \app\widgets\NewPlansWidget::widget() ?>
     <?= \app\widgets\PricingboxWidget::widget() ?>
     <?= \app\widgets\OurAppWidget::widget() ?>
-    <?= \app\widgets\NewsRotatorWidget::widget() ?>
+    <?= NewsRotatorWidget::widget() ?>
 <?php endif; ?>
 
 <!-- FOOTER -->

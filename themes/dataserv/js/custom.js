@@ -1,9 +1,28 @@
 (function ($) {
     "use strict";
 
+    $(window).load(function() {
+        equalheight('.testimonials-carousel .testimonial-content');
+    });
+
+    $(window).resize(function(){
+        equalheight('.testimonials-carousel .testimonial-content');
+    });
+
     $(document).ready(function () {
 
         $('[data-toggle="popover"]').popover();
+
+        // ______________ TESTIMONIALS CAROUSEL
+        if ($("#testimonials-carousel").length != 0) {
+            $("#testimonials-carousel").owlCarousel({
+                items: 3,
+                autoPlay: 5000,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [979, 2],
+                itemsTablet: [768, 2]
+            });
+        }
 
         // ______________ RESPONSIVE MENU
         $('#navigation').superfish({
@@ -36,6 +55,8 @@
                 }
             });
         }
+
+
 
         // ______________ MODAL LOGIN
         $('input').blur(function () {

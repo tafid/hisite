@@ -18951,3 +18951,11 @@ table.tablesaw tr td:first-child {
     color: #fff;
     padding: 10px 18px 8px;
 }
+
+.testimonial-content span {
+    font-size: 10px;
+}
+
+.testimonial-content a {
+    padding: 0px;
+}
