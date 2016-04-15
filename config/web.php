@@ -202,6 +202,14 @@ $config = [
                         'hipanel/finance' => 'finance.php',
                     ],
                 ],
+                'cart' => [
+                    'class'          => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en-US',
+                    'basePath'       => '@hiqdev/yii2/cart/messages',
+                    'fileMap'        => [
+                        'merchant' => 'cart.php',
+                    ],
+                ]
             ],
         ],
 
