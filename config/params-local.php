@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'api_url' => 'https://hiapi.ahnames.com',
+    'api_url' => 'http://localhost-api.ahnames.com',
 ];
