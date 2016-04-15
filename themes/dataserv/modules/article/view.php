@@ -1,20 +1,9 @@
 <?php
-$this->title = Yii::t('app', 'New domain zones: .PRO, .MOBI, at a great price!');
+use yii\helpers\Html;
+use yii\helpers\HtmlPurifier;
 
-$this->registerJs("
-$('[rel=\"shared-popover\"]').popover({
-    trigger: 'click',
-    container: 'body',
-    html: true,
-    template: '<div class=\"popover sharing\" role=\"tooltip\"><div class=\"arrow\"></div><h3 class=\"popover-title\"></h3><div class=\"popover-content\"></div></div>',
-    content: function () {
-      var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
-      return clone;
-    }
-  }).click(function(e) {
-    e.preventDefault();
-  });
-");
+$this->title = Html::encode($model->translation->html_title);
+$this->blocks['subTitle'] = Yii::t('hisite/news', 'Posted on {date}', ['date' => Yii::$app->formatter->asDate($model->post_date)]);
 ?>
 
 <!-- Share buttons hidden popover -->
@@ -35,17 +24,7 @@ $('[rel=\"shared-popover\"]').popover({
             <!-- Blog Post-->
             <article>
                 <div class="post-content">
-                    <p>Dear customer!</p>
-                    <p>We are glad to inform you that during the period from 02/10/16 to 03/31/16, you can register domains in .PRO, .MOBI, .INFO zones at the price of $2.45/year.</p>
-                    <p>Regular price of the transfer and renewal you can find here: Prices</p>
-                    <p>In addition, the registration of domains in the newGTLD zones will start soon, that will give you the opportunity to choose domains from more than 200 zones!</p>
-                    <p>Stay with us and stay tuned!</p>
-
-                    <div class="tagcloud"><a href="">90s</a>
-                        <a href="">Accessories</a>
-                        <a href="">Athlete</a>
-                        <a href="">Bag</a>
-                    </div>
+                    <?= HtmlPurifier::process($model->translation->text, $model->htmlPurifierConfig) ?>
                 </div>
             </article>
             <!-- End of Blog Post-->

@@ -12,7 +12,7 @@ return [
 //        'grouping'          => '{Lang:Grouping}',
         'resources' => '{Lang:Resources}',
     ],
-//    'api_url' => 'http://hicore.dev',
-    'api_url' => 'https://hiapi.ahnames.com',
+    'api_url' => 'http://hicore.dev',
+//    'api_url' => 'https://hiapi.ahnames.com',
     'currency' => 'USD',
 ];

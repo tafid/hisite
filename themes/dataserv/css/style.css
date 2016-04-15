@@ -6953,3 +6953,18 @@ table.tablesaw tr td:first-child {
 .testimonial-content a {
     padding: 0px;
 }
+
+#testimonials-carousel .item p {
+    text-align: justify;
+    font-size: 14px;
+}
+
+.testimonial-content a {
+    font-size: 16px;
+}
+
+.blog nav ul.pagination li span,  .blog nav ul.pagination li span:hover {
+    color: #cccccc;
+    padding: 10px 18px 8px;
+}
+

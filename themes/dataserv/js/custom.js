@@ -2,16 +2,28 @@
     "use strict";
 
     $(window).load(function() {
-        equalheight('.testimonials-carousel .testimonial-content');
+        equalheight('#testimonials-carousel .testimonial-content, .newplanscolumn, .pricingbox .pricing-plan');
     });
 
     $(window).resize(function(){
-        equalheight('.testimonials-carousel .testimonial-content');
+        equalheight('#testimonials-carousel .testimonial-content, .newplanscolumn, .pricingbox .pricing-plan');
     });
 
     $(document).ready(function () {
 
         $('[data-toggle="popover"]').popover();
+        $('[rel="shared-popover"]').popover({
+            trigger: 'click',
+            container: 'body',
+            html: true,
+            template: '<div class="popover sharing" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+            content: function () {
+                var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+                return clone;
+            }
+        }).click(function(e) {
+            e.preventDefault();
+        });
 
         // ______________ TESTIMONIALS CAROUSEL
         if ($("#testimonials-carousel").length != 0) {

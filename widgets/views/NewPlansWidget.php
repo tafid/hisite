@@ -5,7 +5,7 @@
         <div class="newplans_box"></div>
         <div class="spacing-25"></div>
         <div class="col-md-12">
-            <div class="row equal">
+            <div class="row">
                 <div class="col-md-4 col-sm-12 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
                     <div class="newplanscolumn">
                         <h5><?= Yii::t('hisite', 'Hosting') ?></h5>
