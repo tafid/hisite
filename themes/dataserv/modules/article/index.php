@@ -9,8 +9,7 @@ $this->blocks['subTitle'] = Yii::t('hisite/news', 'Web hosting news, tips & insi
 <!-- Blog -->
 <div class="blog">
     <div class="row">
-        <div class="col-sm-8">
-
+        <div class="col-sm-12">
             <?= ListView::widget([
                 'dataProvider' => $dataProvider,
                 'itemOptions' => ['class' => 'item'],
@@ -19,11 +18,6 @@ $this->blocks['subTitle'] = Yii::t('hisite/news', 'Web hosting news, tips & insi
             ]) ?>
 
         </div>
-
-        <div class="col-sm-4">
-            <?= $this->render('_newsSidebar'); ?>
-        </div>
-
     </div>
 </div>
 

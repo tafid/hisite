@@ -19,8 +19,7 @@ $this->blocks['subTitle'] = Yii::t('hisite/news', 'Posted on {date}', ['date' =>
 <!-- Blog -->
 <div class="blog single">
     <div class="row">
-        <div class="col-sm-8">
-
+        <div class="col-sm-12">
             <!-- Blog Post-->
             <article>
                 <div class="post-content">
@@ -30,11 +29,6 @@ $this->blocks['subTitle'] = Yii::t('hisite/news', 'Posted on {date}', ['date' =>
             <!-- End of Blog Post-->
 
         </div>
-
-        <div class="col-sm-4">
-            <?= $this->render('_newsSidebar'); ?>
-        </div>
-
     </div>
 </div>
 
