@@ -14,37 +14,48 @@ use yii\helpers\Json;
 $this->title = Yii::t('hisite/hosting', 'Order creating');
 $this->blocks['subTitle'] = Yii::t('hisite/hosting', 'Customise your server'); // todo: we need a good text
 ?>
+<div class="order-boxes">
 
-    <h3><?= $package->getName() ?></h3>
-    <h3><?= $package->getPrice() ?></h3>
+    <div class="row">
+        <div class="col-md-6">
+            <h3><?= $package->getName() ?></h3>
+        </div>
+        <div class="col-md-6">
+            <h3><?= $package->getPrice() ?></h3>
+        </div>
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <table>
+                    <tr>
+                        <td><?= $package->getResourceTitle('cpu') ?></td>
+                        <td><?= $package->getResourceValue('cpu') ?></td>
+                    </tr>
+                    <tr>
+                        <td><?= $package->getResourceTitle('ram') ?></td>
+                        <td><?= $package->getResourceValue('ram') ?></td>
+                    </tr>
+                    <tr>
+                        <td><?= $package->getResourceTitle('hdd') ?></td>
+                        <td><?= $package->getResourceValue('hdd') ?></td>
+                    </tr>
+                    <tr>
+                        <td><?= $package->getResourceTitle('ip') ?></td>
+                        <td><?= $package->getResourceValue('ip') ?></td>
+                    </tr>
+                    <tr>
+                        <td><?= $package->getResourceTitle('traffic') ?></td>
+                        <td><?= $package->getResourceValue('traffic') ?></td>
+                    </tr>
+                    <tr>
+                        <td><?= Yii::t('hisite/hosting', 'Traffic overuse') ?></td>
+                        <td><?= Yii::t('hisite/hosting', '{price}/{unit}', $package->getOverusePrice('traffic')) ?></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 
-    <table>
-        <tr>
-            <td><?= $package->getResourceTitle('cpu') ?></td>
-            <td><?= $package->getResourceValue('cpu') ?></td>
-        </tr>
-        <tr>
-            <td><?= $package->getResourceTitle('ram') ?></td>
-            <td><?= $package->getResourceValue('ram') ?></td>
-        </tr>
-        <tr>
-            <td><?= $package->getResourceTitle('hdd') ?></td>
-            <td><?= $package->getResourceValue('hdd') ?></td>
-        </tr>
-        <tr>
-            <td><?= $package->getResourceTitle('ip') ?></td>
-            <td><?= $package->getResourceValue('ip') ?></td>
-        </tr>
-        <tr>
-            <td><?= $package->getResourceTitle('traffic') ?></td>
-            <td><?= $package->getResourceValue('traffic') ?></td>
-        </tr>
-        <tr>
-            <td><?= Yii::t('hisite/hosting', 'Traffic overuse') ?></td>
-            <td><?= Yii::t('hisite/hosting', '{price}/{unit}', $package->getOverusePrice('traffic')) ?></td>
-        </tr>
-    </table>
-<?php $form = ActiveForm::begin(['action' => ['add-to-cart']]); ?>
+    <?php $form = ActiveForm::begin(['action' => ['add-to-cart']]); ?>
     <?= Html::activeHiddenInput($product, 'tariff_id', ['name' => 'tariff_id']) ?>
     <?= Html::hiddenInput('osimage', null, ['class' => 'reinstall-osimage']) ?>
     <?= Html::hiddenInput('panel', null, ['class' => 'reinstall-panel']) ?>
@@ -123,9 +134,14 @@ $this->blocks['subTitle'] = Yii::t('hisite/hosting', 'Customise your server'); /
             </div>
         </div>
     </div>
-<?php $form->end();
+    <?php $form->end(); ?>
+</div>
 
-$this->registerJs("
+
+
+
+
+<?php $this->registerJs("
     var osparams = " . Json::encode($groupedOsimages['oses']) . ";
     $('.os-selector').osSelector({
         osparams: osparams
