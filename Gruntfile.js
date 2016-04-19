@@ -68,7 +68,7 @@ module.exports = function (grunt) {
         //},
         watch: {
             js: {
-                files: ['themes/dataserv/js/**/*.js', 'assets/js.json', 'themes/dataserv/css.json', 'themes/dataserv/css/*.css'],
+                files: ['themes/dataserv/js/**/*.js', 'themes/dataserv/js.json', 'themes/dataserv/css.json', 'themes/dataserv/css/*.css'],
                 tasks: [
                     'concat_sourcemap',
                     'concat'
