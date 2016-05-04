@@ -37,78 +37,69 @@ $id = $model->id ?: 0;
     ]) ?>
     <div class="row">
 
-        <div class="col-md-12">
-            <div class="nav-tabs-custom">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#single"
-                                          data-toggle="tab"><?= Yii::t('app', 'Single domain transfer') ?></a></li>
-                    <li><a href="#bulk" data-toggle="tab"><?= Yii::t('app', 'Bulk domain transfer') ?></a></li>
+        <div class="col-lg-12">
+            <div class="ds-horizontal-tabs lg-mt-20 lg-mb-20">
+                <div class="tabbable tabs-top-horizontal">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1"
+                                              data-toggle="tab"><?= Yii::t('app', 'Single domain transfer') ?></a></li>
+                        <li><a href="#tab2" data-toggle="tab"><?= Yii::t('app', 'Bulk domain transfer') ?></a></li>
+                    </ul>
+                    <div class="tab-content">
 
-                </ul>
-
-                <div class="tab-content" style="padding-top: 1em">
-
-                    <div class="tab-pane active" id="single">
-                        <div class="row">
-                            <div class="col-md-1 step">1.</div>
-                            <!-- /.col-md-1 -->
-                            <div
-                                class="col-md-11"><?= Yii::t('app', 'Remove whois protection from the current registrar.') ?></div>
-                            <!-- /.col-md-11 -->
-                        </div>
-                        <!-- /.row -->
-                        <div class="row">
-                            <div class="col-md-1 step">2.</div>
-                            <!-- /.col-md-1 -->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <?= $form->field($model, "[$id]domain"); ?>
+                        <div class="tab-pane fade in active" id="tab1">
+                            <h4><?= Yii::t('app', 'Single domain transfer') ?></h4>
+                            <div class="row">
+                                <div class="col-md-1 step">1.</div>
+                                <div
+                                    class="col-md-11"><?= Yii::t('app', 'Remove whois protection from the current registrar.') ?></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 step">2.</div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <?= $form->field($model, "[$id]domain"); ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <?= $form->field($model, "[$id]password"); ?>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- /.col-md-6 -->
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <?= $form->field($model, "[$id]password"); ?>
+                            <div class="row">
+                                <div class="col-md-1 step">3.</div>
+                                <div class="col-md-11">
+                                    <?= Yii::t('app', 'An email was sent to your email address specified in Whois. To start the transfer, click on the link in the email.') ?>
                                 </div>
                             </div>
-                            <!-- /.col-md-5 -->
                         </div>
-                        <div class="row">
-                            <div class="col-md-1 step">3.</div>
-                            <!-- /.col-md-1 -->
-                            <div class="col-md-11">
-                                <?= Yii::t('app', 'An email was sent to your email address specified in Whois. To start the transfer, click on the link in the email.') ?>
-                            </div>
-                            <!-- /.col-md-11 -->
-                        </div>
-                        <!-- /.row -->
-                    </div>
 
-                    <div class="tab-pane" id="bulk">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <?= $form->field($model, "[$id]domains")->textarea(['rows' => 7]); ?>
-                            </div>
-                            <div class="col-md-6 lg-mt-20 md-mt-20 sm-mt-20">
-                                <p class="help-block">
-                                    <?= Yii::t('app', 'For separation of the domain and code use a space, a comma or a semicolon.') ?>
-                                    <?= Yii::t('app', 'Example') ?>:<br>
-                                    <b>yourdomain.com uGt6shlad</b><br>
-                                    <?= Yii::t('app', 'or') ?><br>
-                                    <b>yourdomain.com, uGt6shlad</b><br>
-                                    <?= Yii::t('app', 'or') ?><br>
-                                    <b>yourdomain.com; uGt6shlad</b><br>
-                                    <?= Yii::t('app', 'each pair (domain + code) should be written with a new line') ?>
-                                </p>
+                        <div class="tab-pane fade" id="tab2">
+                            <h4><?= Yii::t('app', 'Bulk domain transfer') ?></h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <?= $form->field($model, "[$id]domains")->textarea(['rows' => 7]); ?>
+                                </div>
+                                <div class="col-md-6 lg-mt-20 md-mt-20 sm-mt-20">
+                                    <p class="help-block">
+                                        <?= Yii::t('app', 'For separation of the domain and code use a space, a comma or a semicolon.') ?>
+                                        <?= Yii::t('app', 'Example') ?>:<br>
+                                        <b>yourdomain.com uGt6shlad</b><br>
+                                        <?= Yii::t('app', 'or') ?><br>
+                                        <b>yourdomain.com, uGt6shlad</b><br>
+                                        <?= Yii::t('app', 'or') ?><br>
+                                        <b>yourdomain.com; uGt6shlad</b><br>
+                                        <?= Yii::t('app', 'each pair (domain + code) should be written with a new line') ?>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <?= Html::submitButton('<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;' . Yii::t('app', 'Transfer'), ['class' => 'btn btn-success no-radius btn-lg used']); ?>
                 </div>
-
             </div>
-            <?= Html::submitButton('<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;' . Yii::t('app', 'Transfer'), ['class' => 'btn btn-success']); ?>
         </div>
-
     </div>
     <?php ActiveForm::end() ?>
 <?php else : ?>
