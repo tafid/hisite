@@ -27,4 +27,4 @@ $this->blocks['subHeaderClass'] = 'domainavailability';
     </div>
 </div>
 
-<?= $this->render('_domainFooter'); ?>
+<?php /*= $this->render('_domainFooter'); */ ?>

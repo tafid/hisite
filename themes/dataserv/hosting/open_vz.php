@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Html;
 
-$this->title = Yii::t('app', 'OpenVz');
-$this->blocks['subTitle'] = Yii::t('app', 'Hosting by AHnames is an optimal and reliable solution for any project at affordable price');
+$this->title = Yii::t('hisite/hosting', 'OpenVz');
+$this->blocks['subTitle'] = Yii::t('hisite/hosting', 'Hosting by AHnames is an optimal and reliable solution for any project at affordable price');
 $this->registerCss(".products-table { display: table; }");
 ?>
 
@@ -14,7 +14,7 @@ $this->registerCss(".products-table { display: table; }");
         </div>
         <div class="col-md-9 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="200ms">
             <p>
-                <?= Yii::t('app', '{0} - is an inexpensive and reliable solution for small projects that do not require many resources (HTML web-sites, landing pages, small blogs, personal websites, business cards, etc.). An additional advantage of our VDS based on OpenVZ is utilization of SSD cache system that improves performance of the disk subsystem during frequently accessed data readings.', [Html::a(Yii::t('app', 'VDS based on OpenVZ'), '#')]) ?>
+                <?= Yii::t('hisite/hosting', '{0} - is an inexpensive and reliable solution for small projects that do not require many resources (HTML web-sites, landing pages, small blogs, personal websites, business cards, etc.). An additional advantage of our VDS based on OpenVZ is utilization of SSD cache system that improves performance of the disk subsystem during frequently accessed data readings.', [Html::a(Yii::t('app', 'VDS based on OpenVZ'), '#')]) ?>
             </p>
         </div>
     </div>
@@ -29,7 +29,7 @@ $this->registerCss(".products-table { display: table; }");
             <h4><?= Yii::t('app', 'PAYMENT METHODS') ?></h4>
         </div>
         <div class="col-sm-6">
-            <p>We accept the following automatic payment methods:
+            <p><?= Yii::t('hisite/hosting', 'We accept the following automatic payment methods')?>:
                 <noindex>
                     <a rel="nofollow" target="_blank" href="http://www.webmoney.ru/">WebMoney</a>,
                     <a rel="nofollow" target="_blank" href="https://www.paypal.com/nl/webapps/mpp/home">PayPal</a>,
@@ -38,7 +38,7 @@ $this->registerCss(".products-table { display: table; }");
                     <a rel="nofollow" href="https://www.paxum.com/payment/index.php?view=views/index.xsl">Paxum</a>,
                     <a rel="nofollow" target="_blank" href="https://www.interkassa.com/">InterKassa</a>
                 </noindex>
-                as well as PayPal payments from your Visa and MasterCard.
+                <?= Yii::t('hisite/hosting', 'as well as PayPal payments from your Visa and MasterCard')?>.
             </p>
         </div>
     </div>

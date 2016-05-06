@@ -1,6 +1,6 @@
 <?php
-$this->title = Yii::t('app', 'API');
-$this->blocks['subTitle'] = Yii::t('app', 'Domains reselling with AHnames is a great choice, if you want to run your own domain registration service');
+$this->title = Yii::t('hisite/hosting', 'API');
+$this->blocks['subTitle'] = Yii::t('hisite/hosting', 'Domains reselling with AHnames is a great choice, if you want to run your own domain registration service');
 
 $this->registerJs(<<<JS
  // ______________ ACCORDION ICONS
@@ -24,7 +24,7 @@ JS
                 <div class="panel panel-default">
 
                     <div class="panel-heading">
-                        <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><?= Yii::t('app', 'General information') ?></a></h4>
+                        <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><?= Yii::t('hisite/hosting', 'General information') ?></a></h4>
                     </div>
 
                     <div id="collapse1" class="panel-collapse collapse">
@@ -36,7 +36,7 @@ JS
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><?= Yii::t('app', 'Detailed examples') ?></a></h4>
+                        <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><?= Yii::t('hisite/hosting', 'Detailed examples') ?></a></h4>
                     </div>
 
                     <div id="collapse2" class="panel-collapse collapse">
@@ -48,7 +48,7 @@ JS
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><?= Yii::t('app', 'Type directory') ?></a></h4>
+                        <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><?= Yii::t('hisite/hosting', 'Type directory') ?></a></h4>
                     </div>
 
                     <div id="collapse3" class="panel-collapse collapse">
@@ -62,7 +62,7 @@ JS
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><?= Yii::t('app', 'Command directory') ?></a></h4>
+                        <h4 class="panel-title"><i class="indicator fa fa-plus-square-o pull-left"></i><a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><?= Yii::t('hisite/hosting', 'Command directory') ?></a></h4>
                     </div>
 
                     <div id="collapse4" class="panel-collapse collapse">

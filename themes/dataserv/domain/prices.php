@@ -119,4 +119,4 @@ $this->registerCss(".servers-table { display: block; }");
 </div>
 <!-- END OF DOMAIN FEATURES -->
 
-<?= $this->render('_domainFooter'); ?>
+<?php /*= $this->render('_domainFooter'); */ ?>
