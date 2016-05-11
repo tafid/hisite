@@ -12,7 +12,7 @@ $menuItems = [
     ['label' => Yii::t('hisite', 'Domains'), 'url' => '#', 'items' => [
         ['label' => Yii::t('hisite', 'Prices'), 'url' => ['/domain/prices']],
         ['label' => Yii::t('hisite', 'Advantages'), 'url' => ['/domain/advantages']],
-//        ['label' => Yii::t('hisite', 'Transfer'), 'url' => ['/domain/transfer']],
+        ['label' => Yii::t('hisite', 'Transfer'), 'url' => ['/domainchecker/transfer/index']],
         ['label' => Yii::t('hisite', 'Premium Package'), 'url' => ['/domain/premium-package']],
 //        ['label' => Yii::t('hisite', 'Whois lookup'), 'url' => ['/domain/whois-lookup']],
     ]],

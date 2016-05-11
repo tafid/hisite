@@ -1,7 +1,7 @@
 <?php
 
-$this->title = Yii::t('app', 'Prices');
-$this->blocks['subTitle'] = Yii::t('app', 'Domains reselling with AHnames is a great choice, if you want to run your own domain registration service');
+$this->title = Yii::t('hisite/reseller', 'Prices');
+$this->blocks['subTitle'] = Yii::t('hisite/reseller', 'Domains reselling with AHnames is a great choice, if you want to run your own domain registration service');
 $this->registerCss("
 .gold-table, .platinum-table {
     display: none;
@@ -53,11 +53,11 @@ JS
 
     <div class="row">
         <div class="col-sm-12">
-            <span class="chooseprice"><?= Yii::t('app', 'Choose your tariff') ?></span>
+            <span class="chooseprice"><?= Yii::t('hisite/reseller', 'Choose your tariff') ?></span>
             <div class="price-per-period">
-                <button type="button" class="btn btn-shared-checked ripple silver"><?= Yii::t('app', 'Silver') ?><br><?= Yii::t('app', '(up to 100 domains)') ?></button>
-                <button type="button" class="btn btn-default ripple gold"><?= Yii::t('app', 'Gold') ?><br><?= Yii::t('app', '(more than 100 domains)') ?></button>
-                <button type="button" class="btn btn-default ripple platinum"><?= Yii::t('app', 'Platinum') ?><br><?= Yii::t('app', '(more than 1000 domains)') ?></button>
+                <button type="button" class="btn btn-shared-checked ripple silver"><?= Yii::t('hisite/reseller', 'Silver') ?><br><?= Yii::t('hisite/reseller', '(up to 100 domains)') ?></button>
+                <button type="button" class="btn btn-default ripple gold"><?= Yii::t('hisite/reseller', 'Gold') ?><br><?= Yii::t('hisite/reseller', '(more than 100 domains)') ?></button>
+                <button type="button" class="btn btn-default ripple platinum"><?= Yii::t('hisite/reseller', 'Platinum') ?><br><?= Yii::t('hisite/reseller', '(more than 1000 domains)') ?></button>
             </div>
         </div>
     </div>
@@ -68,18 +68,18 @@ JS
             <table id="tld-table" class="tablesaw" data-tablesaw-mode="stack" data-wow-duration="1000ms" data-wow-delay="250ms" >
                 <thead>
                 <tr>
-                    <th><?= Yii::t('app', 'TLD') ?></th>
-                    <th><?= Yii::t('app', 'REGISTRATION') ?></th>
-                    <th><?= Yii::t('app', 'RENEWAL') ?></th>
-                    <th><?= Yii::t('app', 'TRANSFER') ?></th>
+                    <th><?= Yii::t('hisite/reseller', 'TLD') ?></th>
+                    <th><?= Yii::t('hisite/reseller', 'REGISTRATION') ?></th>
+                    <th><?= Yii::t('hisite/reseller', 'RENEWAL') ?></th>
+                    <th><?= Yii::t('hisite/reseller', 'TRANSFER') ?></th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($zones as $z) : ?>
                     <tr>
                         <td class="right_column"><b>.<?= strtoupper($z) ?></b></td>
-                        <td><?= Yii::$app->formatter->asCurrency($info[$option]['zone:.' . $z]['dregistration']['price'], 'usd') ?> / <?= Yii::t('app', 'year') ?></td>
-                        <td><?= Yii::$app->formatter->asCurrency($info[$option]['zone:.' . $z]['drenewal']['price'], 'usd') ?> / <?= Yii::t('app', 'year') ?></td>
+                        <td><?= Yii::$app->formatter->asCurrency($info[$option]['zone:.' . $z]['dregistration']['price'], 'usd') ?> / <?= Yii::t('hisite/reseller', 'year') ?></td>
+                        <td><?= Yii::$app->formatter->asCurrency($info[$option]['zone:.' . $z]['drenewal']['price'], 'usd') ?> / <?= Yii::t('hisite/reseller', 'year') ?></td>
                         <td><?= Yii::$app->formatter->asCurrency($info[$option]['zone:.' . $z]['dtransfer']['price'], 'usd') ?></td>
                     </tr>
                 <?php endforeach; ?>

@@ -28,7 +28,8 @@
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",
-        "yiisoft/yii2-gii": "*"
+        "yiisoft/yii2-gii": "*",
+        "tysonmatanich/elementQuery": "*"
     },
     "config": {
         "process-timeout": 1800
@@ -42,6 +43,18 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.hiqdev.com"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "tysonmatanich/elementQuery",
+                "version": "0.1",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:tysonmatanich/elementQuery.git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "extra": {

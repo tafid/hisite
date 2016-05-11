@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Html;
 
-$this->title = Yii::t('app', 'XEN SSD');
-$this->blocks['subTitle'] = Yii::t('app', 'Hosting by AHnames is an optimal and reliable solution for any project at affordable price');
+$this->title = Yii::t('hisite/hosting', 'XEN SSD');
+$this->blocks['subTitle'] = Yii::t('hisite/hosting', 'Hosting by AHnames is an optimal and reliable solution for any project at affordable price');
 $this->registerCss(".products-table { display: table; }");
 ?>
 
@@ -14,13 +14,13 @@ $this->registerCss(".products-table { display: table; }");
         </div>
         <div class="col-md-9 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="200ms">
             <p>
-                <?= Yii::t('app', 'The main advantage of a VDS based on {0} is speed. It is more than 250 times faster than a conventional HDD. Due to Xen virtualization type, all resources are assigned to user and the operation of your {1} does not depend on the main server\'s load.', [
-                    Html::a(Yii::t('app', 'XEN with SSD'), ['/hosting/what-is-vds']),
-                    Html::a(Yii::t('app', 'VDS'), ['/hosting/what-is-vds']),
+                <?= Yii::t('hisite/hosting', 'The main advantage of a VDS based on {0} is speed. It is more than 250 times faster than a conventional HDD. Due to Xen virtualization type, all resources are assigned to user and the operation of your {1} does not depend on the main server\'s load.', [
+                    Html::a(Yii::t('hisite/hosting', 'XEN with SSD'), ['/hosting/what-is-vds']),
+                    Html::a(Yii::t('hisite/hosting', 'VDS'), ['/hosting/what-is-vds']),
                 ]) ?>
             </p>
             <p>
-                <?= Yii::t('app', 'Virtual dedicated server based on Xen is a perfect solution for most medium and large projects because of its performance that is highly competitive with the performance of a dedicated server.') ?>
+                <?= Yii::t('hisite/hosting', 'Virtual dedicated server based on Xen is a perfect solution for most medium and large projects because of its performance that is highly competitive with the performance of a dedicated server.') ?>
             </p>
         </div>
     </div>
@@ -32,10 +32,10 @@ $this->registerCss(".products-table { display: table; }");
 <div class="domain-features-text">
     <div class="row">
         <div class="col-sm-6">
-            <h4><?= Yii::t('app', 'PAYMENT METHODS') ?></h4>
+            <h4><?= Yii::t('hisite/hosting', 'PAYMENT METHODS') ?></h4>
         </div>
         <div class="col-sm-6">
-            <p>We accept the following automatic payment methods:
+            <p><?= Yii::t('hisite/hosting', 'We accept the following automatic payment methods')?>:
                 <noindex>
                     <a rel="nofollow" target="_blank" href="http://www.webmoney.ru/">WebMoney</a>,
                     <a rel="nofollow" target="_blank" href="https://www.paypal.com/nl/webapps/mpp/home">PayPal</a>,
@@ -44,7 +44,7 @@ $this->registerCss(".products-table { display: table; }");
                     <a rel="nofollow" href="https://www.paxum.com/payment/index.php?view=views/index.xsl">Paxum</a>,
                     <a rel="nofollow" target="_blank" href="https://www.interkassa.com/">InterKassa</a>
                 </noindex>
-                as well as PayPal payments from your Visa and MasterCard.
+                <?= Yii::t('hisite/hosting', 'as well as PayPal payments from your Visa and MasterCard') ?>.
             </p>
         </div>
     </div>

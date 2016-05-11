@@ -53,7 +53,7 @@ $this->registerCss(".servers-table { display: block; }");
             <h4><?= Yii::t('app', 'PAYMENT METHODS') ?></h4>
         </div>
         <div class="col-sm-6">
-            <p>We accept the following automatic payment methods:
+            <p><?= Yii::t('hisite/domain', 'We accept the following automatic payment methods') ?>:
                 <noindex>
                     <a rel="nofollow" target="_blank" href="http://www.webmoney.ru/">WebMoney</a>,
                     <a rel="nofollow" target="_blank" href="https://www.paypal.com/nl/webapps/mpp/home">PayPal</a>,
@@ -62,7 +62,7 @@ $this->registerCss(".servers-table { display: block; }");
                     <a rel="nofollow" href="https://www.paxum.com/payment/index.php?view=views/index.xsl">Paxum</a>,
                     <a rel="nofollow" target="_blank" href="https://www.interkassa.com/">InterKassa</a>
                 </noindex>
-                as well as PayPal payments from your Visa and MasterCard.
+                <?= Yii::t('hisite/domain', 'as well as PayPal payments from your Visa and MasterCard') ?>.
             </p>
         </div>
     </div>
@@ -77,9 +77,9 @@ $this->registerCss(".servers-table { display: block; }");
                 <div class="col-sm-3 col-md-2"><img src="/images/icon13.png" alt=""/></div>
                 <div class="col-sm-9 col-md-10">
                     <h5><?= Yii::t('app', 'Simple domain registration, renewal and transfer') ?></h5>
-                    <p>You can register a domain name in one of the following zones:<b> .COM, .NET, .ORG, .INFO,
+                    <p><?= Yii::t('hisite/domain', 'You can register a domain name in one of the following zones')?>:<b> .COM, .NET, .ORG, .INFO,
                             .BIZ, .ME, .NAME, .CC, .XXX, .RU, .SU, .COM.UA, .KIEV.UA.</b> or <b>.TV</b></p>
-                    <p>Registering a domain will only take few seconds!</p>
+                    <p><?= Yii::t('hisite/domain', 'Registering a domain will only take few seconds') ?>!</p>
                 </div>
             </div>
 
@@ -97,12 +97,12 @@ $this->registerCss(".servers-table { display: block; }");
                 <div class="col-sm-3 col-md-2"><img src="/images/icon15.png" alt=""/></div>
                 <div class="col-sm-9 col-md-10"><h5><?= Yii::t('app', 'Professional customer support') ?></h5>
                     <ul class="long-dash">
-                        <li>our customer support staff consists of qualified professionals;</li>
-                        <li>over 10 years of experience;</li>
-                        <li>thousands of clients;</li>
-                        <li>individual approach;</li>
-                        <li>resolving issues in a timely manner;</li>
-                        <li>constant update and optimization of our services.</li>
+                        <li><?= Yii::t('hisite/domain', 'our customer support staff consists of qualified professionals') ?>;</li>
+                        <li><?= Yii::t('hisite/domain', 'over 10 years of experience') ?>;</li>
+                        <li><?= Yii::t('hisite/domain', 'thousands of clients') ?>;</li>
+                        <li><?= Yii::t('hisite/domain', 'individual approach') ?>;</li>
+                        <li><?= Yii::t('hisite/domain', 'resolving issues in a timely manner') ?>;</li>
+                        <li><?= Yii::t('hisite/domain', 'constant update and optimization of our services') ?>.</li>
                     </ul>
                 </div>
             </div>
@@ -119,4 +119,4 @@ $this->registerCss(".servers-table { display: block; }");
 </div>
 <!-- END OF DOMAIN FEATURES -->
 
-<?= $this->render('_domainFooter'); ?>
+<?php /*= $this->render('_domainFooter'); */ ?>

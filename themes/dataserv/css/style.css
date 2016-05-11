@@ -6798,14 +6798,15 @@ ul.topright li.activeLanguage a {
 }
 
 #check-domain .has-error .form-control:focus,
-#check-domain .has-success .form-control:focus,
-.form-control:focus
+#check-domain .has-success .form-control:focus
 {
     border-color: transparent;
      -webkit-box-shadow: none;
      box-shadow: none;
 }
-
+.help-block {
+    font-size: smaller;
+}
 
 .nav-stacked > li.active > a, .nav-stacked > li.active > a:hover {
     background: transparent!important;
@@ -6817,7 +6818,7 @@ ul.topright li.activeLanguage a {
     border-radius: 0;
 }
 
-select2-container .select2-choice, .select2-container .select2-choices, .select2-container .select2-choices .select2-search-field input, .select2-search input {
+.select2-container .select2-choice, .select2-container .select2-choices, .select2-container .select2-choices .select2-search-field input, .select2-search input {
     border-radius: 0px;
 }
 
@@ -6968,3 +6969,6 @@ table.tablesaw tr td:first-child {
     padding: 10px 18px 8px;
 }
 
+.apps-grid .block-grid-item .odometer {
+    font-size: 64px;
+}

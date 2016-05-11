@@ -2,11 +2,11 @@
     "use strict";
 
     $(window).load(function() {
-        equalheight('#testimonials-carousel .testimonial-content, .newplanscolumn, .pricingbox .pricing-plan');
+        equalheight('#testimonials-carousel .testimonial-content, .newplanscolumn, .pricingbox .pricing-plan, .order-boxes .block-grid-item');
     });
 
     $(window).resize(function(){
-        equalheight('#testimonials-carousel .testimonial-content, .newplanscolumn, .pricingbox .pricing-plan');
+        equalheight('#testimonials-carousel .testimonial-content, .newplanscolumn, .pricingbox .pricing-plan, .order-boxes .block-grid-item');
     });
 
     $(document).ready(function () {

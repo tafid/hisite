@@ -1,2 +1,2 @@
 <?php
-$this->title = Yii::t('app', 'Promotions');
+$this->title = Yii::t('hisite/page', 'Promotions');
