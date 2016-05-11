@@ -128,7 +128,7 @@ $config = [
             ],
         ],
 
-        'hiresource' => [
+        'hiart' => [
             'class' => 'hipanel\base\Connection',
 //            'auth'   => function () {
 //                if (Yii::$app->user->identity) {
@@ -223,7 +223,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         'panels' => [
-            'hiresource' => [
+            'hiart' => [
                 'class' => 'hiqdev\hiart\DebugPanel',
             ],
         ],
