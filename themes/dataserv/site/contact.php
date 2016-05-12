@@ -27,8 +27,7 @@ $this->registerCss(".help-block { font-size: 12px; }");
             <div class="contactmethod blue">
                 <h5><?= Yii::t('app', 'Mailing Address') ?></h5>
                 <p>
-                    AHnames. <br>
-                    27 Old Gloucester Street, WC1N 3AX, London, United Kingdom
+                    <?= Yii::$app->params['mailingAddress'] ?>
                 </p>
             </div>
         </div>
@@ -37,10 +36,7 @@ $this->registerCss(".help-block { font-size: 12px; }");
             <div class="contactmethod green">
                 <h5><?= Yii::t('app', 'Billing address') ?></h5>
                 <p>
-                    DATAWEB GLOBAL LP<br>
-                    84 Park Road,Rosyth<br>
-                    KY11 2JL, United Kingdom<br>
-                    Tel./FAX: +312 021 70 228
+                    <?= Yii::$app->params['billingAddress'] ?>
                 </p>
             </div>
         </div>
