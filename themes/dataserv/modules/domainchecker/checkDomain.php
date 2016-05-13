@@ -2,7 +2,7 @@
 use hipanel\modules\domain\models\Domain;
 use yii\helpers\Html;
 
-$this->title = Yii::t('app', 'Domain check');
+$this->title = Yii::t('hipanel/domainchecker', 'Domain check');
 $this->blocks['subHeaderClass'] = 'domainavailability';
 $this->blocks['dropDownZonesOptions'] = $dropDownZonesOptions;
 

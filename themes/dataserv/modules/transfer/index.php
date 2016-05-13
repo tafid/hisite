@@ -7,7 +7,7 @@ use yii\bootstrap\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
-$this->title = Yii::t('hisite', 'Domain transfer');
+$this->title = Yii::t('hipanel/domainchecker', 'Domain transfer');
 
 
 $this->registerCss('
@@ -17,6 +17,7 @@ $this->registerCss('
     margin-bottom: 1em;
     text-align: center;
 }
+
 ');
 $this->registerJs(<<<JS
     jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -30,14 +31,14 @@ $id = $model->id ?: 0;
 <?php if (!Yii::$app->session->getFlash('transferGrid')) : ?>
     <?php $form = ActiveForm::begin([
         'id' => 'domain-transfer-single',
-        'action' => ['transfer'],
+        'action' => ['index'],
         'enableAjaxValidation' => true,
         'enableClientValidation' => false,
         'validationUrl' => Url::toRoute(['validate-form', 'scenario' => $model->scenario]),
     ]) ?>
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 or-border">
             <h2><?= Yii::t('hisite', 'Single domain transfer') ?></h2>
             <div class="titleborder pink">
                 <div class="titleborder_left"></div>
@@ -91,25 +92,39 @@ $id = $model->id ?: 0;
                         <?= Yii::t('app', 'each pair (domain + code) should be written with a new line') ?>
                     </p>
                 </div>
+
             </div>
         </div>
-
-        <div class="col-lg-12">
-            <?= Html::submitButton('<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;' . Yii::t('app', 'Transfer'), ['class' => 'mtr-btn button-blue ripple has-ripple']); ?>
+        <div class="col-lg-6">
+            <hr>
+            <?= Html::submitButton('<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;' . Yii::t('hipanel/domainchecker', 'Transfer'), ['class' => 'mtr-btn button-blue ripple has-ripple']); ?>
         </div>
+        <div class="col-lg-6">
+            <hr>
+            <?= Html::submitButton('<i class="fa fa-paper-plane"></i>&nbsp;&nbsp;' . Yii::t('hipanel/domainchecker', 'Bulk transfer'), ['class' => 'mtr-btn button-blue ripple has-ripple']); ?>
+        </div>
+
+
     </div>
     <?php ActiveForm::end() ?>
 <?php else : ?>
     <?= Html::beginForm(['add-to-cart-transfer']) ?>
-    <div class="box">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title"><?= Yii::t('hipanel/domain', 'Starting the transfer procedure for the following domains'); ?></h3>
+            <h2 class="box-title"><?= Yii::t('hipanel/domainchecker', 'Starting the transfer procedure for the following domains'); ?></h2>
+            <div class="titleborder pink">
+                <div class="titleborder_left"></div>
+                <div class="titleborder_sign"></div>
+            </div>
         </div>
         <div class="box-body">
             <?= GridView::widget([
                 'dataProvider' => $transferDataProvider,
                 'tableOptions' => [
-                    'class' => 'table table-hover',
+                    'class' => 'table',
                 ],
                 'layout' => "{items}\n{pager}",
                 'rowOptions' => function ($model) {
@@ -142,7 +157,7 @@ $id = $model->id ?: 0;
                         },
                     ],
                     [
-                        'label' => Yii::t('app', 'Additional message'),
+                        'label' => Yii::t('hipanel/domainchecker', 'Additional message'),
                         'value' => function ($model) {
                             /* @var Domain $model */
                             return $model->hasErrors('password') ? $model->getFirstError('password') : '';
@@ -151,12 +166,14 @@ $id = $model->id ?: 0;
                 ],
             ]); ?>
         </div>
-        <div class="box-footer">
-            <?= Html::submitButton('<i class="fa fa-shopping-cart"></i> ' . Yii::t('app', 'Add to cart'), ['class' => 'btn btn-success']) ?>
-            <?= Html::a(Yii::t('hipanel/domain', 'Return to transfer form'), ['transfer'], ['class' => 'btn btn-default']) ?>
+        <div class="box-footer lg-pt-50 lg-pb-50">
+            <?= Html::submitButton('<i class="fa fa-shopping-cart"></i> ' . Yii::t('hipanel/domainchecker', 'Add to cart'), ['class' => 'btn btn-success no-radius btn-lg used']) ?>
+            <?= Html::a(Yii::t('hipanel/domain', 'Return to transfer form'), ['index'], ['class' => 'btn btn-default no-radius btn-lg used']) ?>
         </div>
-        <!-- /.box-footer -->
+                <!-- /.box-footer -->
     </div>
+        </div>
+        </div>
     <?= Html::endForm(); ?>
 <?php endif; ?>
 </div>
