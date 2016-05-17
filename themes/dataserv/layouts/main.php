@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use app\widgets\PanelTopCart;
+use hipanel\widgets\Alert;
 use hisite\modules\news\widgets\NewsRotatorWidget;
 use yii\helpers\Html;
 use yii\widgets\Menu;
@@ -48,7 +49,7 @@ $menuItems = [
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<?= Alert::widget(); ?>
 <!-- TOP NAV -->
 <div class="topmenu">
     <div class="row">

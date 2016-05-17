@@ -5,6 +5,8 @@
 
   "vendor/hiqdev/hipanel-module-server/src/assets/css/OsSelection.css",
 
+  "vendor/bower/pnotify/src/pnotify.core.css",
+
   "themes/dataserv/css/bootstrap-theme.min.css",
   "themes/dataserv/css/block_grid_bootstrap.css",
   "themes/dataserv/css/owl.carousel.css",

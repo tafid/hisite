@@ -14,6 +14,7 @@
   "vendor/hiqdev/hipanel-module-server/src/assets/js/OsSelection.js",
   "vendor/hiqdev/hipanel-core/src/frontend/assets/js/hipanel.js",
 
+  "vendor/bower/pnotify/src/pnotify.core.js",
 
   "themes/dataserv/js/morphext.min.js",
   "themes/dataserv/js/hoverIntent.js",
