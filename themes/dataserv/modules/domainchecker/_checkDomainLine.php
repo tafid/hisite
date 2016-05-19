@@ -51,7 +51,7 @@ $topcartUrl = '/cart/cart/topcart';
         </div>
         <div class="col-md-3 col-sm-12 col-xs-12">
             <?php if ($line['isAvailable'] === true) : ?>
-                <?= Html::a('<i class="fa fa-cart-plus fa-lg"></i>&nbsp; ' . Yii::t('hipanel/domainchecker', 'Add to cart'), ['add-to-cart-registration', 'name' => $line['fqdn']], [
+                <?= Html::a('<i class="fa fa-cart-plus fa-lg"></i>&nbsp; ' . Yii::t('hipanel/domainchecker', 'To cart'), ['add-to-cart-registration', 'name' => $line['fqdn']], [
                     'data-pjax' => 0,
                     'class' => 'btn add-to-cart-button btn-success no-radius used',
                     'data-loading-text' => '<i class="fa fa-circle-o-notch fa-spin fa-lg"></i>&nbsp;&nbsp;' . Yii::t('hipanel/domainchecker', 'Adding'),
