@@ -3,7 +3,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             css: {
-                src: grunt.file.readJSON('themes/dataserv/css.json'),
+                src: [ grunt.file.readJSON('themes/dataserv/css.json') ],
                 dest: 'web/css/all.css'
             }
         },
@@ -28,44 +28,44 @@ module.exports = function (grunt) {
                 }
             }
         },
-        copy: {
-            main: {
-                //files: [
-                //    {
-                //        expand: true,
-                //        flatten: true,
-                //        src: grunt.file.readJSON('themes/dataserv/fonts.json'),
-                //        dest: 'web/fonts/',
-                //        filter: 'isFile'
-                //    }
-                //]
-            }
-        },
+        // copy: {
+        //     main: {
+        //         files: [
+        //            {
+        //                expand: true,
+        //                flatten: true,
+        //                src: grunt.file.readJSON('themes/dataserv/fonts.json'),
+        //                dest: 'web/fonts/',
+        //                filter: 'isFile'
+        //            }
+        //         ]
+        //     }
+        // },
         uglify: {
             options: {
                 mangle: false
             },
-            lib: {
-                files: {
-                    'web/js/lib.min.js': 'web/js/lib.js'
-                }
-            },
+            // lib: {
+            //     files: {
+            //         'web/js/lib.min.js': 'web/js/lib.js'
+            //     }
+            // },
             all: {
                 files: {
                     'web/js/all.min.js': 'web/js/all.js'
                 }
             }
         },
-        //imagemin: {
-        //    dynamic: {
-        //        files: [{
-        //            expand: true,
-        //            cwd: 'web/img/',
-        //            src: ['**/*.{png,jpg,gif}'],
-        //            dest: 'web/img/'
-        //        }]
-        //    }
-        //},
+        imagemin: {
+           dynamic: {
+               files: [{
+                   expand: true,
+                   cwd: 'web/images/',
+                   src: ['**/*.{png,jpg,gif}'],
+                   dest: 'web/images/'
+               }]
+           }
+        },
         watch: {
             js: {
                 files: ['themes/dataserv/js/**/*.js', 'themes/dataserv/js.json', 'themes/dataserv/css.json', 'themes/dataserv/css/*.css'],
@@ -97,9 +97,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    //grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // Task definition
-    grunt.registerTask('build', ['concat', 'cssmin', 'copy', 'concat_sourcemap', 'uglify']); // 'imagemin',
+    grunt.registerTask('build', ['concat', 'cssmin', 'concat_sourcemap', 'uglify']);
+    grunt.registerTask('img', ['imagemin']);
     grunt.registerTask('default', ['watch']);
 };
