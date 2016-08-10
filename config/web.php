@@ -68,7 +68,7 @@ $config = [
             'cookieValidationKey' => '6WbP9JyuVvFfMaTSXTLVxRgQX20WvS7B',
         ],
         'cache' => [
-            'class' => 'hipanel\base\Cache',
+            'class' => 'hipanel\components\Cache',
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -94,11 +94,9 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-
         'assetManager' => [
             'bundles' => false,
         ],
-
         'view' => [
             'theme' => [
                 'basePath' => '@app/themes/dataserv',
@@ -108,7 +106,6 @@ $config = [
                 ],
             ],
         ],
-
         'urlManager' => [
             'class' => 'codemix\localeurls\UrlManager',
             'languages' => ['en', 'ru'],
@@ -127,9 +124,8 @@ $config = [
 
             ],
         ],
-
         'hiart' => [
-            'class' => 'hipanel\base\Connection',
+            'class' => \hipanel\components\Connection::class,
 //            'auth'   => function () {
 //                if (Yii::$app->user->identity) {
 //                    return ['access_token' => Yii::$app->user->identity->getAccessToken()];
@@ -148,9 +144,8 @@ $config = [
                 'base_uri' => $params['api_url'],
             ],
         ],
-
         'i18n' => [
-            'class' => 'hipanel\base\I18N',
+            'class' => 'hipanel\components\I18N',
             'translations' => [
                 'app*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
@@ -159,6 +154,14 @@ $config = [
                     'fileMap' => [
                         'app' => 'app.php',
                         'app/error' => 'error.php',
+                    ],
+                ],
+                'hipanel' => [
+                    'class' => \yii\i18n\PhpMessageSource::class,
+                    'basePath' => '@hipanel/messages',
+                    'fileMap' => [
+                        'hipanel' => 'hipanel.php',
+                        'block-reasons' => 'block-reasons.php',
                     ],
                 ],
                 'hisite*' => [
