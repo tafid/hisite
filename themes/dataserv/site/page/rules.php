@@ -11,12 +11,16 @@ $this->registerCss(".vps-features-tabs .tabs-left-vertical > .nav-tabs > li > a 
 
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#termsOfUse"
-                                          data-toggle="tab"><?= Yii::t('hisite/page', 'Domains terms of use') ?></a></li>
-                    <li><a href="#privacyPolicy" data-toggle="tab"><?= Yii::t('hisite/page', 'Privacy Policy') ?></a></li>
-                    <li><a href="#cancelationPolicy" data-toggle="tab"><?= Yii::t('hisite/page', 'Cancelation policy') ?></a>
+                                          data-toggle="tab"><?= Yii::t('hisite/page', 'Domains terms of use') ?></a>
+                    </li>
+                    <li><a href="#privacyPolicy" data-toggle="tab"><?= Yii::t('hisite/page', 'Privacy Policy') ?></a>
+                    </li>
+                    <li><a href="#cancelationPolicy"
+                           data-toggle="tab"><?= Yii::t('hisite/page', 'Cancelation policy') ?></a>
                     </li>
                     <li><a href="#domainRemovalAndAutoRenewalPolicy"
-                           data-toggle="tab"><?= Yii::t('hisite/page', 'Domain removal and auto renewal Policy') ?></a></li>
+                           data-toggle="tab"><?= Yii::t('hisite/page', 'Domain removal and auto renewal Policy') ?></a>
+                    </li>
                 </ul>
 
                 <div class="tab-content">
@@ -55,6 +59,7 @@ $this->registerCss(".vps-features-tabs .tabs-left-vertical > .nav-tabs > li > a 
 </div>
 
 <a href="https://www.icann.org/resources/pages/responsibilities-2014-03-14-en" target="_blank" data-toggle="tab"><i
-        class="fa fa-check-square-o lightblue"></i><?= Yii::t('hisite/page', 'Registrant rights and responsibilities') ?></a>
+        class="fa fa-check-square-o lightblue"></i><?= Yii::t('hisite/page', 'Registrant rights and responsibilities') ?>
+</a>
 <a href="http://afilias.info/policies" target="_blank" data-toggle="tab"><i
         class="fa fa-gratipay orange"></i><?= Yii::t('hisite/page', 'Afilias Domain Anti-Abuse Policy') ?></a>
