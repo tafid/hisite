@@ -13,11 +13,11 @@ $config = [
     'language' => 'en',
     'sourceLanguage' => 'en',
     'aliases' => [
-        '@bill'   => '/finance/bill',
-        '@purse'  => '/finance/purse',
+        '@bill' => '/finance/bill',
+        '@purse' => '/finance/purse',
         '@tariff' => '/finance/tariff',
-        '@pay'    => '/merchant/pay',
-        '@cart'   => '/cart/cart',
+        '@pay' => '/merchant/pay',
+        '@cart' => '/cart/cart',
     ],
     'modules' => [
         'domainchecker' => [
@@ -28,10 +28,10 @@ $config = [
             'class' => 'hipanel\modules\finance\Module',
         ],
         'cart' => [
-            'class'  => 'hiqdev\yii2\cart\Module',
+            'class' => 'hiqdev\yii2\cart\Module',
             'viewPath' => '@app/themes/dataserv/modules',
-            'termsPage'      => Yii::$app->params['orgUrl'] . 'rules',
-            'orderPage'      => '/finance/cart/select',
+            'termsPage' => Yii::$app->params['orgUrl'] . 'rules',
+            'orderPage' => '/finance/cart/select',
             /*'orderButton'    => function ($module) {
                 return Yii::$app->getView()->render('@hipanel/modules/finance/views/cart/order-button', [
                     'module' => $module,
@@ -47,15 +47,15 @@ $config = [
             ],
         ],
         'merchant' => [
-            'class'           => 'hiqdev\yii2\merchant\Module',
-            'returnPage'      => '/finance/pay/return',
-            'notifyPage'      => '/finance/pay/notify',
-            'finishPage'      => '/finance/bill',
-            'depositClass'    => 'hipanel\modules\finance\merchant\Deposit',
+            'class' => 'hiqdev\yii2\merchant\Module',
+            'returnPage' => '/finance/pay/return',
+            'notifyPage' => '/finance/pay/notify',
+            'finishPage' => '/finance/bill',
+            'depositClass' => 'hipanel\modules\finance\merchant\Deposit',
             'collectionClass' => 'hipanel\modules\finance\merchant\Collection',
         ],
         'news' => [
-            'class'  => 'hisite\modules\news\Module',
+            'class' => 'hisite\modules\news\Module',
             'viewPath' => '@app/themes/dataserv/modules'
         ]
     ],
@@ -125,20 +125,8 @@ $config = [
             ],
         ],
         'hiart' => [
-            'class' => \hipanel\components\Connection::class,
-//            'auth'   => function () {
-//                if (Yii::$app->user->identity) {
-//                    return ['access_token' => Yii::$app->user->identity->getAccessToken()];
-//                }
-//
-//                if (Yii::$app->user->loginRequired() !== null) {
-//                    Yii::trace('Login is required. Redirecting to the login page', 'hipanel');
-//                    Yii::$app->response->send();
-//                    Yii::$app->end();
-//                }
-//
-//                return [];
-//            },
+            'class' => \hiqdev\hiart\Connection::class,
+            'disabledAuth' => true,
             'config' => [
                 'api_url' => $params['api_url'],
                 'base_uri' => $params['api_url'],
@@ -172,7 +160,7 @@ $config = [
                         'hisite' => 'hisite.php',
                     ],
                 ],
-                 'hipanel/dns' => [
+                'hipanel/dns' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@app/messages',
                     'sourceLanguage' => 'en-US',
@@ -206,10 +194,10 @@ $config = [
                     ],
                 ],
                 'cart' => [
-                    'class'          => 'yii\i18n\PhpMessageSource',
+                    'class' => 'yii\i18n\PhpMessageSource',
                     'sourceLanguage' => 'en-US',
-                    'basePath'       => '@hiqdev/yii2/cart/messages',
-                    'fileMap'        => [
+                    'basePath' => '@hiqdev/yii2/cart/messages',
+                    'fileMap' => [
                         'merchant' => 'cart.php',
                     ],
                 ]
