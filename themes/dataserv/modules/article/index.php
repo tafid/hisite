@@ -1,5 +1,4 @@
 <?php
-use yii\helpers\Html;
 use yii\widgets\ListView;
 
 $this->title = Yii::t('hisite/news', 'News');
@@ -20,6 +19,4 @@ $this->blocks['subTitle'] = Yii::t('hisite/news', 'Web hosting news, tips & insi
         </div>
     </div>
 </div>
-
-
 <!-- End of Blog -->

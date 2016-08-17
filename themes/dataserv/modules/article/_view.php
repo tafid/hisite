@@ -6,6 +6,7 @@ use yii\helpers\StringHelper;
 
 /** @var $model \hisite\modules\news\models\Article */
 ?>
+
 <!-- Blog Post-->
 <article>
     <div class="post-content">
